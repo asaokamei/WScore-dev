@@ -1,0 +1,15 @@
+{
+    "name": "wscore/dev",
+    "description": "site development using WScore.",
+    "require": {
+        "wscore/dicontainer": "dev-master",
+        "wscore/html": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Asao Kamei",
+            "email": "kamei@workspot.jp"
+        }
+    ],
+    "minimum-stability": "dev"
+}
