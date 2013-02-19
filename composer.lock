@@ -1,0 +1,91 @@
+{
+    "hash": "d4fe065e9f75058242db7af3c84ce6d6",
+    "packages": [
+        {
+            "name": "twitter/bootstrap",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/twitter/bootstrap.git",
+                "reference": "v2.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/v2.3.0",
+                "reference": "v2.3.0",
+                "shasum": ""
+            },
+            "time": "2013-02-08 06:13:13",
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+            "homepage": "http://twitter.github.com/bootstrap/",
+            "keywords": [
+                "bootstrap",
+                "css"
+            ]
+        },
+        {
+            "name": "wscore/dicontainer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asaokamei/WScore.DiContainer.git",
+                "reference": "21f7bf363a1e62373af382fb2eeb63d54dc52c5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/21f7bf363a1e62373af382fb2eeb63d54dc52c5c",
+                "reference": "21f7bf363a1e62373af382fb2eeb63d54dc52c5c",
+                "shasum": ""
+            },
+            "time": "2013-02-19 05:23:24",
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Asao Kamei",
+                    "email": "kamei@workspot.jp"
+                }
+            ],
+            "description": "Simple DI container with auto-wiring."
+        },
+        {
+            "name": "wscore/html",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asaokamei/WScore.Html.git",
+                "reference": "f7ccb85cbab434af90ba702250e8a11be25386ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/f7ccb85cbab434af90ba702250e8a11be25386ce",
+                "reference": "f7ccb85cbab434af90ba702250e8a11be25386ce",
+                "shasum": ""
+            },
+            "time": "2013-02-19 05:20:55",
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Asao Kamei",
+                    "email": "kamei@workspot.jp"
+                }
+            ],
+            "description": "Html tag generator classes."
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "wscore/dicontainer": 20,
+        "wscore/html": 20
+    }
+}
