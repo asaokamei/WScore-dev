@@ -3,7 +3,8 @@
     "description": "site development using WScore.",
     "require": {
         "wscore/dicontainer": "dev-master",
-        "wscore/html": "dev-master"
+        "wscore/html": "dev-master",
+        "twitter/bootstrap": "v2.3.0"
     },
     "authors": [
         {
