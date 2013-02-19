@@ -1,5 +1,5 @@
 {
-    "hash": "d4fe065e9f75058242db7af3c84ce6d6",
+    "hash": "50df97265a1d355bdb4abf96522374af",
     "packages": [
         {
             "name": "twitter/bootstrap",
@@ -77,6 +77,31 @@
                 }
             ],
             "description": "Html tag generator classes."
+        },
+        {
+            "name": "wscore/template",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asaokamei/WScore.Template.git",
+                "reference": "9df8ddf7e11d3db355565bcfd5de57ad02afb0ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Template/zipball/9df8ddf7e11d3db355565bcfd5de57ad02afb0ea",
+                "reference": "9df8ddf7e11d3db355565bcfd5de57ad02afb0ea",
+                "shasum": ""
+            },
+            "time": "2013-02-19 06:45:41",
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Asao Kamei",
+                    "email": "kamei@workspot.jp"
+                }
+            ],
+            "description": "A simple template engine using only PHP."
         }
     ],
     "packages-dev": null,
@@ -86,6 +111,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "wscore/dicontainer": 20,
-        "wscore/html": 20
+        "wscore/html": 20,
+        "wscore/template": 20
     }
 }

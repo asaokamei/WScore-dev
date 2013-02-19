@@ -4,7 +4,8 @@
     "require": {
         "wscore/dicontainer": "dev-master",
         "wscore/html": "dev-master",
-        "twitter/bootstrap": "v2.3.0"
+        "twitter/bootstrap": "v2.3.0",
+        "wscore/template": "dev-master"
     },
     "authors": [
         {
