@@ -34,16 +34,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DiContainer.git",
-                "reference": "21f7bf363a1e62373af382fb2eeb63d54dc52c5c"
+                "reference": "4d71cc24f92d311466ec70ad448bd46fa186e047"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/21f7bf363a1e62373af382fb2eeb63d54dc52c5c",
-                "reference": "21f7bf363a1e62373af382fb2eeb63d54dc52c5c",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/4d71cc24f92d311466ec70ad448bd46fa186e047",
+                "reference": "4d71cc24f92d311466ec70ad448bd46fa186e047",
                 "shasum": ""
             },
-            "time": "2013-02-19 05:23:24",
+            "time": "2013-02-19 06:53:08",
             "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WScore\\DiContainer": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
@@ -59,16 +64,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Html.git",
-                "reference": "f7ccb85cbab434af90ba702250e8a11be25386ce"
+                "reference": "19a899d96dc26f23229aee97a97ce9d53f2d9e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/f7ccb85cbab434af90ba702250e8a11be25386ce",
-                "reference": "f7ccb85cbab434af90ba702250e8a11be25386ce",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/19a899d96dc26f23229aee97a97ce9d53f2d9e66",
+                "reference": "19a899d96dc26f23229aee97a97ce9d53f2d9e66",
                 "shasum": ""
             },
-            "time": "2013-02-19 05:20:55",
+            "time": "2013-02-19 06:59:09",
             "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WScore\\Html": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
@@ -84,16 +94,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Template.git",
-                "reference": "9df8ddf7e11d3db355565bcfd5de57ad02afb0ea"
+                "reference": "3e984238514579c24940406c04af2586125204cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Template/zipball/9df8ddf7e11d3db355565bcfd5de57ad02afb0ea",
-                "reference": "9df8ddf7e11d3db355565bcfd5de57ad02afb0ea",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Template/zipball/3e984238514579c24940406c04af2586125204cc",
+                "reference": "3e984238514579c24940406c04af2586125204cc",
                 "shasum": ""
             },
-            "time": "2013-02-19 06:45:41",
+            "time": "2013-02-19 06:56:33",
             "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WScore\\Template": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
