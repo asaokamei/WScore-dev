@@ -1,0 +1,76 @@
+/*
+  copied from bootstrap's narrow.
+*/
+
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    overflow-y: scroll;
+}
+
+/* Custom container */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+dl dt { margin-top: 10px; }
+dl.dl-horizontal dd { margin-top: 10px; }
+
+/* Supporting marketing content */
+.marketing {
+    margin: 60px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+.memo {
+    font-size: 85%;
+    color: #666666;
+}
+
+.formError {
+    color: red;
+    font-size: 90%;
+}
+
+.img-heart {
+    display: inline-block;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    background-image: url( "../img/glyphicons_012_heart.png" );
+    background-repeat: no-repeat;
+}
+
+.img-star {
+    display: inline-block;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    background-image: url( "../img/glyphicons_049_star.png" );
+    background-repeat: no-repeat;
+}
+
+.img-user {
+    display: inline-block;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    background-image: url( "../img/glyphicons_003_user.png" );
+    background-repeat: no-repeat;
+}
+
+div.formListBox li {
+    float: left;
+    width: 10em;
+    list-style: none;
+}
+
+div.formListBox input {
+    margin-right: 5px;
+}

@@ -4,7 +4,7 @@
     "require": {
         "wscore/dicontainer": "dev-master",
         "wscore/html": "dev-master",
-        "twitter/bootstrap": "v2.3.0",
+        "twitter/bootstrap": "dev-master",
         "wscore/template": "dev-master"
     },
     "authors": [
@@ -13,5 +13,23 @@
             "email": "kamei@workspot.jp"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories":[
+        {
+            "type":"package",
+            "package":{
+                "version":"master",
+                "name":"twitter/bootstrap",
+                "source":{
+                    "url":"https://github.com/twitter/bootstrap.git",
+                    "type":"git",
+                    "reference":"master"
+                },
+                "dist":{
+                    "url":"https://github.com/twitter/bootstrap/zipball/master",
+                    "type":"zip"
+                }
+            }
+        }
+    ]
 }

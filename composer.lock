@@ -1,32 +1,22 @@
 {
-    "hash": "50df97265a1d355bdb4abf96522374af",
+    "hash": "749be4e83d66a862f34f59ecdcdb2007",
     "packages": [
         {
             "name": "twitter/bootstrap",
-            "version": "v2.3.0",
+            "version": "master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/twitter/bootstrap.git",
-                "reference": "v2.3.0"
+                "url": "https://github.com/twitter/bootstrap.git",
+                "reference": "master"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/v2.3.0",
-                "reference": "v2.3.0",
-                "shasum": ""
+                "url": "https://github.com/twitter/bootstrap/zipball/master",
+                "reference": null,
+                "shasum": null
             },
-            "time": "2013-02-08 06:13:13",
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
-            "homepage": "http://twitter.github.com/bootstrap/",
-            "keywords": [
-                "bootstrap",
-                "css"
-            ]
+            "time": "2013-02-08 06:13:13"
         },
         {
             "name": "wscore/dicontainer",
@@ -127,6 +117,7 @@
     "stability-flags": {
         "wscore/dicontainer": 20,
         "wscore/html": 20,
+        "twitter/bootstrap": 20,
         "wscore/template": 20
     }
 }
