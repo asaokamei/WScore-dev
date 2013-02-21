@@ -1,9 +1,8 @@
 <?php
-require_once( '../src/bootstrap.php' );
+require_once( '../lib/bootstrap.php' );
 
 /** @var $view WScore\Template\Template */
-$view = require( '../src/dev/Scripts/template.php' );
-$view->parent( __DIR__ . '/../src/dev/Documents/layout.php' );
+$view = require( '../src/Scripts/template.php' );
 $view->renderSelf();
 
 ?>
