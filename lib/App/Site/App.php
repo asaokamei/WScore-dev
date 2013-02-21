@@ -44,7 +44,6 @@ class App
         self::$container->set( 'Template', '\WScore\Template\Template', array( 
             'setter' => array( 
                 'parent' => array( 'parentTemplate' => self::$template_root.'/layout.php' ),
-                'set'    => array( 'name' => 'basePath', 'value' => self::$basePath )
             )
         ) );
     }

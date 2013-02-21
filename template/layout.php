@@ -1,5 +1,6 @@
 <?php
 /** @var $_v \WScore\Template\Template */
+$_v->setDefault( 'basePath', '/WSdev')
 ?>
 <!DOCTYPE html>
 <html>
