@@ -5,6 +5,7 @@
         "wscore/dicontainer": "dev-master",
         "wscore/html": "dev-master",
         "twitter/bootstrap": "dev-master",
+        "wscore/web": "dev-master",
         "wscore/template": "dev-master"
     },
     "authors": [
