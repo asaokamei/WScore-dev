@@ -1,8 +1,9 @@
 <?php
 require_once( '../lib/bootstrap.php' );
+use \App\Site\App;
 
 /** @var $view WScore\Template\Template */
-$view = require( '../src/Scripts/template.php' );
+$view = App::$container->get( 'Template' );
 $view->renderSelf();
 
 ?>

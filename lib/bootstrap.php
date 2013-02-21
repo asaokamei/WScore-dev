@@ -8,4 +8,4 @@ $loader->add( 'App', __DIR__.'' );
 $loader->register();
 
 // define constant. 
-\App\Site\App::setUp();
+\App\Site\App::start();

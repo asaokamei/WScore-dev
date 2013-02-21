@@ -1,5 +1,5 @@
 {
-    "hash": "749be4e83d66a862f34f59ecdcdb2007",
+    "hash": "c866e19d5fbd44aa0b6c35566fd5f665",
     "packages": [
         {
             "name": "twitter/bootstrap",
@@ -107,6 +107,31 @@
                 }
             ],
             "description": "A simple template engine using only PHP."
+        },
+        {
+            "name": "wscore/web",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asaokamei/WScore.Web.git",
+                "reference": "fb5137af2153a3ffe3cc3b5111b34bde317a0a49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/fb5137af2153a3ffe3cc3b5111b34bde317a0a49",
+                "reference": "fb5137af2153a3ffe3cc3b5111b34bde317a0a49",
+                "shasum": ""
+            },
+            "time": "2013-02-21 11:27:24",
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Asao Kamei",
+                    "email": "kamei@workspot.jp"
+                }
+            ],
+            "description": "Web application front-end dispatcher."
         }
     ],
     "packages-dev": null,
@@ -118,6 +143,7 @@
         "wscore/dicontainer": 20,
         "wscore/html": 20,
         "twitter/bootstrap": 20,
+        "wscore/web": 20,
         "wscore/template": 20
     }
 }
