@@ -35,7 +35,6 @@ class App extends \WScore\Web\FrontMC
     {
         // set up folders.
         self::$root = dirname( dirname( dirname( __DIR__ ) ) );
-        self::$vendor_root = self::$root . '/vendor';
         self::$application_root = __DIR__;
         self::$template_root = self::$root . '/template';
         
@@ -43,7 +42,7 @@ class App extends \WScore\Web\FrontMC
         self::$basePath = '/WSdev'; // ugly.
 
         /** @noinspection PhpIncludeInspection */
-        self::$service = include( self::$vendor_root . '/wscore/dicontainer/scripts/instance.php' );
+        self::$service = include( self::$root . '/vendor/wscore/dicontainer/scripts/instance.php' );
         self::$service->set( 'ContainerInterface', self::$service );
 
         // set Template
