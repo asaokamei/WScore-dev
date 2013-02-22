@@ -4,6 +4,7 @@ use \App\Site\App;
 
 /** @var $view WScore\Template\Template */
 $view = App::$container->get( 'Template' );
+$view->HomePage = true;
 $view->renderSelf();
 
 ?>
