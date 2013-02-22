@@ -1,6 +1,6 @@
 <h4>Template Folder</h4>
 <p>contents under template folder is rendered here. </p>
-<h1>Top of Direct Folder</h1>
+<h1>Template Folder</h1>
 <div class="row-fluid marketing">
     <div class="span6">
         <h3>tttt ttt</h3>

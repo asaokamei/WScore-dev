@@ -32,6 +32,11 @@ $view->renderSelf();
     </header>
     <div class="row-fluid marketing">
         <div class="span6">
+            <h3>Basic File Viewings</h3>
+            <h4>&gt; <a href="direct/" >direct</a></h4>
+            <p>viewing files under public directly. self-template. </p>
+            <h4>&gt; <a href="test.php" >from template folder</a></h4>
+            <p>viewing files under template folder (outside of public) with layout. </p>
             <h3>Basic Features</h3>
             <h4>&gt; <a href="password.php" >generate password</a></h4>
             <p>demo for building form elements. </p>
@@ -52,8 +57,7 @@ $view->renderSelf();
             </ul>
             <h4>&gt; <a href="cenaFriends" >cena data transfer agent</a></h4>
             <p>a conceptual demo for using Cena-DTA using friends and contact demo. </p>
-        </div>
-        <div class="span12">
+            <h3>Caching Application</h3>
             <p>development still undergoing. more demo should come up, hopefully sometime soon...</p>
             <p>[<a href="info.php">php info</a>],
                 [<a href="index.php?act=cache-info" >apc info</a>],
