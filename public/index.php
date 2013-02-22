@@ -35,7 +35,7 @@ $view->renderSelf();
             <h3>Basic File Viewings</h3>
             <h4>&gt; <a href="direct/" >direct</a></h4>
             <p>viewing files under public directly. self-template. </p>
-            <h4>&gt; <a href="test.php" >from template folder</a></h4>
+            <h4>&gt; <a href="templates/index.php" >from template folder</a></h4>
             <p>viewing files under template folder (outside of public) with layout. </p>
             <h3>Basic Features</h3>
             <h4>&gt; <a href="password.php" >generate password</a></h4>
