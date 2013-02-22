@@ -9,7 +9,7 @@ namespace App\Site;
  * 
  */
 
-class App
+class App extends \WScore\Web\FrontMC
 {
     /** @var string    root folder of everything, including vendor.  */
     public static $root;
@@ -26,7 +26,10 @@ class App
     public static $basePath;
     
     /** @var \WScore\DiContainer\Container */
-    public static $container;
+    public static $service;
+
+    /** @var \App\Site\App */
+    public static $app;
     
     public static function start()
     {
@@ -40,11 +43,28 @@ class App
         self::$basePath = '/WSdev'; // ugly.
 
         /** @noinspection PhpIncludeInspection */
-        self::$container = include( self::$vendor_root . '/wscore/dicontainer/scripts/instance.php' );
-        self::$container->set( 'Template', '\WScore\Template\Template', array( 
+        self::$service = include( self::$vendor_root . '/wscore/dicontainer/scripts/instance.php' );
+        self::$service->set( 'ContainerInterface', self::$service );
+
+        // set Template
+        self::$service->set( 'Template', '\WScore\Template\Template', array(
             'setter' => array( 
-                'parent' => array( 'parentTemplate' => self::$template_root.'/layout.php' ),
+                'setRoot' => array( 'root' => self::$template_root ),
+                'parent' => array( 'parentTemplate' => 'layout.php' ),
             )
         ) );
+
+        // generate myself, app, object.
+        self::$app = self::$service->get( 'App\Site\App' );
+        return self::$app;
+    }
+
+    /**
+     * @Inject
+     * @param \App\Site\Loader\Renderer $render
+     */
+    public function loader( $render )
+    {
+        $this->loaders[] = $render;
     }
 }
