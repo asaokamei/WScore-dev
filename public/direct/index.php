@@ -12,31 +12,15 @@ $view->renderSelf();
 <h1>Top of Direct Folder</h1>
 <div class="row-fluid marketing">
     <div class="span6">
-        <h3>Basic Features</h3>
-        <h4>&gt; <a href="password.php" >generate password</a></h4>
-        <p>demo for building form elements. </p>
-        <h4>&gt; <a href="myTasks" >task/todo application</a></h4>
-        <p>demo for using data mapper, model, and entity. </p>
-        <p class="memo">please give <code>./task/data</code> folder writable permission for web server to store sqlite file. </p>
-        <h4>&gt; <a href="myFriends" >friends & contacts</a></h4>
-        <p>demo for using relation, such as hasOne, isRef, isJoined, and isJoinDao relation types. </p>
-        <p class="memo">click <a href="myFriends/setup">setup</a> to set up sqlite data file for this demo. </p>
+        <h3>brah brah</h3>
+        <p>aasdf asdf asdfasd fasdf asdf asfawea efasdfa sdfad fasdf asdfa sfasd fasd. </p>
     </div>
     <div class="span6">
-        <h3>Experimental Demo</h3>
-        <h4>&gt; interaction with forms</h4>
-        <p>demo for data mapper and interactions. </p>
-        <ul>
-            <li><a href="interaction1.php" >demo #1: insert friend's data</a></li>
-            <li><a href="interaction2.php" >demo #2: interaction like a wizard</a></li>
-        </ul>
-        <h4>&gt; <a href="cenaFriends" >cena data transfer agent</a></h4>
-        <p>a conceptual demo for using Cena-DTA using friends and contact demo. </p>
+        <h3>more brah</h3>
+        <p>qwerqwer qwerqwerq werq werqwe rqwerqwerqwertqwerqwerqwe . </p>
+        <p>a l ljl ;lj lj;lkjkloiuo ij  ljl jl; j;lj lkj; kll;l . </p>
     </div>
     <div class="span12">
-        <p>development still undergoing. more demo should come up, hopefully sometime soon...</p>
-        <p>[<a href="info.php">php info</a>],
-            [<a href="index.php?act=cache-info" >apc info</a>],
-            [<a href="index.php?act=cache-clear" >clear apc cache</a>], </p>
+        <p>12394123904712390 123 4129384 12394 12 4129038 41928074 0129 741209 412...</p>
     </div>
 </div>
