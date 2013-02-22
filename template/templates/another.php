@@ -2,14 +2,14 @@
 /** @var $_v \WScore\Template\Template */
 $_v->parent( 'template.php' );
 ?>
-<h1>Template Folder</h1>
+<h1>Another Template</h1>
 <div class="row-fluid marketing">
     <div class="span6">
-        <h3>tttt ttt</h3>
+        <h3>aaaa aaaa</h3>
         <p>aasdf asdf asdfasd fasdf asdf asfawea efasdfa sdfad fasdf asdfa sfasd fasd. </p>
     </div>
     <div class="span6">
-        <h3>more ttttt</h3>
+        <h3>more another</h3>
         <p>qwerqwer qwerqwerq werq werqwe rqwerqwerqwertqwerqwerqwe . </p>
         <p>a l ljl ;lj lj;lkjkloiuo ij  ljl jl; j;lj lkj; kll;l . </p>
     </div>
