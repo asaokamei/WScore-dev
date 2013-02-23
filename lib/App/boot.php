@@ -30,10 +30,12 @@ $boot = function()
 /**
  * @param string  $appName
  * @param Closure $boot
+ * @param bool    $cache
  * @return App\App
  */
-function getApp( $appName, $boot )
+function getApp( $appName, $boot, $cache=true )
 {
+    if( !$cache ) return $boot();
     if( !function_exists( 'apc_fetch' ) ) return $boot();
     if( $app = apc_fetch( $appName ) ) return $app;
     $app = $boot();

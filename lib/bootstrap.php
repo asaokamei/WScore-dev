@@ -7,4 +7,4 @@ $loader = new \Composer\Autoload\ClassLoader();
 $loader->add( 'App', __DIR__.'' );
 $loader->register();
 
-return getApp( 'WsDemo-app', $boot );
+return getApp( 'WsDemo-app', $boot, false );
