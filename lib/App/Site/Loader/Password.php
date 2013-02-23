@@ -1,7 +1,7 @@
 <?php
 namespace App\Site\Loader;
 
-class Password extends \WScore\Web\Loader\Renderer
+class Password extends \WScore\Web\Loader\Pager
 {
     public function __construct()
     {
