@@ -15,28 +15,6 @@ class App extends \WScore\Web\FrontMC
 {
     public static $appName = 'WsDemo';
     
-    /** @var string    root folder of everything, including vendor.  */
-    public static $root;
-    
-    /** @var string    root folder of vendor. */
-    public static $vendor_root;
-    
-    /** @var string    root folder for application classes */
-    public static $application_root;
-    
-    /** @var string    root folder for template files. */
-    public static $template_root;
-    
-    public static $basePath;
-    
-    /** @var \WScore\DiContainer\Container */
-    public static $service;
-
-    /** @var \App\App */
-    public static $app;
-    
-    public static $cache;
-
     /**
      * @Inject
      * @var ContainerInterface
@@ -49,10 +27,8 @@ class App extends \WScore\Web\FrontMC
     public static function getCached() 
     {
         /** @var $app self */
-        self::$cache = $cache = \WScore\DiContainer\Cache::getCache();
+        $cache = $cache = \WScore\DiContainer\Cache::getCache();
         if( !$app = $cache->fetch( self::$appName ) ) return self::start();
-        self::$app = $app;
-        self::$service = $app->container;
         $cache->store( self::$appName, $app );
         return $app;
     }
@@ -63,28 +39,28 @@ class App extends \WScore\Web\FrontMC
     public static function start()
     {
         // set up folders.
-        self::$root = dirname( dirname( __DIR__ ) );
-        self::$application_root = __DIR__;
-        self::$template_root = self::$root . '/template';
+        $root = dirname( dirname( __DIR__ ) );
+        $application_root = __DIR__;
+        $template_root = $root . '/template';
         
         // set up base paths
-        self::$basePath = '/WSdev'; // ugly.
+        $basePath = '/WSdev'; // ugly.
 
         /** @noinspection PhpIncludeInspection */
-        self::$service = include( self::$root . '/vendor/wscore/dicontainer/scripts/container.php' );
-        self::$service->set( 'ContainerInterface', self::$service );
+        $service = include( $root . '/vendor/wscore/dicontainer/scripts/container.php' );
+        $service->set( 'ContainerInterface', $service );
 
         // set Template
-        self::$service->set( 'Template', '\WScore\Template\Template', array(
+        $service->set( 'Template', '\WScore\Template\Template', array(
             'setter' => array( 
-                'setRoot' => array( 'root' => self::$template_root ),
+                'setRoot' => array( 'root' => $template_root ),
                 'parent' => array( 'parentTemplate' => 'layout.php' ),
             )
         ) );
 
         // generate myself, app, object.
-        self::$app = self::$service->get( 'App\App' );
-        return self::$app;
+        $app = $service->get( 'App\App' );
+        return $app;
     }
 
     /**
