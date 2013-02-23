@@ -5,7 +5,10 @@ try {
 
     $app->pathInfo( $_SERVER );
     $response = $app->run();
-    if( $response ) $response->send();
+    if( $response ) {
+        $response->send();
+        exit;
+    }
 // no response means nothing found.
     echo $app->template->render( 'errors/e404.php' );
 
