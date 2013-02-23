@@ -25,7 +25,7 @@ class Index
 
     public function onPost( $match )
     {
-        $input = $this->password->init();
+        $input = $this->password->getInput();
         $data = $this->form( $input );
         $data[ 'passwords' ] = $this->password->generate( $input );
         return $data;

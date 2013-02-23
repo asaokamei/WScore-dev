@@ -6,6 +6,11 @@ use \App\Site\Model\Password;
 class PwdAble
 {
     /**
+     * @Inject
+     * @var \WScore\Web\Http\Request
+     */
+    protected $request;
+    /**
      * @return array
      */
     public function init() {
@@ -33,5 +38,14 @@ class PwdAble
             $passwords[] = $words;
         }
         return $passwords;
+    }
+
+    public function getInput()
+    {
+        $input = array();
+        $input[ 'length' ] = $this->request->getPost( 'length', 'number' );
+        $input[ 'count'  ] = $this->request->getPost( 'count', 'number' );
+        $input[ 'symbol' ] = !!$this->request->getPost( 'symbol' );
+        return $input;
     }
 }
