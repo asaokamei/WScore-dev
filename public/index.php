@@ -3,7 +3,7 @@ require_once( __DIR__ . '/../lib/bootstrap.php' );
 use \App\Site\App;
 
 // define constant. 
-App::start();
+App::getCached();
 
 /** @var $view WScore\Template\Template */
 $view = App::$service->get( 'Template' );
