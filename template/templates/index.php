@@ -1,7 +1,3 @@
-<?php
-/** @var $_v \WScore\Template\Template */
-$_v->parent( 'template.php' );
-?>
 <h1>Template Folder</h1>
 <div class="row-fluid marketing">
     <div class="span6">
