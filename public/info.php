@@ -1,6 +1,6 @@
 <?php
 require_once( __DIR__ . '/../lib/bootstrap.php' );
-use \App\Site\App;
+use \App\App;
 
 /** @var $view WScore\Template\Template */
 $view = App::$service->get( 'Template' );

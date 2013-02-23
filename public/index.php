@@ -1,6 +1,6 @@
 <?php
 require_once( __DIR__ . '/../lib/bootstrap.php' );
-use \App\Site\App;
+use \App\App;
 
 // define constant. 
 App::getCached();

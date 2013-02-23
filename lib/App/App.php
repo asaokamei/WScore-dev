@@ -1,5 +1,5 @@
 <?php
-namespace App\Site;
+namespace App;
 
 use \WScore\DiContainer\ContainerInterface;
 
@@ -32,7 +32,7 @@ class App extends \WScore\Web\FrontMC
     /** @var \WScore\DiContainer\Container */
     public static $service;
 
-    /** @var \App\Site\App */
+    /** @var \App\App */
     public static $app;
     
     public static $cache;
@@ -63,7 +63,7 @@ class App extends \WScore\Web\FrontMC
     public static function start()
     {
         // set up folders.
-        self::$root = dirname( dirname( dirname( __DIR__ ) ) );
+        self::$root = dirname( dirname( __DIR__ ) );
         self::$application_root = __DIR__;
         self::$template_root = self::$root . '/template';
         
@@ -83,7 +83,7 @@ class App extends \WScore\Web\FrontMC
         ) );
 
         // generate myself, app, object.
-        self::$app = self::$service->get( 'App\Site\App' );
+        self::$app = self::$service->get( 'App\App' );
         return self::$app;
     }
 
