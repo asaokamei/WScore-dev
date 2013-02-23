@@ -42,7 +42,7 @@ class Password
         $alphabet  = str_shuffle( $alphabet );
 
         // make some of the alphabets to upper case
-        $divide = mt_rand( 1, strlen( $alphabet ) - 1 );
+        $divide = mt_rand( 1, max( 1, strlen( $alphabet ) - 1 ) );
         $upper = strtoupper( substr( $alphabet, 0, $divide ) );
         $lower = substr( $alphabet, $divide );
 
