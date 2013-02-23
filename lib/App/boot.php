@@ -18,7 +18,8 @@ $boot = function()
         'setter' => array(
             'setRoot' => array( 'root' => $template_root ),
             'parent' => array( 'parentTemplate' => 'layout.php' ),
-        )
+        ),
+        'singleton' => true,
     ) );
 
     // generate myself, app, object.
