@@ -33,9 +33,10 @@ $view->renderSelf();
         <div class="span6">
             <h3>Basic File Viewings</h3>
             <h4>&gt; <a href="direct/" >direct</a></h4>
-            <p>viewing files under public directly. self-template. </p>
+            <p>viewing files under public directly. </p>
             <h4>&gt; <a href="templates/index.php" >from template folder</a></h4>
-            <p>viewing files under template folder (outside of public) with layout. </p>
+            <p>viewing files under template folder (outside of public). </p>
+            <p>[<a href="templates/badRequest.php" >bad request</a>] [<a href="templates/noService.php" >no service</a>]</p>
             <h3>Basic Features</h3>
             <h4>&gt; <a href="password/index.php" >generate password</a></h4>
             <p>demo for building form elements. </p>
