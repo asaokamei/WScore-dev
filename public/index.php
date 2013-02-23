@@ -36,9 +36,9 @@ $view->renderSelf();
             <p>viewing files under public directly. self-template. </p>
             <h4>&gt; <a href="templates/index.php" >from template folder</a></h4>
             <p>viewing files under template folder (outside of public) with layout. </p>
+            <h3>Basic Features</h3>
             <h4>&gt; <a href="password/index.php" >generate password</a></h4>
             <p>demo for building form elements. </p>
-            <h3>Basic Features</h3>
             <h4>&gt; <a href="myTasks" >task/todo application</a></h4>
             <p>demo for using data mapper, model, and entity. </p>
             <p class="memo">please give <code>./task/data</code> folder writable permission for web server to store sqlite file. </p>
