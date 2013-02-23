@@ -1,4 +1,5 @@
-View Folder
+Page Folder
 ===========
 
-contains pages and controller for the App. 
+For page objects to manage models and viewing template.
+The namespace should match with the requested pathInfo.
