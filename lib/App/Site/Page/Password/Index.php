@@ -5,18 +5,31 @@ class Index
 {
     /**
      * @Inject
+     * @var \App\Site\Role\PwdAble
+     */
+    protected $password;
+
+    /**
+     * @Inject
      * @var \WScore\Html\Forms
      */
     protected $form;
 
     public function onGet( $match )
     {
-        $input = array( 'length' => 12, 'symbol' => false, 'count' => 5 );
+        $input = $this->password->init();
         $data = $this->form( $input );
         $data[ 'class' ]  = 'me:'.get_called_class();
         return $data;
     }
 
+    public function onPost( $match )
+    {
+        $input = $this->password->init();
+        $data = $this->form( $input );
+        $data[ 'passwords' ] = $this->password->generate( $input );
+        return $data;
+    }
     protected function form( $input )
     {
         $counts = array(
