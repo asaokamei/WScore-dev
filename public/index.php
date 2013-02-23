@@ -63,7 +63,7 @@ $view->renderSelf();
             <h3>Caching Application</h3>
             <p>development still undergoing. more demo should come up, hopefully sometime soon...</p>
             <p>[<a href="info.php">php info</a>],
-                [<a href="index.php?act=cache-info" >apc info</a>],
-                [<a href="index.php?act=cache-clear" >clear apc cache</a>], </p>
+                [<a href="cache.php" >apc info</a>],
+                [<a href="cache.php?act=cache-clear" >clear apc cache</a>], </p>
         </div>
     </div>
