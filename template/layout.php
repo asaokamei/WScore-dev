@@ -30,7 +30,7 @@ $_v->setDefault( 'basePath', '/WSdev')
 <body>
 <div class="container-narrow">
     <div class="masthead">
-        <h3 class="muted"><?php if( $_v->HomePage ) { ?>WScore Public Demo<?php } else { echo "<a href=\"{$_v->basePath}\">WScore Public Demo</a>"; } ?></h3>
+        <h3 class="muted"><?php if( $_v->HomePage ) { ?>WScore Public Demo<?php } else { echo "<a href=\"{$_v->basePath}/index.php\">WScore Public Demo</a>"; } ?></h3>
     </div>
     <hr>
     <?php echo $_v->get( 'content' ); ?>

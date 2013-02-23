@@ -1,10 +1,6 @@
 <?php
-$app = require_once( __DIR__ . '/../lib/bootstrap.php' );
-/** @var $app App\App */
-/** @var $view WScore\Template\Template */
-$view = $app->container->get( 'Template' );
-$view->HomePage = true;
-$view->renderSelf();
+/** @var $_v WScore\Template\Template */
+$_v->HomePage = true;
 
 ?>
     <style type="text/css">
