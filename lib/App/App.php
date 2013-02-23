@@ -21,9 +21,10 @@ class App extends \WScore\Web\FrontMC
     public static function getCached() 
     {
         /** @var $app self */
-        $cache = $cache = \WScore\DiContainer\Cache::getCache();
-        if( !$app = $cache->fetch( self::$appName ) ) return self::start();
-        $cache->store( self::$appName, $app );
+        if( !function_exists( 'apc_fetch' ) ) return self::start();
+        if( $app = apc_fetch( self::$appName ) ) return $app;
+        $app = self::start();
+        apc_store( self::$appName, $app );
         return $app;
     }
 
