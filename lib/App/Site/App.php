@@ -42,7 +42,10 @@ class App extends \WScore\Web\FrontMC
      * @var ContainerInterface
      */
     public $container;
-    
+
+    /**
+     * @return App
+     */
     public static function getCached() 
     {
         /** @var $app self */
@@ -50,9 +53,13 @@ class App extends \WScore\Web\FrontMC
         if( !$app = $cache->fetch( self::$appName ) ) return self::start();
         self::$app = $app;
         self::$service = $app->container;
+        $cache->store( self::$appName, $app );
         return $app;
     }
-    
+
+    /**
+     * @return App
+     */
     public static function start()
     {
         // set up folders.
