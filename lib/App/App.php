@@ -14,12 +14,6 @@ use \WScore\DiContainer\ContainerInterface;
 class App extends \WScore\Web\FrontMC
 {
     public static $appName = 'WsDemo';
-    
-    /**
-     * @Inject
-     * @var ContainerInterface
-     */
-    public $container;
 
     /**
      * @return App
@@ -40,12 +34,8 @@ class App extends \WScore\Web\FrontMC
     {
         // set up folders.
         $root = dirname( dirname( __DIR__ ) );
-        $application_root = __DIR__;
         $template_root = $root . '/template';
         
-        // set up base paths
-        $basePath = '/WSdev'; // ugly.
-
         /** @noinspection PhpIncludeInspection */
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/container.php' );
         $service->set( 'ContainerInterface', $service );
