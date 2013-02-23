@@ -48,6 +48,7 @@ class App extends \WScore\Web\FrontMC
         /** @var $app self */
         self::$cache = $cache = \WScore\DiContainer\Cache::getCache();
         if( !$app = $cache->fetch( self::$appName ) ) return self::start();
+        self::$app = $app;
         self::$service = $app->container;
         return $app;
     }
