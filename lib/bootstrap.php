@@ -7,5 +7,3 @@ $loader = new \Composer\Autoload\ClassLoader();
 $loader->add( 'App', __DIR__.'' );
 $loader->register();
 
-// define constant. 
-\App\Site\App::start();

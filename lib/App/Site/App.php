@@ -1,6 +1,8 @@
 <?php
 namespace App\Site;
 
+use \WScore\DiContainer\ContainerInterface;
+
 /**
  * Front-end controller for the Site's application. 
  * Should extend \WScore\Web\FrontMC class...
@@ -11,6 +13,8 @@ namespace App\Site;
 
 class App extends \WScore\Web\FrontMC
 {
+    public static $appName = 'WsDemo';
+    
     /** @var string    root folder of everything, including vendor.  */
     public static $root;
     
@@ -31,6 +35,23 @@ class App extends \WScore\Web\FrontMC
     /** @var \App\Site\App */
     public static $app;
     
+    public static $cache;
+
+    /**
+     * @Inject
+     * @var ContainerInterface
+     */
+    public $container;
+    
+    public static function getCached() 
+    {
+        /** @var $app self */
+        self::$cache = $cache = \WScore\DiContainer\Cache::getCache();
+        if( !$app = $cache->fetch( self::$appName ) ) return self::start();
+        self::$service = $app->container;
+        return $app;
+    }
+    
     public static function start()
     {
         // set up folders.
@@ -42,7 +63,7 @@ class App extends \WScore\Web\FrontMC
         self::$basePath = '/WSdev'; // ugly.
 
         /** @noinspection PhpIncludeInspection */
-        self::$service = include( self::$root . '/vendor/wscore/dicontainer/scripts/instance.php' );
+        self::$service = include( self::$root . '/vendor/wscore/dicontainer/scripts/container.php' );
         self::$service->set( 'ContainerInterface', self::$service );
 
         // set Template
