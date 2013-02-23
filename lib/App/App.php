@@ -16,7 +16,7 @@ class App extends \WScore\Web\FrontMC
     /**
      * @Inject
      * @param \App\Site\Loader\Renderer $render
-     * @param \App\Site\Loader\Password $pwd
+     * @param \App\Site\Loader\PwdGenerator $pwd
      * @return void
      */
     public function loader( $render, $pwd )
