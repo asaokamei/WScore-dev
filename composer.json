@@ -6,7 +6,8 @@
         "wscore/html": "dev-master",
         "twitter/bootstrap": "dev-master",
         "wscore/web": "dev-master",
-        "wscore/template": "dev-master"
+        "wscore/template": "dev-master",
+        "wscore/dbaccess": "dev-master"
     },
     "authors": [
         {
