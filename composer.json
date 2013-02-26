@@ -7,7 +7,9 @@
         "twitter/bootstrap": "dev-master",
         "wscore/web": "dev-master",
         "wscore/template": "dev-master",
-        "wscore/dbaccess": "dev-master"
+        "wscore/dbaccess": "dev-master",
+        "wscore/datamapper": "dev-master",
+        "wscore/validation": "dev-master"
     },
     "authors": [
         {

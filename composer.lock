@@ -1,5 +1,5 @@
 {
-    "hash": "de82c4c30d14c436606dbae617f29d03",
+    "hash": "54bef3c61f2e59e0727539ccc46ca421",
     "packages": [
         {
             "name": "twitter/bootstrap",
@@ -19,20 +19,56 @@
             "time": "2013-02-08 06:13:13"
         },
         {
+            "name": "wscore/datamapper",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asaokamei/WScore.DataMapper.git",
+                "reference": "19a8a1ab83cdbd3c6f26d8a933c5240e97722380"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/19a8a1ab83cdbd3c6f26d8a933c5240e97722380",
+                "reference": "19a8a1ab83cdbd3c6f26d8a933c5240e97722380",
+                "shasum": ""
+            },
+            "require": {
+                "wscore/dbaccess": "dev-master",
+                "wscore/dicontainer": "dev-master",
+                "wscore/html": "dev-master"
+            },
+            "time": "2013-02-26 07:24:38",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WScore\\DataMapper": "src/",
+                    "WScore\\Selector": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Asao Kamei",
+                    "email": "kamei@workspot.jp"
+                }
+            ],
+            "description": "DataMapper."
+        },
+        {
             "name": "wscore/dbaccess",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DbAccess.git",
-                "reference": "3ad30e3c34ec28a30de3c269283ad281aa1f7258"
+                "reference": "6598fc9c10369d9bb00bea5928d528a48d7e4b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/3ad30e3c34ec28a30de3c269283ad281aa1f7258",
-                "reference": "3ad30e3c34ec28a30de3c269283ad281aa1f7258",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/6598fc9c10369d9bb00bea5928d528a48d7e4b75",
+                "reference": "6598fc9c10369d9bb00bea5928d528a48d7e4b75",
                 "shasum": ""
             },
-            "time": "2013-02-20 07:50:18",
+            "time": "2013-02-26 05:08:09",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -139,6 +175,36 @@
             "description": "A simple template engine using only PHP."
         },
         {
+            "name": "wscore/validation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asaokamei/WScore.Validation.git",
+                "reference": "639f62c268b63b9ec103af728db1145e98cbaa9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Validation/zipball/639f62c268b63b9ec103af728db1145e98cbaa9e",
+                "reference": "639f62c268b63b9ec103af728db1145e98cbaa9e",
+                "shasum": ""
+            },
+            "time": "2013-02-26 07:21:29",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WScore\\Validation": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Asao Kamei",
+                    "email": "kamei@workspot.jp"
+                }
+            ],
+            "description": "Validation and filtration for values such as form input."
+        },
+        {
             "name": "wscore/web",
             "version": "dev-master",
             "source": {
@@ -184,6 +250,8 @@
         "twitter/bootstrap": 20,
         "wscore/web": 20,
         "wscore/template": 20,
-        "wscore/dbaccess": 20
+        "wscore/dbaccess": 20,
+        "wscore/datamapper": 20,
+        "wscore/validation": 20
     }
 }
