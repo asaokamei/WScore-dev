@@ -2,7 +2,7 @@
 namespace App;
 
 use \WScore\DiContainer\ContainerInterface;
-use \WScore\Template\Template;
+use \WScore\Template\TemplateInterface;
 
 /**
  * Front-end controller for the Site's application. 
@@ -16,7 +16,7 @@ class App extends \WScore\Web\FrontMC
 {
     /**
      * @Inject
-     * @var Template
+     * @var TemplateInterface
      */
     public $template;
 
