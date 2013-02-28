@@ -1,8 +1,8 @@
 <?php
 $app = require_once( __DIR__ . '/../../lib/bootstrap.php' );
 /** @var $app App\App */
-/** @var $view WScore\Template\Template */
-$view = $app->container->get( 'Template' );
+/** @var $view WScore\Template\TemplateInterface */
+$view = $app->container->get( 'TemplateInterface' );
 $view->renderSelf();
 
 ?>

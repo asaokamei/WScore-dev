@@ -1,14 +1,14 @@
 <?php
-/** @var $_v \WScore\Template\Template */
-$_v->setDefault( 'basePath', '/WSdev')
+/** @var $this \WScore\Template\TemplateInterface */
+$this->setDefault( 'basePath', '/WSdev')
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="<?php echo $_v->basePath; ?>/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $_v->basePath; ?>/bootstrap/css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $_v->basePath; ?>/bootstrap/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/main.css" />
     <title>WScore Public Demo</title>
     <style type="text/css">
 
@@ -30,10 +30,10 @@ $_v->setDefault( 'basePath', '/WSdev')
 <body>
 <div class="container-narrow">
     <div class="masthead">
-        <h3 class="muted"><?php if( $_v->HomePage ) { ?>WScore Public Demo<?php } else { echo "<a href=\"{$_v->basePath}/index.php\">WScore Public Demo</a>"; } ?></h3>
+        <h3 class="muted"><?php if( $this->HomePage ) { ?>WScore Public Demo<?php } else { echo "<a href=\"{$this->basePath}/index.php\">WScore Public Demo</a>"; } ?></h3>
     </div>
     <hr>
-    <?php echo $_v->get( 'content' ); ?>
+    <?php echo $this->get( 'content' ); ?>
     <footer class="footer">
         <hr>
         <p>WScore Developed by WorkSpot.JP<br />

@@ -1,6 +1,6 @@
 <?php
-/** @var $_v \WScore\Template\Template */
-$_v->parent( 'password.php' );
+/** @var $this \WScore\Template\TemplateInterface */
+$this->parent( 'password.php' );
 ?>
 <h1>Generate Password</h1>
 <div class="row-fluid marketing">
@@ -9,27 +9,27 @@ $_v->parent( 'password.php' );
     <form name="password" method="post" action="index.php">
         <dl class="dl-horizontal">
             <dt>length of password</dt>
-            <dd><?php echo $_v->get( 'length' )->class_( 'span4' ); ?>
+            <dd><?php echo $this->get( 'length' )->class_( 'span4' ); ?>
                 &nbsp;<p class="muted">(minimum length of password is 5)</p>
             </dd>
             <dt>use symbols</dt>
-            <dd><label><?php echo $_v->get( 'symbol' ); ?> check if you want password to have some symbols. </label>
+            <dd><label><?php echo $this->get( 'symbol' ); ?> check if you want password to have some symbols. </label>
             </dd>
             <dt>get # of passwords</dt>
-            <dd><?php echo $_v->get( 'count' )->class_( 'span4' ); ?></dd>
+            <dd><?php echo $this->get( 'count' )->class_( 'span4' ); ?></dd>
         </dl>
         <input type="hidden" name="_act" value="generate">
         <input type="submit" name="generate" class="btn btn-primary" value="generate password">
     </form>
     <?php
-    if( $_v->arr( 'passwords' ) ) : ?>
+    if( $this->arr( 'passwords' ) ) : ?>
         <table class="table">
             <tr>
                 <th>password</th>
                 <th>crypt</th>
                 <th>md5</th>
             </tr>
-            <?php foreach( $_v->arr( 'passwords' ) as $words ) : ?>
+            <?php foreach( $this->arr( 'passwords' ) as $words ) : ?>
             <tr>
                 <td><?php echo $words[ 'password' ]; ?></td>
                 <td><?php echo $words[ 'crypt' ]; ?></td>

@@ -14,10 +14,10 @@ $boot = function()
     $service->set( 'ContainerInterface', $service );
 
     // set Template
-    $service->set( 'Template', '\WScore\Template\Template', array(
+    $service->set( 'TemplateInterface', '\WScore\Template\PhpTemplate', array(
         'setter' => array(
             'setRoot' => array( 'root' => $template_root ),
-            'parent' => array( 'parentTemplate' => 'layout.php' ),
+            'setParent' => array( 'parentTemplate' => 'layout.php' ),
         ),
         'singleton' => true,
     ) );

@@ -1,6 +1,6 @@
 <?php
-/** @var $_v WScore\Template\Template */
-$_v->HomePage = true;
+/** @var $this WScore\Template\Template */
+$this->HomePage = true;
 
 ?>
     <style type="text/css">
