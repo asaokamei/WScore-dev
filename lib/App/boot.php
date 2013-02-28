@@ -7,7 +7,7 @@ $boot = function()
 {
     // set up folders.
     $root = dirname( dirname( __DIR__ ) );
-    $template_root = $root . '/template';
+    $template_root = $root . '/documents';
 
     /** @noinspection PhpIncludeInspection */
     $service = include( $root . '/vendor/wscore/dicontainer/scripts/container.php' );
