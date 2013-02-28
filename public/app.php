@@ -10,12 +10,10 @@ try {
         exit;
     }
 // no response means nothing found.
-    $app->template->setTemplate( 'errors/e404.php' );
-    echo $app->template->render();
+    echo $app->template->setTemplate( 'errors/e404.php' )->render();
 
 } catch ( Exception $e ) {
     $code = $e->getCode();
     if( !in_array( $code, array( '400', '404' ) ) ) $code = '503';
-    $app->template->setTemplate( "errors/e{$code}.php" );
-    echo $app->template->render();
+    echo $app->template->setTemplate( "errors/e{$code}.php" )->render();
 }
