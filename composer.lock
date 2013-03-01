@@ -60,15 +60,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DbAccess.git",
-                "reference": "6598fc9c10369d9bb00bea5928d528a48d7e4b75"
+                "reference": "cb6a3b4b74def25a6badd6ea2f5e7c27ad7e04f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/6598fc9c10369d9bb00bea5928d528a48d7e4b75",
-                "reference": "6598fc9c10369d9bb00bea5928d528a48d7e4b75",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/cb6a3b4b74def25a6badd6ea2f5e7c27ad7e04f3",
+                "reference": "cb6a3b4b74def25a6badd6ea2f5e7c27ad7e04f3",
                 "shasum": ""
             },
-            "time": "2013-02-26 05:08:09",
+            "time": "2013-03-01 03:23:31",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -120,15 +120,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Html.git",
-                "reference": "19a899d96dc26f23229aee97a97ce9d53f2d9e66"
+                "reference": "f9f751e2c5f1b017ecd02543484b4a1cc12d33e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/19a899d96dc26f23229aee97a97ce9d53f2d9e66",
-                "reference": "19a899d96dc26f23229aee97a97ce9d53f2d9e66",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/f9f751e2c5f1b017ecd02543484b4a1cc12d33e3",
+                "reference": "f9f751e2c5f1b017ecd02543484b4a1cc12d33e3",
                 "shasum": ""
             },
-            "time": "2013-02-19 06:59:09",
+            "time": "2013-02-27 07:26:12",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -150,15 +150,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Template.git",
-                "reference": "685d0b3ce9ae82b0c6654dd12348486b6166162d"
+                "reference": "0cf1b69278ee9638d9e6e674eac4655ce59a3fce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Template/zipball/685d0b3ce9ae82b0c6654dd12348486b6166162d",
-                "reference": "685d0b3ce9ae82b0c6654dd12348486b6166162d",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Template/zipball/0cf1b69278ee9638d9e6e674eac4655ce59a3fce",
+                "reference": "0cf1b69278ee9638d9e6e674eac4655ce59a3fce",
                 "shasum": ""
             },
-            "time": "2013-02-23 06:58:55",
+            "time": "2013-02-28 22:02:17",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -180,15 +180,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Validation.git",
-                "reference": "639f62c268b63b9ec103af728db1145e98cbaa9e"
+                "reference": "2f40a17491104d7e72afab0cfac9cc3063159ae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Validation/zipball/639f62c268b63b9ec103af728db1145e98cbaa9e",
-                "reference": "639f62c268b63b9ec103af728db1145e98cbaa9e",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Validation/zipball/2f40a17491104d7e72afab0cfac9cc3063159ae6",
+                "reference": "2f40a17491104d7e72afab0cfac9cc3063159ae6",
                 "shasum": ""
             },
-            "time": "2013-02-26 07:21:29",
+            "time": "2013-02-27 04:21:44",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -210,19 +210,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "b73570d198bf62a35f4b86d5f33f3e4e9ab60bab"
+                "reference": "9cc8ddd8812bb0dc9955b978a40a27be303e9b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/b73570d198bf62a35f4b86d5f33f3e4e9ab60bab",
-                "reference": "b73570d198bf62a35f4b86d5f33f3e4e9ab60bab",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/9cc8ddd8812bb0dc9955b978a40a27be303e9b75",
+                "reference": "9cc8ddd8812bb0dc9955b978a40a27be303e9b75",
                 "shasum": ""
             },
             "require": {
                 "wscore/dicontainer": "dev-master",
                 "wscore/template": "dev-master"
             },
-            "time": "2013-02-23 07:27:57",
+            "time": "2013-03-01 01:18:11",
             "type": "library",
             "autoload": {
                 "psr-0": {
