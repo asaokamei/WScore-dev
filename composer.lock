@@ -24,12 +24,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DataMapper.git",
-                "reference": "19a8a1ab83cdbd3c6f26d8a933c5240e97722380"
+                "reference": "af82dc67ea4f39f8f14a231b906f6cecd697d1c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/19a8a1ab83cdbd3c6f26d8a933c5240e97722380",
-                "reference": "19a8a1ab83cdbd3c6f26d8a933c5240e97722380",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/af82dc67ea4f39f8f14a231b906f6cecd697d1c9",
+                "reference": "af82dc67ea4f39f8f14a231b906f6cecd697d1c9",
                 "shasum": ""
             },
             "require": {
@@ -37,7 +37,7 @@
                 "wscore/dicontainer": "dev-master",
                 "wscore/html": "dev-master"
             },
-            "time": "2013-02-26 07:24:38",
+            "time": "2013-03-04 22:25:39",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -60,15 +60,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DbAccess.git",
-                "reference": "cb6a3b4b74def25a6badd6ea2f5e7c27ad7e04f3"
+                "reference": "1515c6ed1d4e2fa5f76171ef4adaaea59fcebf22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/cb6a3b4b74def25a6badd6ea2f5e7c27ad7e04f3",
-                "reference": "cb6a3b4b74def25a6badd6ea2f5e7c27ad7e04f3",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/1515c6ed1d4e2fa5f76171ef4adaaea59fcebf22",
+                "reference": "1515c6ed1d4e2fa5f76171ef4adaaea59fcebf22",
                 "shasum": ""
             },
-            "time": "2013-03-01 03:23:31",
+            "time": "2013-03-01 22:46:54",
             "type": "library",
             "autoload": {
                 "psr-0": {
