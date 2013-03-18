@@ -16,7 +16,7 @@
                 "shasum": null
             },
             "type": "library",
-            "time": "2013-02-08 06:13:13"
+            "time": "2013-03-01 05:24:27"
         },
         {
             "name": "wscore/datamapper",
@@ -211,12 +211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "2a9a5d37c43a032021437d09501c699c27389338"
+                "reference": "64841de65d8a3882223c59dfe797057542079e4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/2a9a5d37c43a032021437d09501c699c27389338",
-                "reference": "2a9a5d37c43a032021437d09501c699c27389338",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/64841de65d8a3882223c59dfe797057542079e4b",
+                "reference": "64841de65d8a3882223c59dfe797057542079e4b",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-03-18 08:13:51"
+            "time": "2013-03-18 08:29:23"
         }
     ],
     "packages-dev": [
