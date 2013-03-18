@@ -211,12 +211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "9cc8ddd8812bb0dc9955b978a40a27be303e9b75"
+                "reference": "2a9a5d37c43a032021437d09501c699c27389338"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/9cc8ddd8812bb0dc9955b978a40a27be303e9b75",
-                "reference": "9cc8ddd8812bb0dc9955b978a40a27be303e9b75",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/2a9a5d37c43a032021437d09501c699c27389338",
+                "reference": "2a9a5d37c43a032021437d09501c699c27389338",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-03-01 01:18:11"
+            "time": "2013-03-18 08:13:51"
         }
     ],
     "packages-dev": [
