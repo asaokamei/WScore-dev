@@ -28,7 +28,7 @@ class App extends \WScore\Web\FrontMC
      */
     public function loader( $render, $pwd )
     {
+        $this->loaders[ 'password' ] = $pwd;
         $this->loaders[] = $render;
-        $this->loaders[] = $pwd;
     }
 }
