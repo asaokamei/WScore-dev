@@ -46,7 +46,10 @@ class tasks extends Model
      */
     public function __construct()
     {
-        
+        $this->property->setTable( 'friend', 'friend_id' );
+        $this->property->prepare( $this->definition, array() );
+        $this->property->present( $this->validators, $this->selectors );
+
     }
 
     public function getCreateSql() {

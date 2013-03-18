@@ -8,7 +8,7 @@ class Task extends EntityAbstract
     const STATUS_ACTIVE = '1';
     const STATUS_DONE   = '9';
 
-    protected $_model = 'task\model\tasks';
+    protected $_model = '\App\Tasks\Model\Task';
 
     public $task_id = null;
 
