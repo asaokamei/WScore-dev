@@ -12,6 +12,7 @@ $boot = function()
     /** @noinspection PhpIncludeInspection */
     $service = include( $root . '/vendor/wscore/dicontainer/scripts/container.php' );
     $service->set( 'ContainerInterface', $service );
+    $service->set( '\Pdo', 'dsn=mysql:dbname=test_WScore username=admin password=admin' );
 
     // set Template
     $service->set( 'TemplateInterface', '\WScore\Template\PhpTemplate', array(
