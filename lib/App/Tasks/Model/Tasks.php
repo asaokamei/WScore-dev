@@ -7,7 +7,7 @@ use \WScore\DataMapper\Model;
 class tasks extends Model
 {
     /** @var string     name of database table     */
-    protected $table = 'demoTask';
+    protected $table = 'task';
 
     /** @var string     name of primary key        */
     protected $id_name = 'task_id';
@@ -28,13 +28,14 @@ class tasks extends Model
         );
     }
 
-    public function getCreateSql() {
+    public function getCreateSql() 
+    {
         $sql = "
         CREATE TABLE {$this->table} (
-          task_id   INTEGER PRIMARY KEY AUTOINCREMENT,
-          task_memo text NOT NULL DEFAULT '',
-          task_date date,
-          task_status char(1) NOT NULL DEFAULT '1',
+          task_id   SERIAL,
+          memo text NOT NULL DEFAULT '',
+          done_by date,
+          status char(1) NOT NULL DEFAULT '1',
           new_dt_task text,
           mod_dt_task text
         );
