@@ -12,33 +12,6 @@ class tasks extends Model
     /** @var string     name of primary key        */
     protected $id_name = 'task_id';
 
-    protected $definition = array(
-        'task_id'     => array( 'task id',     'number', ),
-        'task_memo'   => array( 'what to do?', 'string', ),
-        'task_date'   => array( 'by when?',    'string', ),
-        'task_status' => array( 'done?',       'string', ),
-        'new_dt_task' => array( 'created at',  'string', 'created_at'),
-        'mod_dt_task' => array( 'updated at',  'string', 'updated_at'),
-    );
-
-    /** @var array      for validation of inputs       */
-    protected $validators = array(
-        'task_id'     => array( 'number' ),
-        'task_memo'   => array( 'text', 'required' ),
-        'task_date'   => array( 'date', '', ),
-        'task_status' => array( 'text', '' ),
-    );
-
-    /** @var array      for selector construction      */
-    protected $selectors  = array(
-        'task_id'     => array( 'Selector', 'text' ),
-        'task_memo'   => array( 'Selector', 'textarea', 'placeholder:your tasks here | class:span5 | rows:5' ),
-        'task_date'   => array( 'Selector', 'date', ),
-        'task_status' => array( 'Selector', 'checkToggle', '', array(
-            'items' => array( array( task::STATUS_ACTIVE, 'active' ), array( task::STATUS_DONE, 'done' ) )
-        ) ),
-    );
-
     public $recordClassName = '\App\Tasks\Entity\Task';
 
     // +----------------------------------------------------------------------+
@@ -46,10 +19,13 @@ class tasks extends Model
      */
     public function __construct()
     {
-        $this->property->setTable( 'friend', 'friend_id' );
-        $this->property->prepare( $this->definition, array() );
-        $this->property->present( $this->validators, $this->selectors );
-
+        parent::__construct();
+        $csv = file_get_contents( __DIR__ . '/tasks.csv' );
+        $this->property->prepare( $csv );
+        $this->property->selectors[ 'status' ][ 'choice' ] = array(
+            array( Task::STATUS_ACTIVE, 'active' ),
+            array( Task::STATUS_DONE,   'done' ),
+        );
     }
 
     public function getCreateSql() {
@@ -69,7 +45,8 @@ class tasks extends Model
         $sql = "DROP TABLE IF EXISTS {$this->table}";
         return $sql;
     }
-    public function getSampleTasks( $idx=1 ) {
+    public function getSampleTasks( $idx=1 ) 
+    {
         $memo = array(
             1 => 'set done this task',
             2 => 'modify this task',
