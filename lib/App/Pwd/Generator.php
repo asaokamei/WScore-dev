@@ -8,8 +8,10 @@ class Generator extends AppLoader
     public function __construct()
     {
         $routes = array(
-            '/*' => array( 'found' => 'true', 'render' => 'password' ),
+            '' => array( 'load' => 'generate' ),
         );
         $this->setRoute( $routes );
+
+        $this->templateRoot = __DIR__ . '/View/';
     }
 }

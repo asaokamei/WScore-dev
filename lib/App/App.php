@@ -22,13 +22,19 @@ class App extends \WScore\Web\FrontMC
 
     /**
      * @Inject
+     * @var \App\Pwd\Generator
+     */
+    public $pwdGen;
+    /**
+     * @Inject
      * @param \App\Site\Loader\Renderer $render
      * @param \App\Site\Loader\PwdGenerator $pwd
      * @return void
      */
     public function loader( $render, $pwd )
     {
-        $this->loaders[ 'password/' ] = $pwd;
+        $this->loaders[ 'pwd' ] = $this->pwdGen;
+        $this->loaders[] = $pwd;
         $this->loaders[] = $render;
     }
 }
