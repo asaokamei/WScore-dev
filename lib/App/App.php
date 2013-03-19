@@ -25,16 +25,24 @@ class App extends \WScore\Web\FrontMC
      * @var \App\Pwd\Generator
      */
     public $pwdGen;
+
     /**
      * @Inject
-     * @param \App\Site\Loader\Renderer $render
-     * @param \App\Site\Loader\PwdGenerator $pwd
-     * @return void
+     * @var \App\Site\Loader\PwdGenerator
      */
-    public function loader( $render, $pwd )
+    public $pwd;
+
+    /**
+     * @Inject
+     * @var \App\Site\Loader\Renderer
+     */
+    public $render;
+    /**
+     */
+    public function __construct()
     {
-        $this->loaders[ 'pwd' ] = $this->pwdGen;
-        $this->loaders[] = $pwd;
-        $this->loaders[] = $render;
+        $this->loaders[ 'pwd/' ] = $this->pwdGen;
+        $this->loaders[] = $this->pwd;
+        $this->loaders[] = $this->render;
     }
 }
