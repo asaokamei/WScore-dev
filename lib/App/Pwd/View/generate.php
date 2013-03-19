@@ -6,7 +6,7 @@ $this->parent( 'password.php' );
 <div class="row-fluid marketing">
     <p>specify length of password, check to use symbols (!@#$ etc.), <br/>and click generate password button. </p>
 
-    <form name="password" method="post" action="index.php">
+    <form name="password" method="post" action="">
         <dl class="dl-horizontal">
             <dt>length of password</dt>
             <dd><?php echo $this->get( 'length' )->class_( 'span4' ); ?>

@@ -1,7 +1,9 @@
 <?php
 namespace App\Site\Loader;
 
-class PwdGenerator extends \WScore\Web\Loader\Pager
+use WScore\Web\Loader\Pager;
+
+class PwdGenerator extends Pager
 {
     public function __construct()
     {
