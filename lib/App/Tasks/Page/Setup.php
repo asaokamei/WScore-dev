@@ -21,7 +21,7 @@ class Setup
         $sql = $this->tasks->getCreateSql();
         $this->tasks->dbAccess()->execSql( $sql );
         for( $i = 1; $i <= 5; $i++ ) {
-            $task = $this->tasks->getSampleTasks();
+            $task = $this->tasks->getSampleTasks($i);
             $this->tasks->insert( $task );
         }
     }
