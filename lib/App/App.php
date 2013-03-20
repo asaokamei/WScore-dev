@@ -22,6 +22,12 @@ class App extends \WScore\Web\FrontMC
 
     /**
      * @Inject
+     * @var \App\Tasks\TaskApp
+     */
+    public $tasks;
+
+    /**
+     * @Inject
      * @var \App\Pwd\Generator
      */
     public $pwdGen;
@@ -41,6 +47,7 @@ class App extends \WScore\Web\FrontMC
      */
     public function __construct()
     {
+        $this->loaders[ 'tasks/' ] = $this->tasks;
         $this->loaders[ 'pwd/' ] = $this->pwdGen;
         $this->loaders[] = $this->pwd;
         $this->loaders[] = $this->render;
