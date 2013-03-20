@@ -7,4 +7,9 @@ class Setup
     {
         return 'Setup';
     }
+    
+    public function onPut( $match )
+    {
+        return 'Setup';
+    }
 }
