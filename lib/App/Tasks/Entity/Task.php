@@ -8,32 +8,32 @@ class Task extends EntityAbstract
     const STATUS_ACTIVE = '1';
     const STATUS_DONE   = '9';
 
-    protected $_model = '\App\Tasks\Model\Task';
+    public static $_modelName = '\App\Tasks\Model\Tasks';
 
     public $task_id = null;
 
-    public $task_memo = '';
+    public $memo = '';
 
-    public $task_date = '';
+    public $done_by = '';
 
-    public $task_status = self::STATUS_ACTIVE;
+    public $status = self::STATUS_ACTIVE;
 
-    public $new_dt_task;
+    public $created_at;
 
-    public $mod_dt_task;
+    public $updated_at;
 
     /**
      * @return bool
      */
     public function isDone() {
-        return $this->task_status == self::STATUS_DONE;
+        return $this->status == self::STATUS_DONE;
     }
 
     /**
      *
      */
     public function setDone() {
-        $this->task_status = self::STATUS_DONE;
+        $this->status = self::STATUS_DONE;
     }
 }
 
