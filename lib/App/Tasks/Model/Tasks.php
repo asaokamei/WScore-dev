@@ -36,8 +36,8 @@ class tasks extends Model
           memo text NOT NULL DEFAULT '',
           done_by date,
           status char(1) NOT NULL DEFAULT '1',
-          new_dt_task text,
-          mod_dt_task text
+          created_at text,
+          updated_at text
         );
         ";
         return $sql;
@@ -56,9 +56,9 @@ class tasks extends Model
             5 => 'delete all finished tasks and setup the task list',
         );
         $task = array(
-            'task_memo' => 'task #' . $idx . ' ' . $memo[ $idx ],
-            'task_status' => task::STATUS_ACTIVE,
-            'task_date' => sprintf( '2012-11-%02d', $idx + 1 ),
+            'memo' => 'task #' . $idx . ' ' . $memo[ $idx ],
+            'status' => task::STATUS_ACTIVE,
+            'done_by' => sprintf( '2012-11-%02d', $idx + 1 ),
         );
         return $task;
     }
