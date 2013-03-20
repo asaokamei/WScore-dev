@@ -151,12 +151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Template.git",
-                "reference": "0cf1b69278ee9638d9e6e674eac4655ce59a3fce"
+                "reference": "d9eca0ff132c96e3b2a98c99d2528854b9cc4fc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Template/zipball/0cf1b69278ee9638d9e6e674eac4655ce59a3fce",
-                "reference": "0cf1b69278ee9638d9e6e674eac4655ce59a3fce",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Template/zipball/d9eca0ff132c96e3b2a98c99d2528854b9cc4fc5",
+                "reference": "d9eca0ff132c96e3b2a98c99d2528854b9cc4fc5",
                 "shasum": ""
             },
             "type": "library",
@@ -173,7 +173,7 @@
                 }
             ],
             "description": "A simple template engine using only PHP.",
-            "time": "2013-02-28 22:02:17"
+            "time": "2013-03-19 06:46:18"
         },
         {
             "name": "wscore/validation",
@@ -211,12 +211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "64841de65d8a3882223c59dfe797057542079e4b"
+                "reference": "c6c7da94cdbbf807cb96c60b697fd1f826709183"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/64841de65d8a3882223c59dfe797057542079e4b",
-                "reference": "64841de65d8a3882223c59dfe797057542079e4b",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/c6c7da94cdbbf807cb96c60b697fd1f826709183",
+                "reference": "c6c7da94cdbbf807cb96c60b697fd1f826709183",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-03-18 08:29:23"
+            "time": "2013-03-19 06:52:50"
         }
     ],
     "packages-dev": [
