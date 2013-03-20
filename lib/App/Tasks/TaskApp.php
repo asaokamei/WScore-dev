@@ -15,6 +15,15 @@ class TaskApp extends AppLoader
         $this->setRoute( $routes );
 
         $this->templateRoot = __DIR__ . '/View/';
+    }
+
+    /**
+     * @param string $pathInfo
+     * @return null|string
+     */
+    public function load( $pathInfo )
+    {
         $this->template->addParent( $this->templateRoot . 'task.php' );
+        return parent::load( $pathInfo );
     }
 }
