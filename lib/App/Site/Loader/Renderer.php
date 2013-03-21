@@ -8,9 +8,8 @@ class Renderer extends \WScore\Web\Loader\Renderer
         $routes = array(
             '/templates/*' => array( 'found' => 'true', 'addParent' => 'template.php' ),
             '/index.php'   => array( 'found' => 'true' ),
-            '/'   => array( 'found' => 'true' ),
+            '/'   => array( 'found' => 'true', 'render' => 'index.php' ),
         );
         $this->setRoute( $routes );
     }
-
 }
