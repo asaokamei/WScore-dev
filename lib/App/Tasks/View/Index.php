@@ -23,7 +23,7 @@ if( !$tasks = $this->get( 'tasks' ) ) {
         $task->setHtmlType( 'html' );
         ?>
         <tr>
-            <td><?php echo $task->popHtml( 'memo' ); ?></td>
+            <td><a href="<?php echo $this->get( 'appRoot' ) . $task->entity->task_id; ?>" ><?php echo $task->popHtml( 'memo' ); ?></a></td>
             <td><?php echo $task->popHtml( 'done_by' ); ?></td>
             <td><?php echo $task->popHtml( 'status' ); ?></td>
         </tr>
