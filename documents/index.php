@@ -37,7 +37,7 @@ $this->HomePage = true;
             <h4>&gt; <a href="password/index.php" >generate password</a></h4>
             <p>demo for building form elements. </p>
             <p>another demo using AppLoader (<a href="pwd/" >pwd</a>). </p>
-            <h4>&gt; <a href="myTasks" >task/todo application</a></h4>
+            <h4>&gt; <a href="tasks/" >task/todo application</a></h4>
             <p>demo for using data mapper, model, and entity. </p>
             <p class="memo">please give <code>./task/data</code> folder writable permission for web server to store sqlite file. </p>
             <h4>&gt; <a href="myFriends" >friends & contacts</a></h4>
