@@ -4,7 +4,7 @@ namespace App\Tasks\Model;
 use \App\Tasks\Entity\Task;
 use \WScore\DataMapper\Model;
 
-class tasks extends Model
+class Tasks extends Model
 {
     /** @var string     name of database table     */
     protected $table = 'task';
