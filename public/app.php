@@ -14,6 +14,7 @@ try {
 
 } catch ( Exception $e ) {
     $code = $e->getCode();
+    $app->template->set( 'code', $code );
     if( !in_array( $code, array( '400', '404' ) ) ) $code = '503';
     echo $app->template->setTemplate( "errors/e{$code}.php" )->render();
 }
