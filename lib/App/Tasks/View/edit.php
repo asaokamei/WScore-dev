@@ -25,7 +25,7 @@ function error( $task, $key ) {
     return '<br />'. $task->getError( $key );
 }
 ?>
-<h1><?php echo $title, $this->id; ?></h1>
+<h1><?php echo $title, $this->get('id'); ?></h1>
 <form name="edit" action="" method="post">
     <dl>
         <dt>task memo</dt>
