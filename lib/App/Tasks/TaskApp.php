@@ -10,6 +10,7 @@ class TaskApp extends AppLoader
         $routes = array(
             'setup'  => array(),
             'create' => array(),
+            'done/:id'=> array(),
             ':id'    => array( 'render' => 'edit' ),
             '/'      => array( 'render' => 'index' ),
         );
