@@ -21,9 +21,12 @@ if( !$tasks = $this->get( 'tasks' ) ) {
     foreach( $tasks as $task ) {
         /** @var $task \WScore\DataMapper\Role\DataIO */
         $task->setHtmlType( 'html' );
+        $memo = $task->popHtml( 'memo' );
+        $edit = $this->get( 'appRoot' ) . $task->getId();
+        $memo = "<a href=\"{$edit}\" >{$memo}</a>";
         ?>
         <tr>
-            <td><?php echo $task->popHtml( 'memo' ); ?></td>
+            <td><?php echo $memo; ?></td>
             <td><?php echo $task->popHtml( 'done_by' ); ?></td>
             <td><?php echo $task->popHtml( 'status' ); ?></td>
         </tr>
