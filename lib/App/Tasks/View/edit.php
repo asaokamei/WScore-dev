@@ -22,7 +22,7 @@ $view = $this;
  */
 function error( $task, $key ) {
     if( !$task->isError( $key ) ) return '';
-    return '<br />'. $task->getError( $key );
+    return '<br /><p class="text-error">'. $task->getError( $key ) . '</p>';
 }
 ?>
 <h1><?php echo $title, $this->get('id'); ?></h1>
