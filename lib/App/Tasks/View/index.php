@@ -22,6 +22,9 @@ if( !$tasks = $this->get( 'tasks' ) ) {
         /** @var $task \WScore\DataMapper\Role\DataIO */
         $task->setHtmlType( 'html' );
         $memo = $task->popHtml( 'memo' );
+        if( $task->get( 'status' ) == \App\Tasks\Entity\Task::STATUS_ACTIVE ) {
+            $memo = "<strong>{$memo}</strong>";
+        }
         $edit = $this->get( 'appRoot' ) . $task->getId();
         $memo = "<a href=\"{$edit}\" >{$memo}</a>";
         ?>
