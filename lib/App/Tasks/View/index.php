@@ -10,6 +10,9 @@ if( !$tasks = $this->get( 'tasks' ) ) {
 }
 ?>
 <h1>Task List</h1>
+<style>
+    form {margin: 0;}
+</style>
 <table class="table">
     <thead>
     <tr>
@@ -40,7 +43,7 @@ if( !$tasks = $this->get( 'tasks' ) ) {
             $classes = 'btn btn-small';
             $doneUrl .= '?_method=del';
         }
-        $done = "<a href=\"{$doneUrl}\" class=\"{$classes}\" >done</a>";
+        $done = "<form action=\"{$doneUrl}\" method='post'><input type='submit' value='done' class='{$classes}'></form>";
         ?>
         <tr>
             <td><?php echo $memo; ?></td>
