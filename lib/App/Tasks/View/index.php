@@ -41,7 +41,7 @@ if( !$tasks = $this->get( 'tasks' ) ) {
             $doneUrl .= '?_method=put';
         } else {
             $classes = 'btn btn-small';
-            $doneUrl .= '?_method=del';
+            $doneUrl .= '?_method=delete';
         }
         $done = "<form action=\"{$doneUrl}\" method='post'><input type='submit' value='done' class='{$classes}'></form>";
         ?>
