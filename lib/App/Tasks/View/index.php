@@ -33,7 +33,7 @@ if( !$tasks = $this->get( 'tasks' ) ) {
             $memo = "<strong>{$memo}</strong>";
         }
         $edit = $this->get( 'appRoot' ) . $task->getId();
-        $memo = "<a href=\"{$edit}\" >{$memo}</a>";
+        $memo = "<!--suppress HtmlUnknownTarget --><a href=\"{$edit}\" >{$memo}</a>";
         // create done button.
         $doneUrl = $this->get( 'appRoot' ) . 'done/'.$task->getId();
         if( $task->get( 'status' ) == Task::STATUS_ACTIVE ) {
@@ -43,7 +43,7 @@ if( !$tasks = $this->get( 'tasks' ) ) {
             $classes = 'btn btn-small';
             $doneUrl .= '?_method=delete';
         }
-        $done = "<form action=\"{$doneUrl}\" method='post'><input type='submit' value='done' class='{$classes}'></form>";
+        $done = "<!--suppress HtmlUnknownTarget --><form action=\"{$doneUrl}\" method='post'><input type='submit' value='done' class='{$classes}'></form>";
         ?>
         <tr>
             <td><?php echo $memo; ?></td>
