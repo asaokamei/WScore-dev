@@ -1,7 +1,7 @@
 <?php
 namespace App\Tasks\Page;
 
-class Edit
+class Done
 {
     /**
      * @Inject
@@ -26,33 +26,35 @@ class Edit
      * @return array
      * @throws \Exception
      */
-    public function onGet( $match )
+    public function onPut( $match )
     {
+        /** @var $task \App\Tasks\Entity\Task */
         $task = $this->fetchTask( $match );
-        $task = $this->role->applyDataIO( $task );
-        $match[ 'task' ] = $task;
-        return $match;
+        if( !$task->isDone() ) {
+            $task->status = \App\Tasks\Entity\Task::STATUS_DONE;
+            $active = $this->role->applyActive( $task );
+            $active->save();
+        }
+        header( "Location: " . $match[ 'appRoot' ] );
+        exit;
     }
-
 
     /**
      * @param array $match
      * @return array
      * @throws \Exception
      */
-    public function onPut( $match )
+    public function onDelete( $match )
     {
+        /** @var $task \App\Tasks\Entity\Task */
         $task = $this->fetchTask( $match );
-        $task = $this->role->applyDataIO( $task );
-        $task->load( $_POST );
-        if( $task->validate() ) {
+        if( $task->isDone() ) {
             $active = $this->role->applyActive( $task );
+            $active->delete();
             $active->save();
-            header( "Location: " . $match[ 'appRoot' ] );
-            exit;
         }
-        $match[ 'task' ] = $task;
-        return $match;
+        header( "Location: " . $match[ 'appRoot' ] );
+        exit;
     }
 
     /**

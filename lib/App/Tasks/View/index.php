@@ -1,5 +1,6 @@
-<h1>Task List</h1>
 <?php
+
+use \App\Tasks\Entity\Task;
 
 /** @var $this \WScore\Template\TemplateInterface */
 
@@ -8,6 +9,10 @@ if( !$tasks = $this->get( 'tasks' ) ) {
     return;
 }
 ?>
+<h1>Task List</h1>
+<style>
+    form {margin: 0;}
+</style>
 <table class="table">
     <thead>
     <tr>
@@ -19,13 +24,31 @@ if( !$tasks = $this->get( 'tasks' ) ) {
     <tbody>
     <?php
     foreach( $tasks as $task ) {
+
         /** @var $task \WScore\DataMapper\Role\DataIO */
         $task->setHtmlType( 'html' );
+        // create memo.
+        $memo = $task->popHtml( 'memo' );
+        if( $task->get( 'status' ) == Task::STATUS_ACTIVE ) {
+            $memo = "<strong>{$memo}</strong>";
+        }
+        $edit = $this->get( 'appRoot' ) . $task->getId();
+        $memo = "<!--suppress HtmlUnknownTarget --><a href=\"{$edit}\" >{$memo}</a>";
+        // create done button.
+        $doneUrl = $this->get( 'appRoot' ) . 'done/'.$task->getId();
+        if( $task->get( 'status' ) == Task::STATUS_ACTIVE ) {
+            $classes  = 'btn btn-small btn-primary';
+            $doneUrl .= '?_method=put';
+        } else {
+            $classes = 'btn btn-small';
+            $doneUrl .= '?_method=delete';
+        }
+        $done = "<!--suppress HtmlUnknownTarget --><form action=\"{$doneUrl}\" method='post'><input type='submit' value='done' class='{$classes}'></form>";
         ?>
         <tr>
-            <td><a href="<?php echo $this->get( 'appRoot' ) . $task->entity->task_id; ?>" ><?php echo $task->popHtml( 'memo' ); ?></a></td>
+            <td><?php echo $memo; ?></td>
             <td><?php echo $task->popHtml( 'done_by' ); ?></td>
-            <td><?php echo $task->popHtml( 'status' ); ?></td>
+            <td><?php echo $done; ?></td>
         </tr>
     <?php
     }

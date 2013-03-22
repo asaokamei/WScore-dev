@@ -43,6 +43,7 @@ class App extends \WScore\Web\FrontMC
      * @var \App\Site\Loader\Renderer
      */
     public $render;
+
     /**
      */
     public function __construct()

@@ -8,10 +8,11 @@ class TaskApp extends AppLoader
     public function __construct()
     {
         $routes = array(
-            ':id'    => array( 'load' => 'edit' ),
             'setup'  => array(),
             'create' => array(),
-            '*'      => array( 'load' => 'index' ),
+            'done/:id'=> array(),
+            ':id'    => array( 'render' => 'edit' ),
+            '/'      => array( 'render' => 'index' ),
         );
         $this->setRoute( $routes );
 
