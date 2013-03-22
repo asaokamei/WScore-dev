@@ -23,7 +23,7 @@ class Index
 
     public function onGet( $match )
     {
-        $tasks = $this->tasks->query()->select();
+        $tasks = $this->tasks->query()->order( 'status, done_by, task_id' )->select();
         $tasks = $this->em->fetch( '\App\Tasks\Entity\Task', $tasks );
         $roles = array();
         foreach( $tasks as $key => $t ) {
