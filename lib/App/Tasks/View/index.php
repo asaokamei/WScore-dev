@@ -1,5 +1,6 @@
-<h1>Task List</h1>
 <?php
+
+use \App\Tasks\Entity\Task;
 
 /** @var $this \WScore\Template\TemplateInterface */
 
@@ -8,6 +9,7 @@ if( !$tasks = $this->get( 'tasks' ) ) {
     return;
 }
 ?>
+<h1>Task List</h1>
 <table class="table">
     <thead>
     <tr>
@@ -19,19 +21,31 @@ if( !$tasks = $this->get( 'tasks' ) ) {
     <tbody>
     <?php
     foreach( $tasks as $task ) {
+
         /** @var $task \WScore\DataMapper\Role\DataIO */
         $task->setHtmlType( 'html' );
+        // create memo.
         $memo = $task->popHtml( 'memo' );
-        if( $task->get( 'status' ) == \App\Tasks\Entity\Task::STATUS_ACTIVE ) {
+        if( $task->get( 'status' ) == Task::STATUS_ACTIVE ) {
             $memo = "<strong>{$memo}</strong>";
         }
         $edit = $this->get( 'appRoot' ) . $task->getId();
         $memo = "<a href=\"{$edit}\" >{$memo}</a>";
+        // create done button.
+        $doneUrl = $this->get( 'appRoot' ) . 'done/'.$task->getId();
+        if( $task->get( 'status' ) == Task::STATUS_ACTIVE ) {
+            $classes  = 'btn btn-small btn-primary';
+            $doneUrl .= '?_method=put';
+        } else {
+            $classes = 'btn btn-small';
+            $doneUrl .= '?_method=del';
+        }
+        $done = "<a href=\"{$doneUrl}\" class=\"{$classes}\" >done</a>";
         ?>
         <tr>
             <td><?php echo $memo; ?></td>
             <td><?php echo $task->popHtml( 'done_by' ); ?></td>
-            <td><?php echo $task->popHtml( 'status' ); ?></td>
+            <td><?php echo $done; ?></td>
         </tr>
     <?php
     }
