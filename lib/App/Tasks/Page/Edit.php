@@ -48,8 +48,9 @@ class Edit
         if( $task->validate() ) {
             $active = $this->role->applyActive( $task );
             $active->save();
+            header( "Location: " . $match[ 'appRoot' ] );
+            exit;
         }
-
         $match[ 'task' ] = $task;
         return $match;
     }
