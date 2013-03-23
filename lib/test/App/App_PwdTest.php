@@ -36,8 +36,8 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
 
         // read index.php
         $this->assertContains( '<form name="password" method="post" action="">', $contents );
-        $this->assertContains( '<!-- Template: documents/layout -->', $contents );
-        $this->assertContains( '<!-- View: Pwd/View/generate -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/layout -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=Pwd/View/generate -->', $contents );
         $this->assertContains( '<dt>length of password</dt>', $contents );
     }
 
@@ -60,8 +60,8 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
 
         // read index.php
         $this->assertContains( '<form name="password" method="post" action="">', $contents );
-        $this->assertContains( '<!-- Template: documents/layout -->', $contents );
-        $this->assertContains( '<!-- View: Pwd/View/generate -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/layout -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=Pwd/View/generate -->', $contents );
         $this->assertContains( '<dt>length of password</dt>', $contents );
         $this->assertContains( '            <table class="table">
             <tr>

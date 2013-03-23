@@ -41,7 +41,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
         $index = file_get_contents( $this->template_root . 'index.php' );
         $index = substr( $index, strpos( $index, '<header class="jumbotron">' ) );
         $this->assertContains( $index, $contents );
-        $this->assertContains( '<!-- Template: documents/layout -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/layout -->', $contents );
     }
 
     function test_template_files()
@@ -54,8 +54,8 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
         // read index.php
         $index = file_get_contents( $this->template_root . 'templates/index.php' );
         $this->assertContains( $index, $contents );
-        $this->assertContains( '<!-- Template: documents/layout -->', $contents );
-        $this->assertContains( '<!-- Template: documents/template -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/layout -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/template -->', $contents );
     }
 
     function test_template_another()
@@ -68,8 +68,8 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
         // read index.php
         $index = file_get_contents( $this->template_root . 'templates/another.php' );
         $this->assertContains( $index, $contents );
-        $this->assertContains( '<!-- Template: documents/layout -->', $contents );
-        $this->assertContains( '<!-- Template: documents/template -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/layout -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/template -->', $contents );
     }
 
     function test_not_found()

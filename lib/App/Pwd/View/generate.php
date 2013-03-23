@@ -3,7 +3,7 @@
 ?>
 <!-- HtmlTest: matchStart -->
 <h1>Generate Password</h1>
-<!-- View: Pwd/View/generate -->
+<!-- HtmlTest: Needle=Pwd/View/generate -->
 <div class="row-fluid marketing">
     <p>specify length of password, check to use symbols (!@#$ etc.), <br/>and click generate password button. </p>
 

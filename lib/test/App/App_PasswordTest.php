@@ -36,8 +36,8 @@ class App_PasswordTests extends \PHPUnit_Framework_TestCase
 
         // read index.php
         $this->assertContains( '<form name="password" method="post" action="index.php">', $contents );
-        $this->assertContains( '<!-- Template: documents/password -->', $contents );
-        $this->assertContains( '<!-- Template: documents/password/index -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/password -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/password/index -->', $contents );
         $this->assertContains( '<dt>length of password</dt>', $contents );
     }
 
@@ -60,8 +60,8 @@ class App_PasswordTests extends \PHPUnit_Framework_TestCase
 
         // read index.php
         $this->assertContains( '<form name="password" method="post" action="index.php">', $contents );
-        $this->assertContains( '<!-- Template: documents/password -->', $contents );
-        $this->assertContains( '<!-- Template: documents/password/index -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/password -->', $contents );
+        $this->assertContains( '<!-- HtmlTest: Needle=documents/password/index -->', $contents );
         $this->assertContains( '<dt>length of password</dt>', $contents );
         $this->assertContains( '            <table class="table">
             <tr>

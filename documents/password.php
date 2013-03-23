@@ -4,7 +4,7 @@
 <style type="text/css">
     ul.subMenu { clear: both; float: right;}
 </style>
-<!-- Template: documents/password -->
+<!-- HtmlTest: Needle=documents/password -->
 <ul class="nav nav-pills subMenu">
     <li><a href="index.php" >New Passwords</a></li>
 </ul>

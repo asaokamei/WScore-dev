@@ -2,7 +2,7 @@
 /** @var $this \WScore\Template\TemplateInterface */
 ?>
 <h1>Generate Password</h1>
-<!-- Template: documents/password/index -->
+<!-- HtmlTest: Needle=documents/password/index -->
 <div class="row-fluid marketing">
     <p>specify length of password, check to use symbols (!@#$ etc.), <br/>and click generate password button. </p>
 
