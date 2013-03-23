@@ -12,6 +12,8 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
     
     public $template_root;
     
+    public $public_root;
+    
     /**
      *
      */
@@ -20,6 +22,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
         /** @var $container \App\App */
         $this->app = \App\getApp( 'WsTest-app', false );
         $this->template_root = __DIR__ . '/../../../documents/';
+        $this->public_root   = __DIR__ . '/../../../public/';
     }
 
     function test0()
@@ -103,5 +106,27 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
             $this->assertEquals( 'RuntimeException', get_class( $e ) );
             $this->assertEquals( '503', $e->getCode() );
         }
+    }
+
+    /**
+     * trying to test direct/index, but cannot test. 
+     * $view (template) does not deconstructed as expected. 
+     */
+    function test_direct()
+    {
+        // read index.php
+        $contents = $this->drawDirect();
+
+        $index = file_get_contents( $this->public_root . 'direct/index.php' );
+        $index = substr( $index, strpos( $index, '<h4>Direct Folder</h4>' ) );
+        $this->assertContains( $index, $contents );
+    }
+    function drawDirect()
+    {
+        ob_start();
+        include( $this->public_root . 'direct/index.php' );
+        unset( $view );
+        $contents = ob_get_clean();
+        return $contents;
     }
 }
