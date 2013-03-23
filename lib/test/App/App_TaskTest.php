@@ -1,7 +1,7 @@
 <?php
 namespace test\App;
 
-use \WSTests\DataMapper\entities\friend;
+use \WScore\Web\Tests\Html;
 
 require( __DIR__ . '/../../bootstrap.php' );
 
@@ -72,66 +72,11 @@ class App_TaskTests extends \PHPUnit_Framework_TestCase
     
     public function verifyNeedles( $page, $sources )
     {
-        $contents = $this->getAppContents( $page );
+        $contents = Html::getAppContents( $this->app, $page );
         foreach( $sources as $src ) {
-            $needle = $this->getFileContents( $src );
-            $needle = $this->extractHtmlTestNeedles( $needle );
+            $needle = Html::getFileContents( $src );
+            $needle = Html::extractHtmlTestNeedles( $needle );
             $this->assertContains( $needle, $contents );
         } 
-    }
-    /**
-     * @param string $file
-     * @return string
-     */
-    public function getFileContents( $file )
-    {
-        return file_get_contents( $file );
-    }
-    /**
-     * @param array|string $server
-     * @return string
-     */
-    public function getAppContents( $server ) 
-    {
-        if( !is_array( $server ) ) {
-            $server = array(
-                'REQUEST_METHOD' => 'GET',
-                'SCRIPT_NAME'    => '/test/app.php',
-                'REQUEST_URI'    => '/test/' . $server,
-            );
-        }
-        $this->app->pathInfo( $server );
-        /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
-        return $response->content;
-    }
-
-    /**
-     * @param string $html
-     * @return string
-     */
-    public function extractHtmlTestMatches( $html )
-    {
-        $startTag = '<!-- HtmlTest: matchStart -->';
-        $endTag   = '<!-- HtmlTest: matchEnd -->';
-        if( preg_match_all( "/{$startTag}(.*?){$endTag}/ms", $html, $match ) ) {
-            $html = $match[1];
-        }
-        return $html;
-    }
-
-    /**
-     * @param string $html
-     * @return array
-     */
-    public function extractHtmlTestNeedles( $html )
-    {
-        $needles = array();
-        $startTag = '<!-- HtmlTest: Needle=';
-        $endTag   = ' -->';
-        if( preg_match( "/({$startTag}.*?{$endTag})/ms", $html, $match ) ) {
-            $needles = $match[1];
-        }
-        return $needles;
     }
 }

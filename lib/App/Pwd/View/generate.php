@@ -26,14 +26,15 @@
     </form>
     <!-- HtmlTest: matchEnd -->
     <?php
-    if( $this->arr( 'passwords' ) ) : ?>
+    if( $password = $this->arr( 'passwords' ) ) : ?>
+        <!-- HtmlTest: NumberOfPasswords: <?php echo count( $password ) ?> -->
         <table class="table">
             <tr>
                 <th>password</th>
                 <th>crypt</th>
                 <th>md5</th>
             </tr>
-            <?php foreach( $this->arr( 'passwords' ) as $words ) : ?>
+            <?php foreach( $password as $words ) : ?>
             <tr>
                 <td><?php echo $words[ 'password' ]; ?></td>
                 <td><?php echo $words[ 'crypt' ]; ?></td>

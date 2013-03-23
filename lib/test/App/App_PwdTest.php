@@ -1,7 +1,7 @@
 <?php
 namespace test\App;
 
-use \WSTests\DataMapper\entities\friend;
+use \WScore\Web\Tests\Html;
 
 require( __DIR__ . '/../../bootstrap.php' );
 
@@ -12,6 +12,8 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
 
     public $template_root;
 
+    public $document_root;
+
     /**
      *
      */
@@ -19,26 +21,19 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
     {
         /** @var $container \App\App */
         $this->app = \App\getApp( 'WsTest-app', false );
+        $this->document_root = __DIR__ . '/../../../documents/';
         $this->template_root = __DIR__ . '/../../../lib/App/Pwd/View/';
     }
 
     function test_password_menu()
     {
-        $server = array(
-            'REQUEST_METHOD' => 'get',
-            'SCRIPT_NAME'    => '/test/app.php',
-            'REQUEST_URI'    => '/test/pwd/',
+        $this->verifyNeedles( 
+            'pwd/', 
+            array(
+                $this->document_root . 'layout.php',
+                $this->template_root . 'generate.php'
+            ) 
         );
-        $this->app->pathInfo( $server );
-        /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
-        $contents = $response->content;
-
-        // read index.php
-        $this->assertContains( '<form name="password" method="post" action="">', $contents );
-        $this->assertContains( '<!-- HtmlTest: Needle=documents/layout -->', $contents );
-        $this->assertContains( '<!-- HtmlTest: Needle=Pwd/View/generate -->', $contents );
-        $this->assertContains( '<dt>length of password</dt>', $contents );
     }
 
     function test_password_post()
@@ -53,22 +48,16 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
             'count'  => '6',
             'symbol' => '',
         );
-        $this->app->pathInfo( $server );
-        /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->using( $post )->run();
-        $contents = $response->content;
-
-        // read index.php
-        $this->assertContains( '<form name="password" method="post" action="">', $contents );
-        $this->assertContains( '<!-- HtmlTest: Needle=documents/layout -->', $contents );
-        $this->assertContains( '<!-- HtmlTest: Needle=Pwd/View/generate -->', $contents );
-        $this->assertContains( '<dt>length of password</dt>', $contents );
-        $this->assertContains( '            <table class="table">
-            <tr>
-                <th>password</th>
-                <th>crypt</th>
-                <th>md5</th>
-            </tr>', $contents );
+        $contents = $this->verifyNeedles(
+            $server,
+            array(
+                $this->document_root . 'layout.php',
+                $this->template_root . 'generate.php'
+            ),
+            $post
+        );
+        $needle = "<!-- HtmlTest: NumberOfPasswords: {$post{'count'}} -->";
+        $this->assertContains( $needle, $contents );
     }
 
     public function test_pwd_match()
@@ -81,22 +70,23 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
         $this->app->pathInfo( $server );
         /** @var $response \WScore\Web\Http\Response */
         $response = $this->app->run();
-        $contents = $this->extractHtmlTestMatch( $response->content );
+        $contents = Html::extractHtmlTestMatches( $response->content );
 
         $html = file_get_contents( $this->template_root . 'generate.php' );
-        $match = $this->extractHtmlTestMatch( $html );
+        $match = Html::extractHtmlTestMatches( $html );
         foreach( $match as $m ) {
             $this->assertContains( $m, $contents );
         }
     }
     
-    public function extractHtmlTestMatch( $html )
+    public function verifyNeedles( $page, $sources, $post=array() )
     {
-        $startTag = '<!-- HtmlTest: matchStart -->';
-        $endTag   = '<!-- HtmlTest: matchEnd -->';
-        if( preg_match_all( "/{$startTag}(.*?){$endTag}/ms", $html, $match ) ) {
-            $html = $match[1];
+        $contents = Html::getAppContents( $this->app, $page, $post );
+        foreach( $sources as $src ) {
+            $needle = Html::getFileContents( $src );
+            $needle = Html::extractHtmlTestNeedles( $needle );
+            $this->assertContains( $needle, $contents );
         }
-        return $html;
+        return $contents;
     }
 }
