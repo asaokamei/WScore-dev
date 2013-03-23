@@ -1,6 +1,5 @@
 <?php
 /** @var $this \WScore\Template\Template */
-$this->parent( 'layout.php' );
 ?>
 <style type="text/css">
     ul.subMenu { clear: both; float: right;}

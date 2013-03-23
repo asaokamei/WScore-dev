@@ -1,6 +1,5 @@
 <?php
 /** @var $this \WScore\Template\TemplateInterface */
-$this->parent( 'password.php' );
 ?>
 <h1>Generate Password</h1>
 <!-- Template: documents/password/index -->
