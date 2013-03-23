@@ -4,6 +4,7 @@
 <style type="text/css">
     ul.subMenu { clear: both; float: right;}
 </style>
+<!-- Template: documents/template -->
 <ul class="nav nav-pills subMenu">
     <li><a href="index.php" >Top</a></li>
     <li><a href="another.php" >Another</a></li>

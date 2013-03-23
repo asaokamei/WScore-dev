@@ -28,6 +28,7 @@ $this->setDefault( 'basePath', '/WSdev')
     </style>
 </head>
 <body>
+<!-- Template: documents/layout -->
 <div class="container-narrow">
     <div class="masthead">
         <h3 class="muted"><?php if( $this->HomePage ) { ?>WScore Public Demo<?php } else { echo "<a href=\"{$this->basePath}/index.php\">WScore Public Demo</a>"; } ?></h3>
