@@ -8,7 +8,7 @@ class PwdGenerator extends Pager
     public function __construct()
     {
         $routes = array(
-            '/password/*' => array( 'render' => 'password/index.php' ),
+            '/password/*' => array( 'render' => 'password/index.php', 'addParent' => 'password.php' ),
         );
         $this->setRoute( $routes );
     }
