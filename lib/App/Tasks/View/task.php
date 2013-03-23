@@ -15,6 +15,7 @@ $appRoot = $this->get( 'appRoot' );
         <li><a href="<?php echo $appRoot; ?>setup" >setup</a></li>
     </ul>
     <h4>task/todo demo</h4>
+    <!-- HtmlTest: Needle=Tasks/View/task -->
     <p>task/todo application using data mapper and basic MVC. </p>
     <div style="clear:both">
     </div>

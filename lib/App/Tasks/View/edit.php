@@ -26,6 +26,7 @@ function error( $task, $key ) {
 }
 ?>
 <h1><?php echo $title, $this->get('id'); ?></h1>
+<!-- HtmlTest: Needle=Tasks/View/edit -->
 <form name="edit" action="" method="post">
     <dl>
         <dt>task memo</dt>

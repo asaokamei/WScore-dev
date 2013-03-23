@@ -1,4 +1,5 @@
 <h1>Setup Task Database</h1>
+<!-- HtmlTest: Needle=Tasks/View/setup -->
 <?php
 
 /** @var $this \WScore\Template\TemplateInterface */

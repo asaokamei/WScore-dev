@@ -10,6 +10,7 @@ if( !$tasks = $this->get( 'tasks' ) ) {
 }
 ?>
 <h1>Task List</h1>
+<!-- HtmlTest: Needle=Tasks/View/index -->
 <style>
     form {margin: 0;}
 </style>
