@@ -1,5 +1,6 @@
 <?php
-$app = require_once( __DIR__ . '/../lib/bootstrap.php' );
+require_once( __DIR__ . '/../lib/bootstrap.php' );
+$app = getApp( 'WsDemo-app', $boot, false );
 /** @var $app App\App */
 try {
 

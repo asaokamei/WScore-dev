@@ -6,5 +6,3 @@ require_once( __DIR__ . '/App/boot.php' );
 $loader = new \Composer\Autoload\ClassLoader();
 $loader->add( 'App', __DIR__.'' );
 $loader->register();
-
-return getApp( 'WsDemo-app', $boot, false );
