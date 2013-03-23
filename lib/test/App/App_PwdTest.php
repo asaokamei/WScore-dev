@@ -49,8 +49,8 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
             'REQUEST_URI'    => '/test/pwd/',
         );
         $post = array(
-            'range' => '12',
-            'count' => '6',
+            'length' => '12',
+            'count'  => '6',
             'symbol' => '',
         );
         $this->app->pathInfo( $server );

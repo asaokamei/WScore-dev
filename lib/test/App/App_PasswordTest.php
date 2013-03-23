@@ -49,8 +49,8 @@ class App_PasswordTests extends \PHPUnit_Framework_TestCase
             'REQUEST_URI'    => '/test/password/index.php',
         );
         $post = array(
-            'range' => '12',
-            'count' => '6',
+            'length' => '12',
+            'count'  => '6',
             'symbol' => '',
         );
         $this->app->pathInfo( $server );
