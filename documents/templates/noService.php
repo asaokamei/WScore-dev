@@ -1,6 +1,6 @@
 <?php
 
-throw new \Exception( 'no service', 503 );
+throw new \RuntimeException( 'no service', 503 );
 
 ?>
 <h1>no service thrower</h1>

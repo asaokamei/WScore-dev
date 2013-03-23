@@ -1,6 +1,6 @@
 <?php
 
-throw new \Exception( 'bad request', 400 );
+throw new \RuntimeException( 'bad request', 400 );
 
 ?>
 <h1>bad request thrower</h1>
