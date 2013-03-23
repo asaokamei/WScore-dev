@@ -1,7 +1,8 @@
 <?php
 require_once( __DIR__ . '/../lib/bootstrap.php' );
-$app = getApp( 'WsDemo-app', $boot, false );
 /** @var $app App\App */
+$app = App\getApp( 'WsDemo-app', false );
+
 try {
 
     $app->pathInfo( $_SERVER );

@@ -1,10 +1,11 @@
 <?php
+namespace App;
 
 /**
  * @param bool     $cache
  * @return \App\App
  */
-$boot = function( $cache )
+function buildApp( $cache )
 {
     // set up folders.
     $root = dirname( dirname( __DIR__ ) );
@@ -36,16 +37,15 @@ $boot = function( $cache )
 
 /**
  * @param string  $appName
- * @param Closure $boot
  * @param bool    $cache
  * @return App\App
  */
-function getApp( $appName, $boot, $cache=true )
+function getApp( $appName, $cache=true )
 {
-    if( !$cache ) return $boot( $cache );
-    if( !function_exists( 'apc_fetch' ) ) return $boot();
+    if( !$cache ) return buildApp( $cache );
+    if( !function_exists( 'apc_fetch' ) ) return buildApp( false );
     if( $app = apc_fetch( $appName ) ) return $app;
-    $app = $boot( $cache );
+    $app = buildApp( $cache );
     apc_store( $appName, $app );
     return $app;
 }
