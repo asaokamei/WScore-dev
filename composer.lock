@@ -1,5 +1,5 @@
 {
-    "hash": "54bef3c61f2e59e0727539ccc46ca421",
+    "hash": "ad3583aac91bc677f7b3179844ca109b",
     "packages": [
         {
             "name": "twitter/bootstrap",
@@ -17,6 +17,39 @@
             },
             "type": "library",
             "time": "2013-03-01 05:24:27"
+        },
+        {
+            "name": "wscore/cena",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asaokamei/WScore.Cena.git",
+                "reference": "a168544603f7d561ccdedc818bdacbe7f499d6d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/a168544603f7d561ccdedc818bdacbe7f499d6d6",
+                "reference": "a168544603f7d561ccdedc818bdacbe7f499d6d6",
+                "shasum": ""
+            },
+            "require": {
+                "wscore/datamapper": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WScore\\Cena": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Asao Kamei",
+                    "email": "kamei@workspot.jp"
+                }
+            ],
+            "description": "Resource oriented data transfer agent.",
+            "time": "2013-03-24 05:18:49"
         },
         {
             "name": "wscore/datamapper",
@@ -91,12 +124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DiContainer.git",
-                "reference": "318f895d8309452c2b3d42c69aa3b41883f6a2be"
+                "reference": "d7c027750d036e7b71ebc741307bfe0174729d52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/318f895d8309452c2b3d42c69aa3b41883f6a2be",
-                "reference": "318f895d8309452c2b3d42c69aa3b41883f6a2be",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/d7c027750d036e7b71ebc741307bfe0174729d52",
+                "reference": "d7c027750d036e7b71ebc741307bfe0174729d52",
                 "shasum": ""
             },
             "type": "library",
@@ -113,7 +146,7 @@
                 }
             ],
             "description": "Simple DI container with auto-wiring.",
-            "time": "2013-03-21 05:40:32"
+            "time": "2013-03-23 03:34:52"
         },
         {
             "name": "wscore/html",
@@ -211,12 +244,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "caab347cc932c9f4c09b95ccb61302eb0a0b00f6"
+                "reference": "30fe78d192434ef07ca957bb328cc72cb31d5116"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/caab347cc932c9f4c09b95ccb61302eb0a0b00f6",
-                "reference": "caab347cc932c9f4c09b95ccb61302eb0a0b00f6",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/30fe78d192434ef07ca957bb328cc72cb31d5116",
+                "reference": "30fe78d192434ef07ca957bb328cc72cb31d5116",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +270,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-03-22 07:14:36"
+            "time": "2013-03-23 22:17:10"
         }
     ],
     "packages-dev": [
@@ -255,7 +288,8 @@
         "wscore/template": 20,
         "wscore/dbaccess": 20,
         "wscore/datamapper": 20,
-        "wscore/validation": 20
+        "wscore/validation": 20,
+        "wscore/cena": 20
     },
     "platform": [
 
