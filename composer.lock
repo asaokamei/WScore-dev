@@ -16,7 +16,7 @@
                 "shasum": null
             },
             "type": "library",
-            "time": "2013-03-01 05:24:27"
+            "time": "2013-02-08 06:13:13"
         },
         {
             "name": "wscore/cena",
@@ -24,12 +24,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Cena.git",
-                "reference": "e99fc9e25c6400bcfd3864b21e8bbfdbc02b92e4"
+                "reference": "d6564f9ef80937d2f75f76569a30a7123c95456d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/e99fc9e25c6400bcfd3864b21e8bbfdbc02b92e4",
-                "reference": "e99fc9e25c6400bcfd3864b21e8bbfdbc02b92e4",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/d6564f9ef80937d2f75f76569a30a7123c95456d",
+                "reference": "d6564f9ef80937d2f75f76569a30a7123c95456d",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "Resource oriented data transfer agent.",
-            "time": "2013-03-26 21:43:17"
+            "time": "2013-03-27 03:59:55"
         },
         {
             "name": "wscore/datamapper",
