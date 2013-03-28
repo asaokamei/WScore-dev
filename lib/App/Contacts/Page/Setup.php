@@ -16,7 +16,7 @@ class Setup
     
     public function onPut( $match )
     {
-        // setup for friends data. 
+        // setup for friends data.
         $this->friends->setupTable();
         for( $i = 1; $i <= 5; $i++ ) {
             $friend = $this->friends->getFriendData($i);
