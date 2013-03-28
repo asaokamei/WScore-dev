@@ -31,8 +31,10 @@ $cancel     = $this->get( 'cancel' );
     <?php
     foreach( $this->arr( 'friends' ) as $friend ) {
         /** @var $friend \WScore\Cena\Role\CenaIO */
-        $detailUrl = $this->get( 'appRoot' ) . $friend->getId();
         $friend->setHtmlType( $htmlType );
+        if( $method == 'onGet' ) {
+            $detailUrl = $this->get( 'appRoot' ) . $friend->getId();
+        } else { $detailUrl = false; }
         ?>
     <tbody>
     <tr>
@@ -40,7 +42,7 @@ $cancel     = $this->get( 'cancel' );
         <td><?php echo $friend->popHtml( 'friend_name' ); ?></td>
         <td><?php echo $friend->popHtml( 'gender' ); ?></td>
         <td>...</td>
-        <td><a href="<?php echo $detailUrl; ?>" class="btn btn-mini">&gt;&gt;</a></td>
+        <td><?php if( $detailUrl ) echo "<a href=\"{$detailUrl}\" class=\"btn btn-mini\">&gt;&gt;</a>"; ?></td>
     </tr>
     </tbody>
     <?php } ?>
