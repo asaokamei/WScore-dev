@@ -24,12 +24,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Cena.git",
-                "reference": "d6564f9ef80937d2f75f76569a30a7123c95456d"
+                "reference": "0d05ecaf57b37dbe6b789aa57921ab62d203ea5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/d6564f9ef80937d2f75f76569a30a7123c95456d",
-                "reference": "d6564f9ef80937d2f75f76569a30a7123c95456d",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/0d05ecaf57b37dbe6b789aa57921ab62d203ea5e",
+                "reference": "0d05ecaf57b37dbe6b789aa57921ab62d203ea5e",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "Resource oriented data transfer agent.",
-            "time": "2013-03-27 03:59:55"
+            "time": "2013-03-27 08:10:58"
         },
         {
             "name": "wscore/datamapper",
@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DataMapper.git",
-                "reference": "9210b87212e4c9940a387cbd1d2c196d0074774e"
+                "reference": "5ddc4e8f9cee75d0caba69ee98fdf51849c73bb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/9210b87212e4c9940a387cbd1d2c196d0074774e",
-                "reference": "9210b87212e4c9940a387cbd1d2c196d0074774e",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/5ddc4e8f9cee75d0caba69ee98fdf51849c73bb6",
+                "reference": "5ddc4e8f9cee75d0caba69ee98fdf51849c73bb6",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 }
             ],
             "description": "DataMapper.",
-            "time": "2013-03-26 06:07:46"
+            "time": "2013-03-27 09:00:36"
         },
         {
             "name": "wscore/dbaccess",
