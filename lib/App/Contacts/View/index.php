@@ -9,8 +9,15 @@ if( !$tasks = $this->get( 'friends' ) ) {
     return;
 }
 
+$method     = $this->get( 'onMethod' );
+$htmlType   = $this->get( 'htmlType' );
+$nextMethod = $this->get( 'nextMethod' );
+$button     = $this->get( 'button' );
+$cancel     = $this->get( 'cancel' );
+
 ?>
 <h1>Contacts List</h1>
+<form name="friend" method="post" action="">
 <table class="table">
     <thead>
     <tr>
@@ -25,6 +32,7 @@ if( !$tasks = $this->get( 'friends' ) ) {
     foreach( $this->arr( 'friends' ) as $friend ) {
         /** @var $friend \WScore\Cena\Role\CenaIO */
         $detailUrl = $this->get( 'appRoot' ) . $friend->getId();
+        $friend->setHtmlType( $htmlType );
         ?>
     <tbody>
     <tr>
@@ -37,3 +45,7 @@ if( !$tasks = $this->get( 'friends' ) ) {
     </tbody>
     <?php } ?>
 </table>
+    <button name="submit" class="btn btn-primary"><?php echo $button; ?></button>
+    <input type="hidden" name="_method" value="<?php echo $nextMethod; ?>"/>
+    <?php if( $cancel ) echo '<a href="" class="btn">cancel</a>'; ?>
+</form>
