@@ -1,5 +1,5 @@
 <?php
-namespace App\Tasks\Page;
+namespace App\Contacts\Page;
 
 class Index
 {

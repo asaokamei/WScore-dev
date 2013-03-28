@@ -42,7 +42,7 @@ $this->HomePage = true;
         </div>
         <div class="span6">
             <h3>Experimental Demo</h3>
-            <h4>&gt; <a href="cenaFriends" >contacts using Cena</a></h4>
+            <h4>&gt; <a href="contacts/" >contacts using Cena</a></h4>
             <p>a conceptual demo for using Cena-DTA using friends and contact demo. </p>
             <h4>&gt; interaction with forms</h4>
             <p>demo for data mapper and interactions. </p>

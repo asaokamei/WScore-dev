@@ -1,9 +1,9 @@
 <?php
-namespace WScore\tests\contacts\entities;
+namespace App\Contacts\Entity;
 
 use \WScore\DataMapper\Entity\EntityAbstract;
 
-class friend extends EntityAbstract
+class Friend extends EntityAbstract
 {
     static $_modelName = '\WScore\tests\contacts\models\Friends';
     

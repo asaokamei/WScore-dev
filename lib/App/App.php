@@ -45,9 +45,16 @@ class App extends \WScore\Web\FrontMC
     public $render;
 
     /**
+     * @Inject
+     * @var \App\Contacts\ContactApp
+     */
+    public $contacts;
+
+    /**
      */
     public function __construct()
     {
+        $this->loaders[ 'contacts/' ] = $this->contacts;
         $this->loaders[ 'tasks/' ] = $this->tasks;
         $this->loaders[ 'pwd/' ] = $this->pwdGen;
         $this->loaders[] = $this->pwd;

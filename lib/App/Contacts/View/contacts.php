@@ -10,13 +10,14 @@ $appRoot = $this->get( 'appRoot' );
         ul.subMenu { clear: both; float: right;}
     </style>
     <ul class="nav nav-pills subMenu">
-        <li><a href="<?php echo $appRoot; ?>" >My Tasks</a></li>
-        <li><a href="<?php echo $appRoot; ?>create" >New Task</a></li>
+        <li><a href="<?php echo $appRoot; ?>" >Contacts</a></li>
+        <li><a href="<?php echo $appRoot; ?>create" >Add New</a></li>
+        <li><a href="<?php echo $appRoot; ?>tags" >Tags</a></li>
         <li><a href="<?php echo $appRoot; ?>setup" >setup</a></li>
     </ul>
-    <h4>task/todo demo</h4>
+    <h4>contacts demo with Cena</h4>
     <!-- HtmlTest: Needle=Tasks/View/task -->
-    <p>task/todo application using data mapper and basic MVC. </p>
+    <p>contacts demo application using Cena data transfer agent. </p>
     <div style="clear:both">
     </div>
     <h1><?= $this->get( 'title' ); ?></h1>

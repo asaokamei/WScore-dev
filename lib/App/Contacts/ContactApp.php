@@ -1,9 +1,9 @@
 <?php
-namespace App\Tasks;
+namespace App\Contacts;
 
 use WScore\Web\Loader\AppLoader;
 
-class TaskApp extends AppLoader
+class ContactApp extends AppLoader
 {
     public function __construct()
     {
@@ -26,7 +26,7 @@ class TaskApp extends AppLoader
     public function load( $pathInfo )
     {
         $this->template->set( 'baseUrl', $this->front->baseUrl );
-        $this->template->addParent( $this->templateRoot . 'task.php' );
+        $this->template->addParent( $this->templateRoot . 'contacts.php' );
         return parent::load( $pathInfo );
     }
 }
