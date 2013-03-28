@@ -10,12 +10,7 @@ if( !$tasks = $this->get( 'friends' ) ) {
 }
 
 $method     = $this->get( 'onMethod' );
-if( $method == 'onGet' ) {
-    $includeForm = '/index-get.php';
-}
-elseif( $method == 'onEdit' ) {
-    $includeForm = '/index-edit.php';
-}
+$includeForm = '/index-' . $method . '.php';
 
 ?>
 <h1>Contacts List</h1>
