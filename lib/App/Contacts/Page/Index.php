@@ -22,14 +22,24 @@ class Index
     protected $friends;
 
     /**
-     * @var string
+     * @Inject
+     * @var \WScore\DbAccess\Tools\Paginate
      */
-    protected $friend = '\App\Contacts\Entity\Friend';
+    protected $paginate;
+
+    /**
+     * @Inject
+     * @var \WScore\Web\View\PaginateBootstrap
+     */
+    protected $pageView;
 
     private function loadIndex( $match )
     {
-        $friends = $this->friends->query()->order( 'friend_id' )->select();
-        $friends = $this->em->fetch( $this->friend, $friends );
+        $this->paginate->per_page = 3;
+        $this->paginate->setOptions( $_GET );
+        $query   = $this->paginate->setQuery( $this->friends->query() );
+        $friends = $query->order( 'friend_id' )->select();
+        $friends = $this->em->fetch( '\App\Contacts\Entity\Friend', $friends );
         $roles = array();
         foreach( $friends as $key => $entity ) {
             $roles[$key] = $this->cm->applyCenaIO( $entity );
@@ -40,7 +50,11 @@ class Index
     public function onGet( $match )
     {
         $friends = $this->loadIndex( $match );
-        $data = array( 'friends' => $friends );
+        $data = array(
+            'friends'  => $friends,
+            'paginate' => $this->paginate,
+            'pageView' => $this->pageView,
+        );
         return $data;
     }
 

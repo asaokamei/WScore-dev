@@ -18,7 +18,7 @@ class Setup
     {
         // setup for friends data.
         $this->friends->setupTable();
-        for( $i = 1; $i <= 5; $i++ ) {
+        for( $i = 1; $i <= 10; $i++ ) {
             $friend = $this->friends->getFriendData($i);
             $this->friends->insert( $friend );
         }

@@ -36,3 +36,10 @@ use \App\Tasks\Entity\Task;
     <button name="submit" class="btn btn-primary">Edit Contacts</button>
     <input type="hidden" name="_method" value="edit"/>
 </form>
+<?php
+$appRoot   = $this->get( 'appRoot' );
+$pageUrls = $this->get( 'paginate' )->setupUrls( "?page=%d" );
+/** @var $pager \WScore\Web\View\PaginateBootstrap */
+$pager    = $this->get( 'pageView' )->setUrls( $pageUrls );
+echo $pager->bootstrap( $pageUrls );
+?>
