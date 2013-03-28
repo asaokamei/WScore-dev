@@ -41,30 +41,13 @@ class Index
     {
         $friends = $this->loadIndex( $match );
         $data = array( 'friends' => $friends );
-        $data[ 'htmlType' ]   = 'html';
-        $data[ 'nextMethod' ] = 'edit';
-        $data[ 'button' ]     = 'edit contacts';
-        $data[ 'cancel' ]     = false;
         return $data;
     }
 
     public function onEdit( $match )
     {
-        /** @var $model \App\Contacts\Model\Friends */
-        $model   = $this->em->getModel( $this->friend );
-        //$model->onListEdit();
-        $sel = $model->getSelector( 'friend_name' );
-        $sel->attributes[ 'class' ] = 'span3';
-        $sel = $model->getSelector( 'gender' );
-        $sel->attributes[ 'class' ] = 'span2';
-        $sel->style = 'select';
-
         $friends = $this->loadIndex( $match );
         $data = array( 'friends' => $friends );
-        $data[ 'htmlType' ]   = 'form';
-        $data[ 'nextMethod' ] = 'put';
-        $data[ 'button' ]     = 'save changes';
-        $data[ 'cancel' ]     = true;
         return $data;
     }
 }
