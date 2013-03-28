@@ -22,9 +22,11 @@ $appRoot = $this->get( 'appRoot' );
     <h1><?= $this->get( 'title' ); ?></h1>
 <?php
 
-if( $this->get( 'alert' ) ) {
-    echo 'alert'; 
-    echo $view->get( 'alert' );
+if( $alert = $this->get( 'alert' ) ) {
+    echo '<div class="alert alert-error">
+      <strong>Error:</strong><br/>
+      <strong>' .$alert.'</strong>
+    </div>';
 }
 
 echo $this->get( 'content' );

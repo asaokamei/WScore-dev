@@ -42,5 +42,6 @@ $error = function( $task, $key ) {
         </dd>
     </dl>
     <button type="submit" class="btn btn-primary">save</button>
+    <input type="hidden" name="<?php echo $this->get( 'tokenTag' );?>" value="<?php echo $this->get( 'tokenVal' );?>" />
     <a href="<?php echo $this->get( 'appRoot' ); ?>" class="btn">cancel</a>
 </form>

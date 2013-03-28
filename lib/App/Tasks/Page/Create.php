@@ -22,6 +22,12 @@ class Create
     protected $tasks;
 
     /**
+     * @Inject
+     * @var \WScore\Web\Session
+     */
+    protected $session;
+
+    /**
      * @param array $match
      * @return array
      * @throws \Exception
@@ -31,6 +37,8 @@ class Create
         $task = $this->em->newEntity( '\App\Tasks\Entity\Task' );
         $task = $this->role->applyDataIO( $task );
         $match[ 'task' ] = $task;
+        $match[ 'tokenVal' ] = $this->session->pushToken();
+        $match[ 'tokenTag' ] = $this->session->popTokenTagName();
         return $match;
     }
 
@@ -44,13 +52,18 @@ class Create
         $task = $this->em->newEntity( '\App\Tasks\Entity\Task' );
         $task = $this->role->applyDataIO( $task );
         $task->load( $_POST );
-        if( $task->validate() ) {
+        if( !$this->session->verifyToken() ){
+            $match[ 'alert' ] = 'error on session token. ';
+        }
+        elseif( $task->validate() ) {
             $active = $this->role->applyActive( $task );
             $active->save();
             header( "Location: " . $match[ 'appRoot' ] );
             exit;
         }
         $match[ 'task' ] = $task;
+        $match[ 'tokenVal' ] = $this->session->pushToken();
+        $match[ 'tokenTag' ] = $this->session->popTokenTagName();
         return $match;
     }
 }
