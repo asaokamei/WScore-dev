@@ -5,7 +5,7 @@ use \App\Tasks\Entity\Task;
 /** @var $this \WScore\Template\TemplateInterface */
 
 if( !$tasks = $this->get( 'friends' ) ) {
-    echo '<p>not ready; more tasks to come... </p>';
+    echo '<p>no contact information... </p>';
     return;
 }
 
