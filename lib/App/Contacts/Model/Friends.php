@@ -5,7 +5,7 @@ use \WScore\DataMapper\Model;
 
 class Friends extends Model
 {
-    protected $table = 'friend';
+    protected $table = 'demoFriend';
     
     protected $id_name = 'friend_id';
 
