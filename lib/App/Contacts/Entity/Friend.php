@@ -5,7 +5,7 @@ use \WScore\DataMapper\Entity\EntityAbstract;
 
 class Friend extends EntityAbstract
 {
-    static $_modelName = '\WScore\tests\contacts\models\Friends';
+    static $_modelName = '\App\Contacts\Model\Friends';
     
     public $friend_id;
     public $friend_name;

@@ -14,21 +14,26 @@ class Index
      * @var \WScore\DataMapper\RoleManager
      */
     protected $role;
-    
+
     /**
      * @Inject
-     * @var \App\Tasks\Model\Tasks
+     * @var \App\Contacts\Model\Friends
      */
-    protected $tasks;
+    protected $friends;
+
+    /**
+     * @var string
+     */
+    protected $friend = '\App\Contacts\Entity\Friend';
 
     public function onGet( $match )
     {
-        $tasks = $this->tasks->query()->order( 'status, done_by, task_id' )->select();
-        $tasks = $this->em->fetch( '\App\Tasks\Entity\Task', $tasks );
+        $friends = $this->friends->query()->order( 'friend_id' )->select();
+        $friends = $this->em->fetch( $this->friend, $friends );
         $roles = array();
-        foreach( $tasks as $key => $t ) {
-            $roles[$key] = $this->role->applyDataIO( $t );
+        foreach( $friends as $key => $entity ) {
+            $roles[$key] = $this->role->applyDataIO( $entity );
         }
-        return array( 'tasks' => $roles );
+        return array( 'friends' => $roles );
     }
 }

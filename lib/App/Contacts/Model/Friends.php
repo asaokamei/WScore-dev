@@ -64,11 +64,11 @@ class Friends extends Model
     public function setGenderChoice( $all=false )
     {
         $this->property->selectors[ 'gender' ][ 'choice' ] = array(
-            array( self::GENDER_NONE, 'not sure' ),
+            array( self::GENDER_FEMALE, 'female' ),
             array( self::GENDER_MALE, 'male' ),
         );
         if( $all ) {
-            $this->property->selectors[ 'gender' ][ 'choice' ][] = array( self::GENDER_FEMALE, 'female' );
+            $this->property->selectors[ 'gender' ][ 'choice' ][] = array( self::GENDER_NONE, 'not sure' );
         }
     }
 }
