@@ -38,7 +38,7 @@ use \App\Tasks\Entity\Task;
 </form>
 <?php
 $appRoot   = $this->get( 'appRoot' );
-$pageUrls = $this->get( 'paginate' )->setupUrls( "?page=%d" );
+$pageUrls = $this->get( 'paginate' )->setupUrls();
 /** @var $pager \WScore\Web\View\PaginateBootstrap */
 $pager    = $this->get( 'pageView' )->setUrls( $pageUrls );
 echo $pager->bootstrap( $pageUrls );
