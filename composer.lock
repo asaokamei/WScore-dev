@@ -24,12 +24,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Cena.git",
-                "reference": "0d05ecaf57b37dbe6b789aa57921ab62d203ea5e"
+                "reference": "4c94e76b3d458880b62d7e4e90cc5f335978ada3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/0d05ecaf57b37dbe6b789aa57921ab62d203ea5e",
-                "reference": "0d05ecaf57b37dbe6b789aa57921ab62d203ea5e",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/4c94e76b3d458880b62d7e4e90cc5f335978ada3",
+                "reference": "4c94e76b3d458880b62d7e4e90cc5f335978ada3",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "Resource oriented data transfer agent.",
-            "time": "2013-03-27 08:10:58"
+            "time": "2013-03-29 08:51:03"
         },
         {
             "name": "wscore/datamapper",
@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DataMapper.git",
-                "reference": "5ddc4e8f9cee75d0caba69ee98fdf51849c73bb6"
+                "reference": "d82ca2a22f1100c37247c93cdec43a12c7d97f59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/5ddc4e8f9cee75d0caba69ee98fdf51849c73bb6",
-                "reference": "5ddc4e8f9cee75d0caba69ee98fdf51849c73bb6",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/d82ca2a22f1100c37247c93cdec43a12c7d97f59",
+                "reference": "d82ca2a22f1100c37247c93cdec43a12c7d97f59",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 }
             ],
             "description": "DataMapper.",
-            "time": "2013-03-27 09:00:36"
+            "time": "2013-03-29 08:51:24"
         },
         {
             "name": "wscore/dbaccess",
@@ -94,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DbAccess.git",
-                "reference": "46f4b2968d51175ae89c0d5663d2e5e4d80adbc5"
+                "reference": "43ddbf4b332bcfe00abcb3a88daa90de4bd11d37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/46f4b2968d51175ae89c0d5663d2e5e4d80adbc5",
-                "reference": "46f4b2968d51175ae89c0d5663d2e5e4d80adbc5",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/43ddbf4b332bcfe00abcb3a88daa90de4bd11d37",
+                "reference": "43ddbf4b332bcfe00abcb3a88daa90de4bd11d37",
                 "shasum": ""
             },
             "type": "library",
@@ -116,7 +116,7 @@
                 }
             ],
             "description": "Database access and query builder.",
-            "time": "2013-03-07 08:17:37"
+            "time": "2013-03-28 06:47:19"
         },
         {
             "name": "wscore/dicontainer",
@@ -244,12 +244,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "30fe78d192434ef07ca957bb328cc72cb31d5116"
+                "reference": "caeffe95a2cb9eca19a8b1d04f41a9fc4d101d60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/30fe78d192434ef07ca957bb328cc72cb31d5116",
-                "reference": "30fe78d192434ef07ca957bb328cc72cb31d5116",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/caeffe95a2cb9eca19a8b1d04f41a9fc4d101d60",
+                "reference": "caeffe95a2cb9eca19a8b1d04f41a9fc4d101d60",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +270,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-03-23 22:17:10"
+            "time": "2013-03-29 07:32:11"
         }
     ],
     "packages-dev": [
