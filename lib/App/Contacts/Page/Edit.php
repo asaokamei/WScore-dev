@@ -17,27 +17,17 @@ class Edit
 
     /**
      * @Inject
-     * @var \App\Contacts\Model\Friends
+     * @var \WScore\DataMapper\RoleManager
      */
-    protected $friends;
-
-    /**
-     * @Inject
-     * @var \WScore\DbAccess\Tools\Paginate
-     */
-    protected $paginate;
-
-    /**
-     * @Inject
-     * @var \WScore\Web\View\PaginateBootstrap
-     */
-    protected $pageView;
+    protected $role;
 
     private function loadFriend( $match )
     {
         $id = $match[ 'id' ];
         $friend = $this->em->fetch( '\App\Contacts\Entity\Friend', $id );
-        $friend = $this->cm->applyCenaIO( $friend[0] );
+        $friend = $this->role->applyActive( $friend[0] );
+        $friend->relation( 'contacts' )->fetch();
+        $friend = $this->cm->applyCenaIO( $friend );
         return $friend;
     }
 
