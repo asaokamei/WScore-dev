@@ -30,7 +30,7 @@ class Setup
         }
         //setup for contacts data.
         $this->contacts->setupTable();
-        for( $i = 1; $i <= 10; $i++ ) {
+        for( $i = 1; $i <= 15; $i++ ) {
             $contact = $this->contacts->makeContact($i);
             $this->contacts->insert( $contact );
         }
