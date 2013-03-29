@@ -23,7 +23,18 @@ $includeForm = '/edit-' . $method . '.php';
 </dl>
 <h3>Tags</h3>
 <h3>Contacts</h3>
+<pre>
 <?php
-$contacts = $friend->retrieve()->contacts;
-var_dump( $contacts );
-?>
+    /** @var $contacts \App\Contacts\Entity\Contact[] */
+    $contacts = $friend->retrieve()->contacts;
+    $cByType  = array();
+    foreach( $contacts as $contact ) {
+        $type = $contact->type;
+        $cByType[ $type ][] = $contact;
+    }
+    foreach( $cByType as $byType => $list ) {
+        print_r( $list );
+    }
+    ?>
+    
+</pre>
