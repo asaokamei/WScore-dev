@@ -23,9 +23,15 @@ $includeForm = '/edit-' . $method . '.php';
 </dl>
 <h3>Tags</h3>
 <h3>Contacts</h3>
+<dl class="dl-horizontal">
 <?php
     /** @var $contacts \WScore\Cena\Role\CenaIO[] */
     $contacts = $this->get( 'contacts' );
+    if( !$contacts || empty( $contacts ) ) {
+        echo '<dt>no contacts yet...</dt>';
+        return;
+    }
+    $selType  = $contacts[0]->form( 'type' );
     $cByType  = array();
     foreach( $contacts as $contact ) {
         /** @var $cont \App\Contacts\Entity\Contact */
@@ -34,9 +40,11 @@ $includeForm = '/edit-' . $method . '.php';
         $cByType[ $type ][] = $contact;
     }
     foreach( $cByType as $byType => $contacts ) {
-        echo "<h4>{$byType}</h4>";
+        $name = $selType->popHtml( 'html', $byType );
+        echo "<dt>{$name}</dt>";
         foreach( $contacts as $contact ) {
-            echo $contact->popHtml( 'info', 'html' );
+            echo '<dd>'.$contact->popHtml( 'info', 'html' ).'</dd>';
         }
     }
     ?>
+</dl>
