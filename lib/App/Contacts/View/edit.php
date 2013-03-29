@@ -2,7 +2,7 @@
 
 /** @var $this \WScore\Template\TemplateInterface */
 /** @var $friend \WScore\Cena\Role\CenaIO */
-if( !$friend = $this->get( 'friends' ) ) {
+if( !$friend = $this->get( 'friend' ) ) {
     echo '<p>no contact information... </p>';
     return;
 }
@@ -23,18 +23,20 @@ $includeForm = '/edit-' . $method . '.php';
 </dl>
 <h3>Tags</h3>
 <h3>Contacts</h3>
-<pre>
 <?php
-    /** @var $contacts \App\Contacts\Entity\Contact[] */
-    $contacts = $friend->retrieve()->contacts;
+    /** @var $contacts \WScore\Cena\Role\CenaIO[] */
+    $contacts = $this->get( 'contacts' );
     $cByType  = array();
     foreach( $contacts as $contact ) {
-        $type = $contact->type;
+        /** @var $cont \App\Contacts\Entity\Contact */
+        $cont = $contact->retrieve();
+        $type = $cont->type;
         $cByType[ $type ][] = $contact;
     }
-    foreach( $cByType as $byType => $list ) {
-        print_r( $list );
+    foreach( $cByType as $byType => $contacts ) {
+        echo "<h4>{$byType}</h4>";
+        foreach( $contacts as $contact ) {
+            echo $contact->popHtml( 'info', 'html' );
+        }
     }
     ?>
-    
-</pre>

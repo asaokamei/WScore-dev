@@ -21,22 +21,38 @@ class Edit
      */
     protected $role;
 
+    /**
+     * @param $match
+     * @return \WScore\DataMapper\Entity\EntityInterface
+     */
     private function loadFriend( $match )
     {
         $id = $match[ 'id' ];
         $friend = $this->em->fetch( '\App\Contacts\Entity\Friend', $id );
         $friend = $this->role->applyActive( $friend[0] );
         $friend->relation( 'contacts' )->fetch();
-        $friend = $this->cm->applyCenaIO( $friend );
-        return $friend;
+        return $friend->retrieve();
+    }
+
+    /**
+     * @param $friend
+     * @return array
+     */
+    private function cenaFriend( $friend )
+    {
+        $data = array();
+        $data[ 'friend' ] = $this->cm->applyCenaIO( $friend );
+        $contacts = $friend->contacts;
+        foreach( $contacts as $c ) {
+            $data[ 'contacts' ][] = $this->cm->applyCenaIO( $c );
+        }
+        return $data;
     }
 
     public function onGet( $match )
     {
         $friend = $this->loadFriend( $match );
-        $data = array(
-            'friends'  => $friend,
-        );
+        $data   = $this->cenaFriend( $friend );
         return $data;
     }
 
