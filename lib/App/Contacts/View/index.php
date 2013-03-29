@@ -1,7 +1,5 @@
 <?php
 
-use \App\Tasks\Entity\Task;
-
 /** @var $this \WScore\Template\TemplateInterface */
 
 if( !$tasks = $this->get( 'friends' ) ) {
