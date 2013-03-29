@@ -21,11 +21,13 @@ use \App\Tasks\Entity\Task;
         /** @var $friend \WScore\Cena\Role\CenaIO */
         $friend->setHtmlType( 'html' );
         $detailUrl = $this->get( 'appRoot' ) . $friend->getId();
+        $name = $friend->popHtml( 'friend_name' );
+        $name = "<a href=\"{$detailUrl}\">{$name}</a>"
         ?>
     <tbody>
     <tr>
         <td></td>
-        <td><?php echo $friend->popHtml( 'friend_name' ); ?></td>
+        <td><?php echo $name; ?></td>
         <td><?php echo $friend->popHtml( 'gender' ); ?></td>
         <td>...</td>
         <td><a href="<?php echo $detailUrl; ?>" class="btn btn-mini">&gt;&gt;</a></td>
