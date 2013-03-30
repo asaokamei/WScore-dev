@@ -3,24 +3,6 @@ namespace App\Contacts\Page;
 
 class Create extends FriendBase
 {
-    /**
-     * @Inject
-     * @var \WScore\DataMapper\EntityManager
-     */
-    protected $em;
-
-    /**
-     * @Inject
-     * @var \WScore\Cena\CenaManager
-     */
-    protected $cm;
-
-    /**
-     * @Inject
-     * @var \WScore\DataMapper\RoleManager
-     */
-    protected $role;
-
     // +----------------------------------------------------------------------+
     //  on* methods. 
     // +----------------------------------------------------------------------+
@@ -46,7 +28,7 @@ class Create extends FriendBase
         $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts();
         $this->em->save();
         // TODO: think about how to reload itself better!
-        header( "Location: " . $_SERVER[ 'REQUEST_URI' ] );
+        header( "Location: " . dirname( $_SERVER[ 'REQUEST_URI' ] ).'/' );
         exit;
     }
     // +----------------------------------------------------------------------+
