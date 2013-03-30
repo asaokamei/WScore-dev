@@ -6,6 +6,7 @@
 $htmlType = 'form';
 
 ?>
+<form name="edit" method="post" action="">
 <dl class="dl-horizontal">
     <dt>name</dt>
     <dd><?php echo $friend->popHtml( 'friend_name', $htmlType )->class_( 'span4' ); ?></dd>
@@ -16,7 +17,6 @@ $htmlType = 'form';
 </dl>
 <h3>Tags</h3>
 <h3>Contacts</h3>
-<form name="edit" method="post" action="">
 <dl class="dl-horizontal">
     <?php
     /** @var $contacts \WScore\Cena\Role\CenaIO[] */
@@ -42,6 +42,7 @@ $htmlType = 'form';
             foreach( $contacts as $contact ) {
                 echo '<dd>'; 
                 echo $contact->popHtml( 'info', $htmlType )->class_( 'span3' );
+                echo $contact->popHtml( 'type', 'hidden' );
                 echo $contact->popLinkHidden( 'friend' );
                 echo '</dd>';
             }
