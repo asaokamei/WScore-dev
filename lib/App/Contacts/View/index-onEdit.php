@@ -35,7 +35,7 @@ $sel->style = 'select';
         <td></td>
         <td><?php echo $friend->popHtml( 'friend_name' ); ?></td>
         <td><?php echo $friend->popHtml( 'gender' ); ?></td>
-        <td><?php echo $friend->popLinkSelect( 'tags', $tagList, 'name', 'select' )->style('height:auto'); ?></td>
+        <td><?php echo $friend->popLinkSelect( 'tags', $tagList, 'name', 'select' )->size('1'); ?></td>
     </tr>
     </tbody>
     <?php } ?>
