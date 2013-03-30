@@ -11,8 +11,22 @@
     <dd><?php echo $friend->popHtml( 'gender' ); ?></dd>
     <dt>birthday</dt>
     <dd><?php echo $friend->popHtml( 'friend_bday' ); ?></dd>
+    <?php
+    // show tags starts
+    $tags = $this->get( 'tags' );
+    if( !$tags || empty( $tags ) ) {
+        echo 'no tags...';
+    } else {
+    ?>
+    <dt>tags</dt>
+    <?php
+    foreach( $tags as $tag ) {
+        /** @var $tag \WScore\Cena\Role\CenaIO */
+        echo '<dd>' . $tag->popHtml( 'name' ) . '</dd>';
+    }
+    } // show tags ends
+    ?>
 </dl>
-<h3>Tags</h3>
 <h3>Contacts</h3>
 <dl class="dl-horizontal">
     <?php

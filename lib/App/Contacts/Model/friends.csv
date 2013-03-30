@@ -38,4 +38,4 @@
 "#relation",,,,,,,,
 "id","type","source","target","entity","by","bySource","byTarget",
 "contacts","joined",,,"\App\Contacts\Entity\Contact",,,,
-"groups","joinBy",,,"\App\Contacts\Entity\Group","\App\Contacts\Entity\Fr2gr",,,
+"tags","joinBy",,,"\App\Contacts\Entity\Tag","\App\Contacts\Entity\Fr2tg",,,

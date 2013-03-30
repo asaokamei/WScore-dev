@@ -34,6 +34,7 @@ class Edit
         $friend = $this->em->fetch( '\App\Contacts\Entity\Friend', $id );
         $friend = $this->role->applyActive( $friend[0] );
         $friend->relation( 'contacts' )->fetch();
+        $friend->relation( 'tags' )->fetch();
         return $friend->retrieve();
     }
 
@@ -48,6 +49,10 @@ class Edit
         $contacts = $friend->contacts;
         foreach( $contacts as $c ) {
             $data[ 'contacts' ][] = $this->cm->applyCenaIO( $c );
+        }
+        $tags = $friend->tags;
+        foreach( $tags as $t ) {
+            $data[ 'tags' ][] = $this->cm->applyCenaIO( $t );
         }
         return $data;
     }
@@ -76,11 +81,16 @@ class Edit
     public function onEdit( $match )
     {
         $friend = $this->loadFriend( $match );
+        // create new contacts for each type.
         $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '1' ) );
         $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '2' ) );
         $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '3' ) );
         $data   = $this->cenaFriend( $friend );
         $this->linkContacts( $data );
+        // get all tags from database for selection. 
+        $tags = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
+        $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
+        $data[ 'tagList' ] = $tagList;
         return $data;
     }
 
@@ -88,6 +98,8 @@ class Edit
     {
         $this->cm->useEntity( '\App\Contacts\Entity\Friend' );
         $this->cm->useEntity( '\App\Contacts\Entity\Contact' );
+        $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
+        $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
         $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts();
         $this->em->save();
         // TODO: think about how to reload itself better!

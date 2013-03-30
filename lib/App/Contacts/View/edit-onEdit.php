@@ -20,6 +20,12 @@ $htmlType = 'form';
         ?></dd>
     <dt>birthday</dt>
     <dd><?php echo $friend->popHtml( 'friend_bday', $htmlType ); ?></dd>
+    <dt>tags</dt>
+    <?php
+    // show tags starts
+    $tags = $this->get( 'tagList' );
+    echo '<dd>' . $friend->popLinkSelect( 'tags', $tags, 'name', 'checkList' ) . '</dd>';
+    ?>
 </dl>
 <h3>Tags</h3>
 <h3>Contacts</h3>
