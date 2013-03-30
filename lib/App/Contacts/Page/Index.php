@@ -35,7 +35,7 @@ class Index
 
     private function loadIndex( $match )
     {
-        $this->paginate->per_page = 3;
+        $this->paginate->per_page = 4;
         $this->paginate->setOptions( $_GET );
         $query   = $this->paginate->setQuery( $this->friends->query() );
         $friends = $query->order( 'friend_id' )->select();
