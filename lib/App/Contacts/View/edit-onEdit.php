@@ -24,10 +24,11 @@ $htmlType = 'form';
     <?php
     // show tags starts
     $tags = $this->get( 'tagList' );
-    echo '<dd>' . $friend->popLinkSelect( 'tags', $tags, 'name', 'checkList' ) . '</dd>';
+    $sel  = $friend->popLinkSelect( 'tags', $tags, 'name', 'checkList' );
+    $sel->contents[0]->class_( 'unstyled' );
+    echo '<dd>' . $sel . '</dd>';
     ?>
 </dl>
-<h3>Tags</h3>
 <h3>Contacts</h3>
 <dl class="dl-horizontal">
     <?php
