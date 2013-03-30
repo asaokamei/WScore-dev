@@ -16,6 +16,7 @@ $htmlType = 'form';
 </dl>
 <h3>Tags</h3>
 <h3>Contacts</h3>
+<form name="edit" method="post" action="">
 <dl class="dl-horizontal">
     <?php
     /** @var $contacts \WScore\Cena\Role\CenaIO[] */
@@ -48,7 +49,6 @@ $htmlType = 'form';
     }
     ?>
 </dl>
-<form name="edit" method="post" action="">
     <button type="submit" class="btn btn-primary">save changes</button>
     <a href="<?php echo $this->get( 'appRoot' ).$friend->getId(); ?>" class="btn">back to detail</a>
 </form>
