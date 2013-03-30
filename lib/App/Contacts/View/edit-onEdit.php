@@ -8,7 +8,7 @@ $htmlType = 'form';
 ?>
 <dl class="dl-horizontal">
     <dt>name</dt>
-    <dd><?php echo $friend->popHtml( 'friend_name', $htmlType ); ?></dd>
+    <dd><?php echo $friend->popHtml( 'friend_name', $htmlType )->class_( 'span4' ); ?></dd>
     <dt>gender</dt>
     <dd><?php echo $friend->popHtml( 'gender', $htmlType ); ?></dd>
     <dt>birthday</dt>
@@ -39,7 +39,10 @@ $htmlType = 'form';
             $name = $selType->popHtml( 'html', $byType );
             echo "<dt>{$name}</dt>";
             foreach( $contacts as $contact ) {
-                echo '<dd>'.$contact->popHtml( 'info', $htmlType ).'</dd>';
+                echo '<dd>'; 
+                echo $contact->popHtml( 'info', $htmlType )->class_( 'span3' );
+                echo $contact->popLinkHidden( 'friend' );
+                echo '</dd>';
             }
         }
     }

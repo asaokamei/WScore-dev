@@ -51,6 +51,17 @@ class Edit
         }
         return $data;
     }
+    
+    private function linkContacts( $data )
+    {
+        /** @var $friend \WScore\Cena\Role\CenaIO */
+        $friend = $data[ 'friend' ];
+        foreach( $data[ 'contacts' ] as $contact )
+        {
+            /** @var $contact \WScore\Cena\Role\CenaIO */
+            $contact->relate( 'friend', $friend->retrieve() );
+        }
+    }
 
     // +----------------------------------------------------------------------+
     //  on* methods. 
@@ -66,6 +77,7 @@ class Edit
     {
         $friend = $this->loadFriend( $match );
         $data   = $this->cenaFriend( $friend );
+        $this->linkContacts( $data );
         return $data;
     }
 
