@@ -21,11 +21,7 @@ class Edit extends FriendBase
         $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '2' ) );
         $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '3' ) );
         $data   = $this->cenaFriend( $friend );
-        $this->linkContacts( $data );
-        // get all tags from database for selection. 
-        $tags = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
-        $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
-        $data[ 'tagList' ] = $tagList;
+        $data   = $this->linkContacts( $data );
         return $data;
     }
 

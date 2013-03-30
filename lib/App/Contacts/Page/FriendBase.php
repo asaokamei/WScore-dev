@@ -51,6 +51,7 @@ class FriendBase
             $data[ 'contacts' ][] = $this->cm->applyCenaIO( $c );
         }
         $tags = $friend->tags;
+        if( !empty( $tags ) )
         foreach( $tags as $t ) {
             $data[ 'tags' ][] = $this->cm->applyCenaIO( $t );
         }
@@ -66,6 +67,11 @@ class FriendBase
             /** @var $contact \WScore\Cena\Role\CenaIO */
             $contact->relate( 'friend', $friend->retrieve() );
         }
+        // get all tags from database for selection. 
+        $tags = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
+        $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
+        $data[ 'tagList' ] = $tagList;
+        return $data;
     }
 
 }
