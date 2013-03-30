@@ -10,7 +10,7 @@ class ContactApp extends AppLoader
         $routes = array(
             'setup'  => array(),
             'create' => array(),
-            'done/:id'=> array(),
+            'tags'   => array(),
             ':id'    => array( 'render' => 'edit' ),
             '/'      => array( 'render' => 'index' ),
         );
