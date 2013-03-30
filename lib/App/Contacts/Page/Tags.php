@@ -56,8 +56,9 @@ class Tags
     public function onPost( $match )
     {
         $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
-        $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Tag', 'tag_code' )->posts();
-        $this->em->save();
+        if( $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Tag', 'tag_code' )->posts() ) {
+            $this->em->save();
+        }
         header( "Location: " . $_SERVER[ 'REQUEST_URI' ] );
         exit;
     }

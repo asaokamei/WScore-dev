@@ -25,8 +25,9 @@ class Create extends FriendBase
         $this->cm->useEntity( '\App\Contacts\Entity\Contact' );
         $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
-        $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts();
-        $this->em->save();
+        if( $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts() ) {
+            $this->em->save();
+        }
         // TODO: think about how to reload itself better!
         header( "Location: " . dirname( $_SERVER[ 'REQUEST_URI' ] ).'/' );
         exit;
