@@ -15,6 +15,12 @@ class Setup
      */
     protected $contacts;
 
+    /**
+     * @Inject
+     * @var \App\Contacts\Model\Tags
+     */
+    protected $tags;
+
     public function onGet( $match )
     {
         return 'Setup';
@@ -33,6 +39,12 @@ class Setup
         for( $i = 1; $i <= 15; $i++ ) {
             $contact = $this->contacts->makeContact($i);
             $this->contacts->insert( $contact );
+        }
+        //setup for contacts data.
+        $this->tags->setupTable();
+        for( $i = 0; $i <= 3; $i++ ) {
+            $tag = $this->tags->makeTag($i);
+            $this->tags->insert( $tag );
         }
     }
 }
