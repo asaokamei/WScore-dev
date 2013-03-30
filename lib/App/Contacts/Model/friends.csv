@@ -16,7 +16,7 @@
 "friend_id",,,,,,,,
 "friend_name","Selector","text",,"ime:on",,,,
 "gender","Selector","radio","[m:male,f:female]",,,,,
-"friend_bday","Selector","DateYMD",,"ime:off",,,,
+"friend_bday","Selector","Date",,"ime:off",,,,
 "friend_tel","Selector","tel",,,,,,
 "new_dt_friend",,,,,,,,
 "mod_dt_friend",,,,,,,,
