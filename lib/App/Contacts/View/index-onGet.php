@@ -6,6 +6,13 @@ use \App\Tasks\Entity\Task;
 
 ?>
 <form name="friend" method="post" action="">
+    <?php
+    $appRoot   = $this->get( 'appRoot' );
+    $pageUrls = $this->get( 'paginate' )->setupUrls();
+    /** @var $pager \WScore\Web\View\PaginateBootstrap */
+    $pager    = $this->get( 'pageView' )->setUrls( $pageUrls );
+    echo $pager->bootstrap( $pageUrls );
+    ?>
 <table class="table">
     <thead>
     <tr>
@@ -35,12 +42,6 @@ use \App\Tasks\Entity\Task;
     </tbody>
     <?php } ?>
 </table>
-    <?php
-    $appRoot   = $this->get( 'appRoot' );
-    $pageUrls = $this->get( 'paginate' )->setupUrls();
-    /** @var $pager \WScore\Web\View\PaginateBootstrap */
-    $pager    = $this->get( 'pageView' )->setUrls( $pageUrls );
-    echo $pager->bootstrap( $pageUrls );
-    ?>    <button name="submit" class="btn btn-primary">Edit Contacts</button>
+    <button name="submit" class="btn btn-primary">Edit Contacts</button>
     <input type="hidden" name="_method" value="edit"/>
 </form>
