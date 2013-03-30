@@ -21,6 +21,9 @@ class Edit
      */
     protected $role;
 
+    // +----------------------------------------------------------------------+
+    //  utilities for all on* methods. 
+    // +----------------------------------------------------------------------+
     /**
      * @param $match
      * @return \WScore\DataMapper\Entity\EntityInterface
@@ -49,6 +52,9 @@ class Edit
         return $data;
     }
 
+    // +----------------------------------------------------------------------+
+    //  on* methods. 
+    // +----------------------------------------------------------------------+
     public function onGet( $match )
     {
         $friend = $this->loadFriend( $match );
@@ -59,9 +65,7 @@ class Edit
     public function onEdit( $match )
     {
         $friend = $this->loadFriend( $match );
-        $data = array(
-            'friends'  => $friend,
-        );
+        $data   = $this->cenaFriend( $friend );
         return $data;
     }
 
@@ -75,4 +79,5 @@ class Edit
         header( "Location: " . $_SERVER[ 'REQUEST_URI' ] );
         exit;
     }
+    // +----------------------------------------------------------------------+
 }
