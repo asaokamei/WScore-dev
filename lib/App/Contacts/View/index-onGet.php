@@ -29,14 +29,22 @@ use \App\Tasks\Entity\Task;
         $friend->setHtmlType( 'html' );
         $detailUrl = $this->get( 'appRoot' ) . $friend->getId();
         $name = $friend->popHtml( 'friend_name' );
-        $name = "<a href=\"{$detailUrl}\">{$name}</a>"
+        $name = "<a href=\"{$detailUrl}\">{$name}</a>";
+        $tags = $friend->retrieve()->tags;
+        if( $tags && !empty( $tags ) ) {
+            /** @var $tags \WScore\DataMapper\Entity\Collection */
+            $tags = $tags->pack( 'name' );
+            $tags = implode( ', ', $tags );
+        } else {
+            $tags = '...';
+        }
         ?>
     <tbody>
     <tr>
         <td></td>
         <td><?php echo $name; ?></td>
         <td><?php echo $friend->popHtml( 'gender' ); ?></td>
-        <td>...</td>
+        <td><?php echo $tags; ?></td>
         <td><a href="<?php echo $detailUrl; ?>" class="btn btn-mini">&gt;&gt;</a></td>
     </tr>
     </tbody>

@@ -25,6 +25,7 @@ $sel->style = 'select';
     </tr>
     </thead>
     <?php
+    $tagList = $this->get( 'tagList' );
     foreach( $friends as $friend ) {
         /** @var $friend \WScore\Cena\Role\CenaIO */
         $friend->setHtmlType( 'form' );
@@ -34,7 +35,7 @@ $sel->style = 'select';
         <td></td>
         <td><?php echo $friend->popHtml( 'friend_name' ); ?></td>
         <td><?php echo $friend->popHtml( 'gender' ); ?></td>
-        <td>...</td>
+        <td><?php echo $friend->popLinkSelect( 'tags', $tagList, 'name', 'select' )->style('height:auto'); ?></td>
     </tr>
     </tbody>
     <?php } ?>

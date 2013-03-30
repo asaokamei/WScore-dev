@@ -42,6 +42,7 @@ class Index
         $friends = $this->em->fetch( '\App\Contacts\Entity\Friend', $friends );
         $roles = array();
         foreach( $friends as $key => $entity ) {
+            $this->em->relation( $entity, 'tags' )->fetch();
             $roles[$key] = $this->cm->applyCenaIO( $entity );
         }
         return $roles;
@@ -61,13 +62,21 @@ class Index
     public function onEdit( $match )
     {
         $friends = $this->loadIndex( $match );
-        $data = array( 'friends' => $friends );
+        // get all tags from database for selection. 
+        $tags = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
+        $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
+        $data = array( 
+            'friends' => $friends,
+            'tagList' => $tagList,
+        );
         return $data;
     }
 
     public function onPut( $match )
     {
         $this->cm->useEntity( '\App\Contacts\Entity\Friend' );
+        $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
+        $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
         $this->cm->processor->with( $_POST )->posts();
         $this->em->save();
         // TODO: think about how to reload itself better!
