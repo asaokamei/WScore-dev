@@ -88,7 +88,7 @@ class Edit
     {
         $this->cm->useEntity( '\App\Contacts\Entity\Friend' );
         $this->cm->useEntity( '\App\Contacts\Entity\Contact' );
-        $this->cm->processor->with( $_POST )->posts();
+        $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts();
         $this->em->save();
         // TODO: think about how to reload itself better!
         header( "Location: " . $_SERVER[ 'REQUEST_URI' ] );
