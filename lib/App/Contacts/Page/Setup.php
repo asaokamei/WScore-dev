@@ -21,6 +21,12 @@ class Setup
      */
     protected $tags;
 
+    /**
+     * @Inject
+     * @var \App\Contacts\Model\Fr2tg
+     */
+    protected $fr2tg;
+
     public function onGet( $match )
     {
         return 'Setup';
@@ -45,6 +51,12 @@ class Setup
         for( $i = 0; $i <= 3; $i++ ) {
             $tag = $this->tags->makeTag($i);
             $this->tags->insert( $tag );
+        }
+        //setup for contacts data.
+        $this->fr2tg->setupTable();
+        for( $i = 0; $i <= 5; $i++ ) {
+            $fr2tg = $this->fr2tg->makeFr2tg($i);
+            $this->fr2tg->insert( $fr2tg );
         }
     }
 }
