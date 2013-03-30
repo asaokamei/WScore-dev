@@ -12,8 +12,8 @@ class Friend extends EntityAbstract
     public $gender;
     public $friend_bday;
     public $friend_tel;
-    public $tag_id;
     public $new_dt_friend;
     public $mod_dt_friend;
     public $contacts;
+    public $tags;
 }
