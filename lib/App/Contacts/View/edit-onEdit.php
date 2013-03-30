@@ -11,7 +11,13 @@ $htmlType = 'form';
     <dt>name</dt>
     <dd><?php echo $friend->popHtml( 'friend_name', $htmlType )->class_( 'span4' ); ?></dd>
     <dt>gender</dt>
-    <dd><?php echo $friend->popHtml( 'gender', $htmlType ); ?></dd>
+    <dd><?php
+        // make ul inline. 
+        $sel = $friend->popHtml( 'gender', $htmlType );
+        $sel->contents[0]->class_( 'inline' );
+        echo $sel; 
+        
+        ?></dd>
     <dt>birthday</dt>
     <dd><?php echo $friend->popHtml( 'friend_bday', $htmlType ); ?></dd>
 </dl>
