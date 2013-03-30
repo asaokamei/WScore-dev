@@ -81,10 +81,10 @@ class Edit
         return $data;
     }
 
-    public function onPut( $match )
+    public function onPost( $match )
     {
-        $friend = $this->loadFriend( $match );
         $this->cm->useEntity( '\App\Contacts\Entity\Friend' );
+        $this->cm->useEntity( '\App\Contacts\Entity\Contact' );
         $this->cm->processor->with( $_POST )->posts();
         $this->em->save();
         // TODO: think about how to reload itself better!
