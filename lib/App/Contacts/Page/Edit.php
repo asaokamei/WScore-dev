@@ -26,7 +26,7 @@ class Edit
     // +----------------------------------------------------------------------+
     /**
      * @param $match
-     * @return \WScore\DataMapper\Entity\EntityInterface
+     * @return \App\Contacts\Entity\Friend
      */
     private function loadFriend( $match )
     {
@@ -76,6 +76,9 @@ class Edit
     public function onEdit( $match )
     {
         $friend = $this->loadFriend( $match );
+        $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '1' ) );
+        $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '2' ) );
+        $friend->contacts[] = $this->em->newEntity( '\App\Contacts\Entity\Contact', array( 'type' => '3' ) );
         $data   = $this->cenaFriend( $friend );
         $this->linkContacts( $data );
         return $data;
