@@ -21,10 +21,12 @@ function buildApp( $cache )
     $service->set( '\Pdo', 'dsn=mysql:dbname=test_WScore username=admin password=admin' );
 
     // set Template
+    $service->set( 'TemplateRoot',      $template_root );
+    $service->set( 'TemplateLayout',    'layout.php' );
     $service->set( 'TemplateInterface', '\WScore\Template\PhpTemplate', array(
         'setter' => array(
-            'setRoot' => array( 'root' => $template_root ),
-            'setParent' => array( 'parentTemplate' => 'layout.php' ),
+            'setRoot'   => array( 'root'           => 'TemplateRoot' ),
+            'setParent' => array( 'parentTemplate' => 'TemplateLayout' ),
         ),
         'singleton' => true,
     ) );
