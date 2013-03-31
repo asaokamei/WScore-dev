@@ -1,7 +1,7 @@
 "#properties",,,,,,,,
 "id","active","label","dbDef","notNull","default","required","extra","bindType"
 "contact_id",,"contact code","serial","TRUE",,,,
-"friend_id",,"friend link","int","TRUE",,"TRUE",,
+"friend_id",,"friend link","int","TRUE",,,,
 "info",,"name","text",,"''","TRUE",,
 "type",,"name","text",,"''","TRUE",,
 "new_dt_contact",,"created at","datetime","TRUE",,,"created_at",
