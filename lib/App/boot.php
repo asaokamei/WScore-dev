@@ -40,7 +40,7 @@ function buildApp( $cache )
 /**
  * @param string  $appName
  * @param bool    $cache
- * @return App\App
+ * @return \App\App
  */
 function getApp( $appName, $cache=true )
 {
