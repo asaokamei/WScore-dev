@@ -51,6 +51,12 @@ class App extends \WScore\Web\FrontMC
     public $contacts;
 
     /**
+     * @Inject
+     * @var \App\Site\Loader\Logger
+     */
+    public $logger;
+    
+    /**
      */
     public function __construct()
     {
@@ -59,5 +65,6 @@ class App extends \WScore\Web\FrontMC
         $this->loaders[ 'pwd/' ] = $this->pwdGen;
         $this->loaders[] = $this->pwd;
         $this->loaders[] = $this->render;
+        $this->loaders[] = $this->logger;
     }
 }
