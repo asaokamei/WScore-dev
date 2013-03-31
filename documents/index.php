@@ -7,7 +7,7 @@ $this->HomePage = true;
 
             /* Main marketing message and sign up button */
         .jumbotron {
-            margin: 30px 0;
+            margin: 20px 0;
             text-align: center;
         }
         .jumbotron h1 {
@@ -15,14 +15,17 @@ $this->HomePage = true;
             line-height: 1;
         }
         .jumbotron .btn {
-            font-size: 21px;
-            padding: 14px 24px;
+            font-size: 20px;
+            padding: 10px 10px;
+        }
+        .marketing {
+            margin: 20px 0;
         }
     </style>
     <header class="jumbotron">
         <h1>WScore framework</h1>
-        <p class="lead">Data Mapper and Cenatar technology for web applications.<br />
-            Wishes wishes wishes. </p>
+        <p class="lead">Simple Data Mapper and Cena data transfer agent <br />for web application development.</p>
+        <a href="https://github.com/asaokamei/WScore-dev" class="btn btn-success">get it at GitHub</a>
         <hr>
     </header>
     <div class="row-fluid marketing">
