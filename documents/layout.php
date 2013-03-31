@@ -10,22 +10,6 @@ $this->setDefault( 'basePath', '/WSdev')
     <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/main.css" />
     <title>WScore Public Demo</title>
-    <style type="text/css">
-
-            /* Main marketing message and sign up button */
-        .jumbotron {
-            margin: 60px 0;
-            text-align: center;
-        }
-        .jumbotron h1 {
-            font-size: 60px;
-            line-height: 1;
-        }
-        .jumbotron .btn {
-            font-size: 21px;
-            padding: 14px 24px;
-        }
-    </style>
 </head>
 <body>
 <!-- HtmlTest: Needle=documents/layout -->
@@ -40,6 +24,13 @@ $this->setDefault( 'basePath', '/WSdev')
         <p>WScore Developed by WorkSpot.JP<br />
             thanks, bootstrap. </p>
     </footer>
+    <div class="navbar navbar-fixed-bottom">
+        <div class="navbar-inner">
+            <div class="container">
+                some debug info
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
