@@ -25,7 +25,7 @@ $this->HomePage = true;
     <header class="jumbotron">
         <h1>WScore framework</h1>
         <p class="lead">Simple Data Mapper and Cena data transfer agent <br />for web application development.</p>
-        <a href="https://github.com/asaokamei/WScore-dev" class="btn btn-success">get it at GitHub</a>
+        <a href="https://github.com/asaokamei/WScore-dev" class="btn btn-success">see it at GitHub</a>
         <hr>
     </header>
     <div class="row-fluid marketing">
