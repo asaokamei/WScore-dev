@@ -24,22 +24,18 @@ function buildApp( $cache )
     $service->set( '\Pdo', 'dsn=mysql:dbname=test_WScore username=admin password=admin' );
     
     // set up logger
-    $service->set( 'LoggerInterface', '\Monolog\Logger', array( 'singleton' => true ) );
     /** @var $logger \Monolog\Logger */
+    $service->singleton( 'LoggerInterface', '\Monolog\Logger' );
     $logger = $service->get( 'LoggerInterface' );
     $logger->pushHandler( new \Monolog\Handler\ChromePHPHandler() );
     $logger->addInfo( 'starting WScore demo' );
 
     // set up Template
-    $service->set( 'TemplateRoot',      $template_root );
-    $service->set( 'TemplateLayout',    'layout.php' );
-    $service->set( 'TemplateInterface', '\WScore\Template\PhpTemplate', array(
-        'setter' => array(
-            'setRoot'   => array( 'root'           => 'TemplateRoot' ),
-            'setParent' => array( 'parentTemplate' => 'TemplateLayout' ),
-        ),
-        'singleton' => true,
-    ) );
+    /** @var $template \WScore\Template\TemplateInterface */
+    $service->singleton( 'TemplateInterface', '\WScore\Template\PhpTemplate' ); 
+    $template = $service->get( 'TemplateInterface' );
+    $template->setRoot( $template_root );
+    $template->setParent( 'layout.php' );
 
     // generate myself, app, object.
     $app = $service->get( 'App\App' );
