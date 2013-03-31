@@ -26,8 +26,10 @@ function buildApp( $cache )
     // set up logger
     /** @var $logger \Monolog\Logger */
     $service->singleton( 'LoggerInterface', '\Monolog\Logger' );
+    $stream = new \Monolog\Handler\ChromePHPHandler();
+    $stream->setFormatter( new \Monolog\Formatter\ChromePHPFormatter() );
     $logger = $service->get( 'LoggerInterface' );
-    $logger->pushHandler( new \Monolog\Handler\ChromePHPHandler() );
+    $logger->pushHandler( $stream );
     $logger->addInfo( 'starting WScore demo' );
 
     // set up Template
