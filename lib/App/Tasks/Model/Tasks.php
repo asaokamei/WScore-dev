@@ -4,6 +4,13 @@ namespace App\Tasks\Model;
 use \App\Tasks\Entity\Task;
 use \WScore\DataMapper\Model;
 
+/**
+ * Class Tasks
+ *
+ * @package App\Tasks\Model
+ * 
+ * @singleton
+ */
 class Tasks extends Model
 {
     /** @var string     name of database table     */
