@@ -2,6 +2,106 @@
     "hash": "ad3583aac91bc677f7b3179844ca109b",
     "packages": [
         {
+            "name": "monolog/monolog",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "3f8c37b23c893ab72d85b6deb02cea9e215d2d3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/3f8c37b23c893ab72d85b6deb02cea9e215d2d3c",
+                "reference": "3f8c37b23c893ab72d85b6deb02cea9e215d2d3c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": ">=1.0,<2.0"
+            },
+            "require-dev": {
+                "doctrine/couchdb": "dev-master",
+                "mlehner/gelf-php": "1.0.*",
+                "raven/raven": "0.3.*"
+            },
+            "suggest": {
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "raven/raven": "Allow sending log messages to a Sentry server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Monolog": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2013-03-28 10:41:04"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/php-fig/log/archive/1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
+        },
+        {
             "name": "twitter/bootstrap",
             "version": "master",
             "source": {
@@ -16,7 +116,7 @@
                 "shasum": null
             },
             "type": "library",
-            "time": "2013-02-08 06:13:13"
+            "time": "2013-03-01 05:24:27"
         },
         {
             "name": "wscore/cena",
@@ -24,12 +124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Cena.git",
-                "reference": "4c94e76b3d458880b62d7e4e90cc5f335978ada3"
+                "reference": "d90b5eb7aca23ad1e1614b20ec8996476bbb5faf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/4c94e76b3d458880b62d7e4e90cc5f335978ada3",
-                "reference": "4c94e76b3d458880b62d7e4e90cc5f335978ada3",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/d90b5eb7aca23ad1e1614b20ec8996476bbb5faf",
+                "reference": "d90b5eb7aca23ad1e1614b20ec8996476bbb5faf",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +149,7 @@
                 }
             ],
             "description": "Resource oriented data transfer agent.",
-            "time": "2013-03-29 08:51:03"
+            "time": "2013-03-30 14:18:00"
         },
         {
             "name": "wscore/datamapper",
@@ -57,12 +157,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DataMapper.git",
-                "reference": "d82ca2a22f1100c37247c93cdec43a12c7d97f59"
+                "reference": "bcf58ad909030d7dbbb3d299e288a2ce2e34bbea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/d82ca2a22f1100c37247c93cdec43a12c7d97f59",
-                "reference": "d82ca2a22f1100c37247c93cdec43a12c7d97f59",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/bcf58ad909030d7dbbb3d299e288a2ce2e34bbea",
+                "reference": "bcf58ad909030d7dbbb3d299e288a2ce2e34bbea",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +186,7 @@
                 }
             ],
             "description": "DataMapper.",
-            "time": "2013-03-29 08:51:24"
+            "time": "2013-03-31 06:28:00"
         },
         {
             "name": "wscore/dbaccess",
@@ -94,13 +194,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DbAccess.git",
-                "reference": "43ddbf4b332bcfe00abcb3a88daa90de4bd11d37"
+                "reference": "4db17bf55e5da29c18aab248f9ebc3a73210ebe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/43ddbf4b332bcfe00abcb3a88daa90de4bd11d37",
-                "reference": "43ddbf4b332bcfe00abcb3a88daa90de4bd11d37",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/4db17bf55e5da29c18aab248f9ebc3a73210ebe8",
+                "reference": "4db17bf55e5da29c18aab248f9ebc3a73210ebe8",
                 "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "1.4.x",
+                "psr/log": ">=1.0,<2.0"
             },
             "type": "library",
             "autoload": {
@@ -116,7 +220,7 @@
                 }
             ],
             "description": "Database access and query builder.",
-            "time": "2013-03-28 06:47:19"
+            "time": "2013-03-31 12:05:53"
         },
         {
             "name": "wscore/dicontainer",
@@ -124,12 +228,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DiContainer.git",
-                "reference": "d7c027750d036e7b71ebc741307bfe0174729d52"
+                "reference": "e8f3e16feafbd8cbaa0847d47f53511620f9759c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/d7c027750d036e7b71ebc741307bfe0174729d52",
-                "reference": "d7c027750d036e7b71ebc741307bfe0174729d52",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/e8f3e16feafbd8cbaa0847d47f53511620f9759c",
+                "reference": "e8f3e16feafbd8cbaa0847d47f53511620f9759c",
                 "shasum": ""
             },
             "type": "library",
@@ -146,7 +250,7 @@
                 }
             ],
             "description": "Simple DI container with auto-wiring.",
-            "time": "2013-03-23 03:34:52"
+            "time": "2013-03-31 12:49:56"
         },
         {
             "name": "wscore/html",
@@ -154,12 +258,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Html.git",
-                "reference": "05a191885037e86a80509435127200909f5e4808"
+                "reference": "2637d90a8c14a8d2a4d4d97e252dd7d0e4c50372"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/05a191885037e86a80509435127200909f5e4808",
-                "reference": "05a191885037e86a80509435127200909f5e4808",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/2637d90a8c14a8d2a4d4d97e252dd7d0e4c50372",
+                "reference": "2637d90a8c14a8d2a4d4d97e252dd7d0e4c50372",
                 "shasum": ""
             },
             "type": "library",
@@ -176,7 +280,7 @@
                 }
             ],
             "description": "Html tag generator classes.",
-            "time": "2013-03-06 22:06:28"
+            "time": "2013-03-30 14:28:02"
         },
         {
             "name": "wscore/template",
@@ -244,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "caeffe95a2cb9eca19a8b1d04f41a9fc4d101d60"
+                "reference": "4e4f06f79b574ce3b0e09bec754c65a7313da5ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/caeffe95a2cb9eca19a8b1d04f41a9fc4d101d60",
-                "reference": "caeffe95a2cb9eca19a8b1d04f41a9fc4d101d60",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/4e4f06f79b574ce3b0e09bec754c65a7313da5ee",
+                "reference": "4e4f06f79b574ce3b0e09bec754c65a7313da5ee",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +374,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-03-29 07:32:11"
+            "time": "2013-03-31 12:08:13"
         }
     ],
     "packages-dev": [
