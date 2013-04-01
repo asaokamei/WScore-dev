@@ -3,6 +3,7 @@ namespace App;
 
 use \WScore\DiContainer\ContainerInterface;
 use \WScore\Template\TemplateInterface;
+use \Psr\Log\LoggerInterface;
 
 /**
  * Front-end controller for the Site's application. 
@@ -54,8 +55,14 @@ class App extends \WScore\Web\FrontMC
      * @Inject
      * @var \App\Site\Loader\Logger
      */
+    public $lastLog;
+
+    /**
+     * @Inject
+     * @var LoggerInterface
+     */
     public $logger;
-    
+
     /**
      */
     public function __construct()
@@ -65,6 +72,6 @@ class App extends \WScore\Web\FrontMC
         $this->loaders[ 'pwd/' ] = $this->pwdGen;
         $this->loaders[] = $this->pwd;
         $this->loaders[] = $this->render;
-        $this->loaders[] = $this->logger;
+        $this->loaders[] = $this->lastLog;
     }
 }
