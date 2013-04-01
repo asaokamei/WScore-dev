@@ -3,6 +3,12 @@ namespace App\Contacts\Model;
 
 use \WScore\DataMapper\Model;
 
+/**
+ * Class Tags
+ * @package App\Contacts\Model
+ *
+ * @singleton
+ */
 class Tags extends Model
 {
     protected $table = 'demoTag';
