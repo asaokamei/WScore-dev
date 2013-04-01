@@ -5,6 +5,18 @@ use WScore\Web\Loader\AppLoader;
 
 class TaskApp extends AppLoader
 {
+    /**
+     * @Inject
+     * @var \WScore\DataMapper\EntityManager
+     */
+    protected $em;
+
+    /**
+     * @Inject
+     * @var \WScore\DataMapper\RoleManager
+     */
+    protected $role;
+
     public function __construct()
     {
         $routes = array(
@@ -17,6 +29,8 @@ class TaskApp extends AppLoader
         $this->setRoute( $routes );
 
         $this->templateRoot = __DIR__ . '/View/';
+
+        $this->em->getModel( '\App\Tasks\Entity\Task' );
     }
 
     /**
