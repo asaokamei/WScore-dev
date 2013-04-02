@@ -13,7 +13,7 @@ function buildApp( $cache )
 
     // set up container/service. 
     /** @noinspection PhpIncludeInspection */
-    if( false ) {
+    if( $cache ) {
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/withCache.php' );
     } else {
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/instance.php' );
