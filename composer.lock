@@ -7,12 +7,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "3f8c37b23c893ab72d85b6deb02cea9e215d2d3c"
+                "reference": "a147e793d7f0026eefd0a2ac6e2a2944abfbcae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/3f8c37b23c893ab72d85b6deb02cea9e215d2d3c",
-                "reference": "3f8c37b23c893ab72d85b6deb02cea9e215d2d3c",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a147e793d7f0026eefd0a2ac6e2a2944abfbcae0",
+                "reference": "a147e793d7f0026eefd0a2ac6e2a2944abfbcae0",
                 "shasum": ""
             },
             "require": {
@@ -61,7 +61,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-03-28 10:41:04"
+            "time": "2013-04-01 10:08:31"
         },
         {
             "name": "psr/log",
@@ -116,7 +116,7 @@
                 "shasum": null
             },
             "type": "library",
-            "time": "2013-02-08 06:13:13"
+            "time": "2013-03-01 05:24:27"
         },
         {
             "name": "wscore/cena",
@@ -157,12 +157,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DataMapper.git",
-                "reference": "bcf58ad909030d7dbbb3d299e288a2ce2e34bbea"
+                "reference": "f57909985365ba7923707a87ae0abb8b2d3e82fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/bcf58ad909030d7dbbb3d299e288a2ce2e34bbea",
-                "reference": "bcf58ad909030d7dbbb3d299e288a2ce2e34bbea",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/f57909985365ba7923707a87ae0abb8b2d3e82fd",
+                "reference": "f57909985365ba7923707a87ae0abb8b2d3e82fd",
                 "shasum": ""
             },
             "require": {
@@ -186,7 +186,7 @@
                 }
             ],
             "description": "DataMapper.",
-            "time": "2013-03-31 06:28:00"
+            "time": "2013-04-01 09:55:15"
         },
         {
             "name": "wscore/dbaccess",
@@ -194,12 +194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DbAccess.git",
-                "reference": "4db17bf55e5da29c18aab248f9ebc3a73210ebe8"
+                "reference": "08ef1853a0d6201fd472be0c6ede8393dc3c3095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/4db17bf55e5da29c18aab248f9ebc3a73210ebe8",
-                "reference": "4db17bf55e5da29c18aab248f9ebc3a73210ebe8",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/08ef1853a0d6201fd472be0c6ede8393dc3c3095",
+                "reference": "08ef1853a0d6201fd472be0c6ede8393dc3c3095",
                 "shasum": ""
             },
             "require": {
@@ -220,7 +220,7 @@
                 }
             ],
             "description": "Database access and query builder.",
-            "time": "2013-03-31 12:05:53"
+            "time": "2013-04-02 07:32:52"
         },
         {
             "name": "wscore/dicontainer",
@@ -228,12 +228,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DiContainer.git",
-                "reference": "e8f3e16feafbd8cbaa0847d47f53511620f9759c"
+                "reference": "841b972c95f3fd05ae44e0b1f09c0b6ae54d437d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/e8f3e16feafbd8cbaa0847d47f53511620f9759c",
-                "reference": "e8f3e16feafbd8cbaa0847d47f53511620f9759c",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DiContainer/zipball/841b972c95f3fd05ae44e0b1f09c0b6ae54d437d",
+                "reference": "841b972c95f3fd05ae44e0b1f09c0b6ae54d437d",
                 "shasum": ""
             },
             "type": "library",
@@ -250,7 +250,7 @@
                 }
             ],
             "description": "Simple DI container with auto-wiring.",
-            "time": "2013-03-31 12:49:56"
+            "time": "2013-04-02 07:34:51"
         },
         {
             "name": "wscore/html",
@@ -258,12 +258,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Html.git",
-                "reference": "2637d90a8c14a8d2a4d4d97e252dd7d0e4c50372"
+                "reference": "1315d21b6a7494d70a49754e5376881c5f38e3b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/2637d90a8c14a8d2a4d4d97e252dd7d0e4c50372",
-                "reference": "2637d90a8c14a8d2a4d4d97e252dd7d0e4c50372",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/1315d21b6a7494d70a49754e5376881c5f38e3b9",
+                "reference": "1315d21b6a7494d70a49754e5376881c5f38e3b9",
                 "shasum": ""
             },
             "type": "library",
@@ -280,7 +280,7 @@
                 }
             ],
             "description": "Html tag generator classes.",
-            "time": "2013-03-30 14:28:02"
+            "time": "2013-04-02 07:32:36"
         },
         {
             "name": "wscore/template",
@@ -318,12 +318,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Validation.git",
-                "reference": "5d46d18be0495170579dfd1ccac82f109d0578ac"
+                "reference": "08e8749f2dd09e6b9ce3e0deed17c9df3a016399"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Validation/zipball/5d46d18be0495170579dfd1ccac82f109d0578ac",
-                "reference": "5d46d18be0495170579dfd1ccac82f109d0578ac",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Validation/zipball/08e8749f2dd09e6b9ce3e0deed17c9df3a016399",
+                "reference": "08e8749f2dd09e6b9ce3e0deed17c9df3a016399",
                 "shasum": ""
             },
             "type": "library",
@@ -340,7 +340,7 @@
                 }
             ],
             "description": "Validation and filtration for values such as form input.",
-            "time": "2013-03-18 04:48:27"
+            "time": "2013-04-02 07:32:08"
         },
         {
             "name": "wscore/web",
@@ -348,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "4e4f06f79b574ce3b0e09bec754c65a7313da5ee"
+                "reference": "242e80592b0056a9402cf0f6732a65fe651dbc76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/4e4f06f79b574ce3b0e09bec754c65a7313da5ee",
-                "reference": "4e4f06f79b574ce3b0e09bec754c65a7313da5ee",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/242e80592b0056a9402cf0f6732a65fe651dbc76",
+                "reference": "242e80592b0056a9402cf0f6732a65fe651dbc76",
                 "shasum": ""
             },
             "require": {
@@ -374,7 +374,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-03-31 12:08:13"
+            "time": "2013-04-02 07:30:49"
         }
     ],
     "packages-dev": [
