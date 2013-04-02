@@ -1,7 +1,7 @@
 <?php
 require_once( __DIR__ . '/../lib/bootstrap.php' );
 /** @var $app App\App */
-$app = App\getApp( 'WsDemo-app', false );
+$app = App\getApp( 'WsDemo-app', true );
 
 $stream = new \Monolog\Handler\ChromePHPHandler();
 $stream->setFormatter( new \Monolog\Formatter\ChromePHPFormatter() );
