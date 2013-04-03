@@ -116,7 +116,7 @@
                 "shasum": null
             },
             "type": "library",
-            "time": "2013-02-08 06:13:13"
+            "time": "2013-03-01 05:24:27"
         },
         {
             "name": "wscore/cena",
@@ -124,12 +124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Cena.git",
-                "reference": "d90b5eb7aca23ad1e1614b20ec8996476bbb5faf"
+                "reference": "bbf1f9470574fb617afae4b0bff35041b2609024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/d90b5eb7aca23ad1e1614b20ec8996476bbb5faf",
-                "reference": "d90b5eb7aca23ad1e1614b20ec8996476bbb5faf",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Cena/zipball/bbf1f9470574fb617afae4b0bff35041b2609024",
+                "reference": "bbf1f9470574fb617afae4b0bff35041b2609024",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
                 }
             ],
             "description": "Resource oriented data transfer agent.",
-            "time": "2013-03-30 14:18:00"
+            "time": "2013-04-03 12:33:54"
         },
         {
             "name": "wscore/datamapper",
@@ -157,12 +157,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DataMapper.git",
-                "reference": "f57909985365ba7923707a87ae0abb8b2d3e82fd"
+                "reference": "de5fb1fd4271e611ec5938b47691df9bc43407b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/f57909985365ba7923707a87ae0abb8b2d3e82fd",
-                "reference": "f57909985365ba7923707a87ae0abb8b2d3e82fd",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/de5fb1fd4271e611ec5938b47691df9bc43407b5",
+                "reference": "de5fb1fd4271e611ec5938b47691df9bc43407b5",
                 "shasum": ""
             },
             "require": {
@@ -186,7 +186,7 @@
                 }
             ],
             "description": "DataMapper.",
-            "time": "2013-04-01 09:55:15"
+            "time": "2013-04-03 13:19:43"
         },
         {
             "name": "wscore/dbaccess",
@@ -258,12 +258,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Html.git",
-                "reference": "1315d21b6a7494d70a49754e5376881c5f38e3b9"
+                "reference": "f9d137bc2755c0cbf2a92216ad16126ab862e31b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/1315d21b6a7494d70a49754e5376881c5f38e3b9",
-                "reference": "1315d21b6a7494d70a49754e5376881c5f38e3b9",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Html/zipball/f9d137bc2755c0cbf2a92216ad16126ab862e31b",
+                "reference": "f9d137bc2755c0cbf2a92216ad16126ab862e31b",
                 "shasum": ""
             },
             "type": "library",
@@ -280,7 +280,7 @@
                 }
             ],
             "description": "Html tag generator classes.",
-            "time": "2013-04-02 07:32:36"
+            "time": "2013-04-03 00:21:06"
         },
         {
             "name": "wscore/template",
