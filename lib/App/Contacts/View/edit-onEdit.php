@@ -14,7 +14,7 @@ $htmlType = 'form';
     <dd><?php
         // make ul inline. 
         $sel = $friend->popHtml( 'gender', $htmlType );
-        $sel->contents[0]->class_( 'inline' );
+        $sel->_get('ul')->class_( 'inline' );
         echo $sel; 
         
         ?></dd>
@@ -25,7 +25,7 @@ $htmlType = 'form';
     // show tags starts
     $tags = $this->get( 'tagList' );
     $sel  = $friend->popLinkSelect( 'tags', $tags, 'name', 'checkList' );
-    $sel->contents[0]->class_( 'unstyled' );
+    $sel->_get('ul')->class_( 'unstyled' );
     echo '<dd>' . $sel . '</dd>';
     ?>
 </dl>
