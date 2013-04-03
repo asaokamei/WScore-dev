@@ -48,9 +48,6 @@ $this->HomePage = true;
             <h4>&gt; <a href="contacts/" >contacts using Cena</a></h4>
             <p>a conceptual demo for using Cena-DTA using friends and contact demo. </p>
             <h3>Caching Application</h3>
-            <p>development still undergoing. more demo should come up, hopefully sometime soon...</p>
-            <p>[<a href="info.php">php info</a>],
-                [<a href="cache.php" >apc info</a>],
-                [<a href="cache.php?act=cache-clear" >clear apc cache</a>], </p>
+            <p>majority of the application is cached into APC as a single object image, as inspired (copied) from BEAR.Sunday.</p>
         </div>
     </div>
