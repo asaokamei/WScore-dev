@@ -26,7 +26,7 @@ $htmlType = 'form';
     $tags = $this->get( 'tagList' );
     $sel  = $friend->popLinkSelect( 'tags', $tags, 'name', 'checkList' );
     $sel->_get('ul')->class_( 'unstyled' );
-    echo '<dd>' . $sel . '</dd>';
+    echo '<dd>' . $sel . $friend->popEmptyLink( 'tags' ) . '</dd>';
     ?>
 </dl>
 <h3>Contacts</h3>
