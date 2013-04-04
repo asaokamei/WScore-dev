@@ -1,6 +1,9 @@
 <?php
 namespace App;
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+
 /**
  * @param bool     $cache
  * @return \App\App
@@ -25,9 +28,10 @@ function buildApp( $cache )
     $service->set( '\Pdo', $dba );
     
     // set up logger
-    /** @var $logger \Monolog\Logger */
-    $service->singleton( 'LoggerInterface', '\Monolog\Logger' );
-    $logger = $service->get( 'LoggerInterface' );
+    $logger = new Logger( 'demoApp' );
+    $stream = new StreamHandler( $root . '/lib/logs/access.log', Logger::INFO );
+    $logger->pushHandler( $stream );
+    $service->singleton( 'LoggerInterface', $logger );
 
     // set up Template
     /** @var $template \WScore\Template\TemplateInterface */

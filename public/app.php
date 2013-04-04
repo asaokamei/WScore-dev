@@ -1,22 +1,22 @@
 <?php
 require_once( __DIR__ . '/../lib/bootstrap.php' );
 /** @var $app App\App */
-$app = App\getApp( 'WsDemo-app', true );
+$app = App\getApp( 'WsDemo-app', false );
 
 $stream = new \Monolog\Handler\ChromePHPHandler();
 $stream->setFormatter( new \Monolog\Formatter\ChromePHPFormatter() );
 $app->logger->pushHandler( $stream );
-$app->logger->info( 'start:'.date( 'Y-m-d H:i:s' ) );
 
 try {
 
     $app->pathInfo( $_SERVER );
+    $app->logger->info( 'app->run', array( 'time' => date( 'Y-m-d H:i:s' ), 'path' => $app->pathInfo ) );
     $response = $app->run();
     if( $response ) {
         $response->send();
         exit;
     }
-// no response means nothing found.
+    // no response means nothing found.
     echo $app->template->setTemplate( 'errors/e404.php' )->render();
 
 } catch ( Exception $e ) {
