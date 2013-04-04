@@ -1,6 +1,8 @@
 <?php
 namespace App;
 
+use Monolog\Formatter\ChromePHPFormatter;
+use Monolog\Handler\ChromePHPHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
@@ -61,3 +63,14 @@ function getApp( $appName, $cache=true )
     return $app;
 }
 
+/**
+ * @param \App\App $app
+ * @return \App\App
+ */
+function debugApp( $app )
+{
+    $stream = new ChromePHPHandler();
+    $stream->setFormatter( new ChromePHPFormatter() );
+    $app->logger->pushHandler( $stream );
+    return $app;
+}
