@@ -3,7 +3,7 @@ namespace App;
 
 use \WScore\DiContainer\ContainerInterface;
 use \WScore\Template\TemplateInterface;
-use \Psr\Log\LoggerInterface;
+use \Monolog\Logger as LoggerInterface;
 
 /**
  * Front-end controller for the Site's application. 
