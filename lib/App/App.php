@@ -17,6 +17,12 @@ class App extends \WScore\Web\FrontMC
 {
     /**
      * @Inject
+     * @var ContainerInterface
+     */
+    public $container;
+
+    /**
+     * @Inject
      * @var TemplateInterface
      */
     public $template;
