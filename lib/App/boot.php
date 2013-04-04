@@ -21,7 +21,8 @@ function buildApp( $cache )
     $service->set( 'ContainerInterface', $service );
     
     // set up database access
-    $service->set( '\Pdo', 'dsn=mysql:dbname=test_WScore username=admin password=admin' );
+    $dba = include( $root . '/lib/config/dbaccess.php' );
+    $service->set( '\Pdo', $dba );
     
     // set up logger
     /** @var $logger \Monolog\Logger */
