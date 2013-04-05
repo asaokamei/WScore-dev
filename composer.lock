@@ -116,7 +116,7 @@
                 "shasum": null
             },
             "type": "library",
-            "time": "2013-03-01 05:24:27"
+            "time": "2013-02-08 06:13:13"
         },
         {
             "name": "wscore/cena",
@@ -194,12 +194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DbAccess.git",
-                "reference": "08ef1853a0d6201fd472be0c6ede8393dc3c3095"
+                "reference": "a406a90673d0987262527438ea50d868517ab0c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/08ef1853a0d6201fd472be0c6ede8393dc3c3095",
-                "reference": "08ef1853a0d6201fd472be0c6ede8393dc3c3095",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DbAccess/zipball/a406a90673d0987262527438ea50d868517ab0c1",
+                "reference": "a406a90673d0987262527438ea50d868517ab0c1",
                 "shasum": ""
             },
             "require": {
@@ -220,7 +220,7 @@
                 }
             ],
             "description": "Database access and query builder.",
-            "time": "2013-04-02 07:32:52"
+            "time": "2013-04-04 07:05:17"
         },
         {
             "name": "wscore/dicontainer",
