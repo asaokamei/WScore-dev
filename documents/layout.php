@@ -1,14 +1,14 @@
 <?php
 /** @var $this \WScore\Template\TemplateInterface */
-$this->setDefault( 'basePath', '/WSdev')
+//$this->setDefault( 'basePath', '/WSdev')
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>/bootstrap/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/main.css" />
     <title>WScore Public Demo</title>
 </head>
 <body>

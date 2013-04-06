@@ -29,6 +29,12 @@ class App extends \WScore\Web\FrontMC
 
     /**
      * @Inject
+     * @var \App\Site\AppSetter
+     */
+    public $setter;
+    
+    /**
+     * @Inject
      * @var \App\Tasks\TaskApp
      */
     public $tasks;
@@ -73,6 +79,7 @@ class App extends \WScore\Web\FrontMC
      */
     public function __construct()
     {
+        $this->loaders[] = $this->setter;
         $this->loaders[ 'contacts/' ] = $this->contacts;
         $this->loaders[ 'tasks/' ] = $this->tasks;
         $this->loaders[ 'pwd/' ] = $this->pwdGen;
