@@ -8,7 +8,7 @@ if( php_sapi_name() == 'cli-server' ) {
         return false;    // serve the requested resource as-is.
     }
     // hack.
-    $_SERVER[ 'SCRIPT_NAME' ] = '/';
+    $_SERVER[ 'SCRIPT_NAME' ] = '/app.php';
 }
 
 try {
