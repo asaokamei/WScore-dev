@@ -1,7 +1,9 @@
 <?php
 namespace App\Contacts\Page;
 
-class Create extends FriendBase
+use \WScore\Web\Page\PageInterface;
+
+class Create extends FriendBase implements PageInterface
 {
     // +----------------------------------------------------------------------+
     //  on* methods. 
@@ -28,7 +30,7 @@ class Create extends FriendBase
         if( $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts() ) {
             $this->em->save();
         }
-        return '';
+        return self::JUMP_TO_APP_ROOT;
     }
     // +----------------------------------------------------------------------+
 

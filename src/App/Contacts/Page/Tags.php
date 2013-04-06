@@ -1,7 +1,9 @@
 <?php
 namespace App\Contacts\Page;
 
-class Tags
+use \WScore\Web\Page\PageInterface;
+
+class Tags implements PageInterface
 {
     /**
      * @Inject
@@ -59,7 +61,7 @@ class Tags
         if( $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Tag', 'tag_code' )->posts() ) {
             $this->em->save();
         }
-        return true;
+        return self::RELOAD_SELF;
     }
 
 }

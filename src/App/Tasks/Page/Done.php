@@ -1,7 +1,9 @@
 <?php
 namespace App\Tasks\Page;
 
-class Done
+use \WScore\Web\Page\PageInterface;
+
+class Done implements PageInterface
 {
     /**
      * @Inject
@@ -35,7 +37,7 @@ class Done
             $active = $this->role->applyActive( $task );
             $active->save();
         }
-        return '';
+        return self::JUMP_TO_APP_ROOT;
     }
 
     /**
@@ -52,7 +54,7 @@ class Done
             $active->delete();
             $active->save();
         }
-        return '';
+        return self::JUMP_TO_APP_ROOT;
     }
 
     /**

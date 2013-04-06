@@ -1,7 +1,9 @@
 <?php
 namespace App\Contacts\Page;
 
-class Index
+use \WScore\Web\Page\PageInterface;
+
+class Index implements PageInterface
 {
     /**
      * @Inject
@@ -73,6 +75,6 @@ class Index
         if( $this->cm->processor->with( $_POST )->posts() ) {
             $this->em->save();
         }
-        return true;
+        return self::RELOAD_SELF;
     }
 }
