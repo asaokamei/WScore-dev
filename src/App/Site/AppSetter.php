@@ -16,7 +16,7 @@ class AppSetter extends LoaderAbstract
         /** @var $app \App\App */
         $app = $this->front;
         $baseUrl = $app->baseUrl;
-        $app->template->set( 'baseUrl', $baseUrl );
+//        $app->template->set( 'baseUrl', $baseUrl );
     }
 
 }
