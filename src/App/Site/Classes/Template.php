@@ -10,7 +10,13 @@ class Template extends PhpTemplate
      * @var \WScore\Web\Http\Request
      */
     public $request;
-    
+
+    /**
+     * @Inject
+     * @var \WScore\Web\View\PaginateBootstrap
+     */
+    public $pageView;
+
     public function __construct()
     {
         $this->set( 'baseUrl', $this->request->getBaseUrl() );

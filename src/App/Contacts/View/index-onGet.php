@@ -2,7 +2,7 @@
 
 use \App\Tasks\Entity\Task;
 
-/** @var $this \WScore\Template\TemplateInterface */
+/** @var $this \App\Site\Classes\Template */
 
 ?>
 <form name="friend" method="post" action="">
@@ -10,7 +10,7 @@ use \App\Tasks\Entity\Task;
     $appRoot   = $this->get( 'appRoot' );
     $pageUrls = $this->get( 'paginate' )->setupUrls();
     /** @var $pager \WScore\Web\View\PaginateBootstrap */
-    $pager    = $this->get( 'pageView' )->setUrls( $pageUrls );
+    $pager    = $this->pageView->setUrls( $pageUrls );
     echo $pager->bootstrap( $pageUrls );
     ?>
 <table class="table">

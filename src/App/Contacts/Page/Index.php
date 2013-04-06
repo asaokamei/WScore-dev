@@ -27,12 +27,6 @@ class Index
      */
     protected $paginate;
 
-    /**
-     * @Inject
-     * @var \WScore\Web\View\PaginateBootstrap
-     */
-    protected $pageView;
-
     private function loadIndex( $match )
     {
         $this->paginate->per_page = 4;
@@ -54,7 +48,6 @@ class Index
         $data = array(
             'friends'  => $friends,
             'paginate' => $this->paginate,
-            'pageView' => $this->pageView,
         );
         return $data;
     }
