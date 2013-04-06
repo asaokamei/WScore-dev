@@ -13,7 +13,7 @@ use Monolog\Logger;
 function buildApp( $cache )
 {
     // set up folders.
-    $root = dirname( dirname( __DIR__ ) );
+    $root = dirname( __DIR__ );
     $template_root = $root . '/documents';
 
     // set up container/service. 
@@ -26,12 +26,12 @@ function buildApp( $cache )
     $service->set( 'ContainerInterface', $service );
     
     // set up database access
-    $dba = include( $root . '/lib/config/dbaccess.php' );
+    $dba = include( $root . '/app/config/dbaccess.php' );
     $service->set( '\Pdo', $dba );
     
     // set up logger
     $logger = new Logger( 'demoApp' );
-    $stream = new StreamHandler( $root . '/lib/logs/access.log', Logger::INFO );
+    $stream = new StreamHandler( $root . '/app/logs/access.log', Logger::INFO );
     $logger->pushHandler( $stream );
     $service->singleton( 'LoggerInterface', $logger );
 
