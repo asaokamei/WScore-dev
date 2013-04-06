@@ -58,8 +58,7 @@ class Create
         elseif( $task->validate() ) {
             $active = $this->role->applyActive( $task );
             $active->save();
-            header( "Location: " . $match[ 'appRoot' ] );
-            exit;
+            return '';
         }
         $match[ 'task' ] = $task;
         $match[ 'tokenVal' ] = $this->session->pushToken();

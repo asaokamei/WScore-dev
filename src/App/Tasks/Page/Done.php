@@ -35,8 +35,7 @@ class Done
             $active = $this->role->applyActive( $task );
             $active->save();
         }
-        header( "Location: " . $match[ 'appRoot' ] );
-        exit;
+        return '';
     }
 
     /**
@@ -53,8 +52,7 @@ class Done
             $active->delete();
             $active->save();
         }
-        header( "Location: " . $match[ 'appRoot' ] );
-        exit;
+        return '';
     }
 
     /**

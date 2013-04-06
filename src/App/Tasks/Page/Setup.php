@@ -11,7 +11,6 @@ class Setup
     
     public function onGet( $match )
     {
-        return 'Setup';
     }
     
     public function onPut( $match )

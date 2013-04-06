@@ -73,8 +73,6 @@ class Index
         if( $this->cm->processor->with( $_POST )->posts() ) {
             $this->em->save();
         }
-        // TODO: think about how to reload itself better!
-        header( "Location: " . $_SERVER[ 'REQUEST_URI' ] );
-        exit;
+        return true;
     }
 }

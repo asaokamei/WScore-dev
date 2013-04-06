@@ -59,8 +59,7 @@ class Tags
         if( $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Tag', 'tag_code' )->posts() ) {
             $this->em->save();
         }
-        header( "Location: " . $_SERVER[ 'REQUEST_URI' ] );
-        exit;
+        return true;
     }
 
 }
