@@ -55,7 +55,6 @@ class ContactApp extends AppLoader
      */
     public function load( $pathInfo )
     {
-        $this->template->set( 'baseUrl', $this->front->baseUrl );
         $this->template->addParent( $this->templateRoot . 'contacts.php' );
         return parent::load( $pathInfo );
     }
