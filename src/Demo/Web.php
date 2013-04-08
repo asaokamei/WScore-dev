@@ -45,7 +45,7 @@ class Web extends WebApp
         //$this->setModule( $this->setter );
         //$this->setModule( $this->contacts, 'contacts/' );
         //$this->setModule( $this->tasks,    'tasks/' );
-        //$this->setModule( $this->pwdGen,   'pwd/' );
+        $this->setModule( $this->container->get( '\App\Pwd\Generator' ),   'pwd/' );
         //$this->setModule( $this->pwd );
         $this->setModule( $this->render );
         $this->setModule( $this->lastLog );

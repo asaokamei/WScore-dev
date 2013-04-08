@@ -1,17 +1,16 @@
 <?php
 namespace App\Pwd;
 
-use WScore\Web\Loader\AppLoader;
+use WScore\Web\Module\AppLoader;
 
 class Generator extends AppLoader
 {
     public function __construct()
     {
+        parent::__construct( __DIR__ );
         $routes = array(
-            '*' => array( 'render' => 'generate' ),
+            '*' => array( 'render' => '/generate' ),
         );
         $this->setRoute( $routes );
-
-        $this->templateRoot = __DIR__ . '/View/';
     }
 }
