@@ -44,7 +44,7 @@ class Web extends WebApp
     {
         $dic = $this->container;
         //$this->setModule( $this->setter );
-        //$this->setModule( $this->contacts, 'contacts/' );
+        $this->setModule( $dic->get( '\App\Contacts\ContactApp' ), 'contacts/' );
         $this->setModule( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
         $this->setModule( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
         //$this->setModule( $this->pwd );

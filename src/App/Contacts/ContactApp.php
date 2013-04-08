@@ -1,7 +1,7 @@
 <?php
 namespace App\Contacts;
 
-use WScore\Web\Loader\AppLoader;
+use WScore\Web\Module\AppLoader;
 use WScore\DiContainer\ContainerInterface;
 
 class ContactApp extends AppLoader
@@ -24,14 +24,9 @@ class ContactApp extends AppLoader
      */
     protected $role;
 
-    /**
-     * @Inject
-     * @var ContainerInterface
-     */
-    protected $container;
-
     public function __construct()
     {
+        parent::__construct( __DIR__ );
         $routes = array(
             'setup'  => array(),
             'create' => array(),
@@ -40,8 +35,6 @@ class ContactApp extends AppLoader
             '/'      => array( 'render' => 'index' ),
         );
         $this->setRoute( $routes );
-
-        $this->templateRoot = __DIR__ . '/View/';
 
         $this->em->getModel( '\App\Contacts\Entity\Friend' );
         $this->em->getModel( '\App\Contacts\Entity\Contact' );
@@ -55,7 +48,7 @@ class ContactApp extends AppLoader
      */
     public function load( $pathInfo )
     {
-        $this->template->addParent( $this->templateRoot . 'contacts.php' );
+        $this->template->addParent( $this->viewRoot . '/contacts.php' );
         return parent::load( $pathInfo );
     }
 }
