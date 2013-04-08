@@ -49,6 +49,6 @@ class Web extends WebApp
         $this->setModule( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
         //$this->setModule( $this->pwd );
         $this->setModule( $this->render );
-        $this->setModule( $this->lastLog );
+        $this->setModule( $this->lastLog, true );
     }
 }
