@@ -19,8 +19,8 @@ try {
     $app = App\debugApp( $app );
 
     // set app for serving web. 
-    $app->logger->info( 'app->run', array( 'time' => date( 'Y-m-d H:i:s' ), 'path' => $app->pathInfo ) );
     $app->pathInfo( $_SERVER )->with( $_POST )->on( $app->request->getMethod() );
+    $app->logger->info( 'app->run', array( 'time' => date( 'Y-m-d H:i:s' ), 'path' => $app->pathInfo, 'on' => $app->method ) );
     $response = $app->load();
     if( $response ) {
         $response->send();
