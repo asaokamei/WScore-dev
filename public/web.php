@@ -20,8 +20,8 @@ try {
 
     // set app for serving web. 
     $app->logger->info( 'app->run', array( 'time' => date( 'Y-m-d H:i:s' ), 'path' => $app->pathInfo ) );
-    $app->pathInfo( $_SERVER )->with( $_POST );
-    $response = $app->on( $app->request->getMethod() )->load();
+    $app->pathInfo( $_SERVER )->with( $_POST )->on( $app->request->getMethod() );
+    $response = $app->load();
     if( $response ) {
         $response->send();
         exit;
