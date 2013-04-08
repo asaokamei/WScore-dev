@@ -22,18 +22,6 @@ class Web extends WebApp
 
     /**
      * @Inject
-     * @var \Demo\Renderer
-     */
-    public $render;
-
-    /**
-     * @Inject
-     * @var \Demo\Logger
-     */
-    public $lastLog;
-
-    /**
-     * @Inject
      * @var LoggerInterface
      */
     public $logger;
@@ -43,12 +31,10 @@ class Web extends WebApp
     public function __construct()
     {
         $dic = $this->container;
-        //$this->setModule( $this->setter );
         $this->setModule( $dic->get( '\App\Contacts\ContactApp' ), 'contacts/' );
         $this->setModule( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
         $this->setModule( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
-        //$this->setModule( $this->pwd );
-        $this->setModule( $this->render );
-        $this->setModule( $this->lastLog, true );
+        $this->setModule( $dic->get( '\Demo\Renderer' ) );
+        $this->setModule( $dic->get( '\Demo\Logger' ), true );
     }
 }
