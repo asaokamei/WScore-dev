@@ -43,7 +43,7 @@ function buildApp( $cache )
     $template->setParent( 'layout.php' );
 
     // generate myself, app, object.
-    $app = $service->get( 'App\App' );
+    $app = $service->get( 'Demo\Web' );
     return $app;
 };
 

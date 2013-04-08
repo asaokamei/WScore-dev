@@ -10,6 +10,6 @@ DirectoryIndex index.html index.php app.php
     RewriteCond %{REQUEST_FILENAME} !favicon.ico$
     #RewriteCond %{REQUEST_FILENAME} !"\.(css|js|jpg|gif|png)$"
 
-    RewriteRule ^(.*)$ app.php [QSA,L]
+    RewriteRule ^(.*)$ web.php [QSA,L]
 
 </IfModule>
