@@ -1,7 +1,7 @@
 <?php
-namespace App\Site\Role;
+namespace Demo\Role;
 
-use \App\Site\Model\Password;
+use \Demo\Model\Password;
 
 class PwdAble
 {

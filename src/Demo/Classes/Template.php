@@ -1,5 +1,5 @@
 <?php
-namespace App\Site\Classes;
+namespace Demo\Classes;
 
 use WScore\Template\PhpTemplate;
 

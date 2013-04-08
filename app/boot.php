@@ -37,7 +37,7 @@ function buildApp( $cache )
 
     // set up Template
     /** @var $template \WScore\Template\TemplateInterface */
-    $service->singleton( 'TemplateInterface', '\App\Site\Classes\Template' ); 
+    $service->singleton( 'TemplateInterface', '\Demo\Classes\Template' ); 
     $template = $service->get( 'TemplateInterface' );
     $template->setRoot( $template_root );
     $template->setParent( 'layout.php' );

@@ -1,5 +1,5 @@
 <?php
-namespace App\Site\Model;
+namespace Demo\Model;
 
 class Password
 {

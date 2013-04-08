@@ -5,7 +5,7 @@ class Index
 {
     /**
      * @Inject
-     * @var \App\Site\Role\PwdAble
+     * @var \Demo\Role\PwdAble
      */
     protected $password;
 
