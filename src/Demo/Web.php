@@ -42,10 +42,11 @@ class Web extends WebApp
      */
     public function __construct()
     {
+        $dic = $this->container;
         //$this->setModule( $this->setter );
         //$this->setModule( $this->contacts, 'contacts/' );
-        //$this->setModule( $this->tasks,    'tasks/' );
-        $this->setModule( $this->container->get( '\App\Pwd\Generator' ),   'pwd/' );
+        $this->setModule( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
+        $this->setModule( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
         //$this->setModule( $this->pwd );
         $this->setModule( $this->render );
         $this->setModule( $this->lastLog );

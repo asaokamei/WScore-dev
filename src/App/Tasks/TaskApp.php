@@ -1,7 +1,7 @@
 <?php
 namespace App\Tasks;
 
-use WScore\Web\Loader\AppLoader;
+use WScore\Web\Module\AppLoader;
 
 class TaskApp extends AppLoader
 {
@@ -19,6 +19,7 @@ class TaskApp extends AppLoader
 
     public function __construct()
     {
+        parent::__construct( __DIR__ );
         $routes = array(
             'setup'  => array(),
             'create' => array(),
@@ -27,8 +28,6 @@ class TaskApp extends AppLoader
             '/'      => array( 'render' => 'index' ),
         );
         $this->setRoute( $routes );
-
-        $this->templateRoot = __DIR__ . '/View/';
 
         $this->em->getModel( '\App\Tasks\Entity\Task' );
     }
@@ -39,7 +38,7 @@ class TaskApp extends AppLoader
      */
     public function load( $pathInfo )
     {
-        $this->template->addParent( $this->templateRoot . 'task.php' );
+        $this->template->addParent( $this->viewRoot . '/task.php' );
         return parent::load( $pathInfo );
     }
 }
