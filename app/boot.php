@@ -72,5 +72,7 @@ function debugApp( $app )
     $stream = new ChromePHPHandler();
     $stream->setFormatter( new ChromePHPFormatter() );
     $app->logger->pushHandler( $stream );
+    
+    $app->template->addParent( 'debug.php' );
     return $app;
 }
