@@ -8,7 +8,7 @@ use Monolog\Logger;
 
 /**
  * @param bool     $cache
- * @return \App\App
+ * @return \Demo\Web
  */
 function buildApp( $cache )
 {
@@ -51,7 +51,7 @@ function buildApp( $cache )
 /**
  * @param string  $appName
  * @param bool    $cache
- * @return \App\App
+ * @return \Demo\Web
  */
 function getApp( $appName, $cache=true )
 {
@@ -64,8 +64,8 @@ function getApp( $appName, $cache=true )
 }
 
 /**
- * @param \App\App $app
- * @return \App\App
+ * @param \Demo\Web $app
+ * @return \Demo\Web
  */
 function debugApp( $app )
 {
