@@ -1,5 +1,5 @@
 <?php
-require_once( __DIR__ . '/../../lib/bootstrap.php' );
+require_once( __DIR__ . '/../../app/bootstrap.php' );
 $app = App\getApp( 'info', false );
 /** @var $app App\App */
 /** @var $view WScore\Template\TemplateInterface */
