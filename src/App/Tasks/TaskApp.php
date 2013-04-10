@@ -1,7 +1,7 @@
 <?php
 namespace App\Tasks;
 
-use WScore\Web\Module\AppLoader;
+use Demo\Classes\AppModuleLogger as AppLoader;
 
 class TaskApp extends AppLoader
 {

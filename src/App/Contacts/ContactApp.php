@@ -1,7 +1,7 @@
 <?php
 namespace App\Contacts;
 
-use WScore\Web\Module\AppLoader;
+use Demo\Classes\AppModuleLogger as AppLoader;
 use WScore\DiContainer\ContainerInterface;
 
 class ContactApp extends AppLoader
