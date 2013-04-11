@@ -3,11 +3,11 @@ namespace test\App;
 
 use \WSTests\DataMapper\entities\friend;
 
-require( __DIR__ . '/../../bootstrap.php' );
+require( __DIR__ . '/../../../app/bootstrap.php' );
 
 class App_PasswordTests extends \PHPUnit_Framework_TestCase
 {
-    /** @var \App\App */
+    /** @var \Demo\Web */
     public $app;
 
     public $template_root;
@@ -17,21 +17,15 @@ class App_PasswordTests extends \PHPUnit_Framework_TestCase
      */
     function setUp()
     {
-        /** @var $container \App\App */
+        /** @var $container \Demo\Web */
         $this->app = \App\getApp( 'WsTest-app', false );
         $this->template_root = __DIR__ . '/../../../documents/';
     }
 
     function test_password_menu()
     {
-        $server = array(
-            'REQUEST_METHOD' => 'get',
-            'SCRIPT_NAME'    => '/test/app.php',
-            'REQUEST_URI'    => '/test/password/index.php',
-        );
-        $this->app->pathInfo( $server );
         /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
+        $response = $this->app->load( 'password/index.php' );
         $contents = $response->content;
 
         // read index.php
@@ -43,19 +37,13 @@ class App_PasswordTests extends \PHPUnit_Framework_TestCase
 
     function test_password_post()
     {
-        $server = array(
-            'REQUEST_METHOD' => 'POST',
-            'SCRIPT_NAME'    => '/test/app.php',
-            'REQUEST_URI'    => '/test/password/index.php',
-        );
         $post = array(
             'length' => '12',
             'count'  => '6',
             'symbol' => '',
         );
-        $this->app->pathInfo( $server );
         /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->using( $post )->run();
+        $response = $this->app->with( $post )->on( 'post' )->load( 'password/index.php' );
         $contents = $response->content;
 
         // read index.php

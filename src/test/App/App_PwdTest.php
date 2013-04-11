@@ -3,11 +3,11 @@ namespace test\App;
 
 use \WScore\Web\Tests\Html;
 
-require( __DIR__ . '/../../bootstrap.php' );
+require( __DIR__ . '/../../../app/bootstrap.php' );
 
 class App_PwdTests extends \PHPUnit_Framework_TestCase
 {
-    /** @var \App\App */
+    /** @var \Demo\Web */
     public $app;
 
     public $template_root;
@@ -19,10 +19,10 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
      */
     function setUp()
     {
-        /** @var $container \App\App */
+        /** @var $container \Demo\Web */
         $this->app = \App\getApp( 'WsTest-app', false );
         $this->document_root = __DIR__ . '/../../../documents/';
-        $this->template_root = __DIR__ . '/../../../lib/App/Pwd/View/';
+        $this->template_root = __DIR__ . '/../../../src/App/Pwd/View/';
     }
 
     function test_password_menu()
@@ -40,8 +40,7 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
     {
         $server = array(
             'REQUEST_METHOD' => 'POST',
-            'SCRIPT_NAME'    => '/test/app.php',
-            'REQUEST_URI'    => '/test/pwd/',
+            'REQUEST_URI'    => 'pwd/',
         );
         $post = array(
             'length' => '12',
@@ -67,9 +66,9 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
             'SCRIPT_NAME'    => '/test/app.php',
             'REQUEST_URI'    => '/test/pwd/',
         );
-        $this->app->pathInfo( $server );
+        //$this->app->pathInfo( $server );
         /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
+        $response = $this->app->load( 'pwd/' );
         $contents = Html::extractHtmlTestMatches( $response->content );
 
         $html = file_get_contents( $this->template_root . 'generate.php' );

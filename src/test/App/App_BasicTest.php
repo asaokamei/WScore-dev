@@ -3,11 +3,11 @@ namespace test\App;
 
 use \WSTests\DataMapper\entities\friend;
 
-require( __DIR__ . '/../../bootstrap.php' );
+require( __DIR__ . '/../../../app/bootstrap.php' );
 
 class App_BasicTests extends \PHPUnit_Framework_TestCase
 {
-    /** @var \App\App */
+    /** @var \Demo\Web */
     public $app;
     
     public $template_root;
@@ -19,7 +19,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
      */
     function setUp()
     {
-        /** @var $container \App\App */
+        /** @var $container \Demo\Web */
         $this->app = \App\getApp( 'WsTest-app', false );
         $this->template_root = __DIR__ . '/../../../documents/';
         $this->public_root   = __DIR__ . '/../../../public/';
@@ -27,14 +27,14 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
 
     function test0()
     {
-        $this->assertEquals( 'App\App', get_class( $this->app ) );
+        $this->assertEquals( 'Demo\Web', get_class( $this->app ) );
     }
     
     function test_top_index()
     {
         $this->app->pathInfo( 'index.php' );
         /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
+        $response = $this->app->load( 'index.php' );
         $contents = $response->content;
         
         // read index.php
@@ -48,7 +48,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
     {
         $this->app->pathInfo( 'templates/index.php' );
         /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
+        $response = $this->app->load( 'templates/index.php' );
         $contents = $response->content;
 
         // read index.php
@@ -60,9 +60,8 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
 
     function test_template_another()
     {
-        $this->app->pathInfo( 'templates/another.php' );
         /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
+        $response = $this->app->load( 'templates/another.php' );
         $contents = $response->content;
 
         // read index.php
@@ -74,9 +73,8 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
 
     function test_not_found()
     {
-        $this->app->pathInfo( 'not_found.php' );
         /** @var $response \WScore\Web\Http\Response */
-        $response = $this->app->run();
+        $response = $this->app->load( 'not_found.php' );
         $this->assertEquals( null, $response );
     }
 
@@ -84,10 +82,9 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
      */
     function test_bad_request()
     {
-        $this->app->pathInfo( 'templates/badRequest.php' );
         /** @var $response \WScore\Web\Http\Response */
         try {
-            $response = $this->app->run();
+            $response = $this->app->load( 'templates/badRequest.php' );
         } catch( \RuntimeException $e ) {
             $this->assertEquals( 'RuntimeException', get_class( $e ) );
             $this->assertEquals( '400', $e->getCode() );
@@ -98,10 +95,9 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
      */
     function test_no_service()
     {
-        $this->app->pathInfo( 'templates/noService.php' );
         /** @var $response \WScore\Web\Http\Response */
         try {
-            $response = $this->app->run();
+            $response = $this->app->load( 'templates/noService.php' );
         } catch( \RuntimeException $e ) {
             $this->assertEquals( 'RuntimeException', get_class( $e ) );
             $this->assertEquals( '503', $e->getCode() );

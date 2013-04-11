@@ -3,7 +3,7 @@ namespace test\App;
 
 use \WScore\Web\Tests\Html;
 
-require( __DIR__ . '/../../bootstrap.php' );
+require( __DIR__ . '/../../../app/bootstrap.php' );
 
 class App_TaskTests extends \PHPUnit_Framework_TestCase
 {
