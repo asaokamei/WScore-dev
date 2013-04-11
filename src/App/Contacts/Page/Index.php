@@ -39,7 +39,9 @@ class Index implements PageInterface
         $ids     = $friends->pack( 'friend_id' );
         $joiners = $this->em->fetch( '\App\Contacts\Entity\Fr2tg', $ids, 'friend_id' );
         $ids     = $joiners->pack( 'tag_code' );
-        $tags    = $this->em->fetch( '\App\Contacts\Entity\Tag', $ids );
+        if( $ids ) {
+            $tags    = $this->em->fetch( '\App\Contacts\Entity\Tag', $ids );
+        }
         $this->em->fetchByGet();
         $roles = array();
         foreach( $friends as $key => $entity ) {
