@@ -9,6 +9,7 @@ class Renderer extends AppLoader
     {
         parent::__construct();
         $routes = array(
+            'password/index.php' => array( 'addParent' => 'password.php' ),
             '/'   => array( 'render' => 'index.php' ),
             '/*'  => array(),
         );
