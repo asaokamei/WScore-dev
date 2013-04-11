@@ -36,6 +36,11 @@ class Index implements PageInterface
         $query   = $this->paginate->setQuery( $this->friends->query() );
         $friends = $query->order( 'friend_id' )->select();
         $friends = $this->em->fetch( '\App\Contacts\Entity\Friend', $friends );
+        $ids     = $friends->pack( 'friend_id' );
+        $joiners = $this->em->fetch( '\App\Contacts\Entity\Fr2tg', $ids, 'friend_id' );
+        $ids     = $joiners->pack( 'tag_code' );
+        $tags    = $this->em->fetch( '\App\Contacts\Entity\Tag', $ids );
+        $this->em->fetchByGet();
         $roles = array();
         foreach( $friends as $key => $entity ) {
             $this->em->relation( $entity, 'tags' )->fetch();
@@ -56,10 +61,10 @@ class Index implements PageInterface
 
     public function onEdit( $match )
     {
+        $tags    = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
+        $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
         $friends = $this->loadIndex( $match );
         // get all tags from database for selection. 
-        $tags = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
-        $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
         $data = array( 
             'friends' => $friends,
             'tagList' => $tagList,
