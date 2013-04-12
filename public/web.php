@@ -1,4 +1,6 @@
 <?php
+use Monolog\Processor\UidProcessor;
+
 require_once( __DIR__ . '/../app/bootstrap.php' );
 
 try {
@@ -14,6 +16,7 @@ try {
 
     // set app for serving web. 
     $app->pathInfo( $_SERVER )->with( $_POST )->on( $app->request->getMethod() );
+    $app->logger->pushProcessor( new UidProcessor() );
     $app->logger->info( 'app->run', array( 'time' => date( 'Y-m-d H:i:s' ), 'path' => $app->pathInfo, 'on' => $app->method ) );
     $response = $app->load();
     if( $response ) {
