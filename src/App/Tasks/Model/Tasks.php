@@ -39,10 +39,10 @@ class Tasks extends Model
     {
         $sql = "
         CREATE TABLE {$this->table} (
-          task_id   SERIAL,
-          memo text NOT NULL DEFAULT '',
-          done_by date,
-          status char(1) NOT NULL DEFAULT '1',
+          task_id    SERIAL,
+          memo       varchar(2048) NOT NULL DEFAULT '',
+          done_by    date,
+          status     char(1) NOT NULL DEFAULT '1',
           created_at text,
           updated_at text
         );

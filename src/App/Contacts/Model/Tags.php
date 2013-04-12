@@ -30,7 +30,7 @@ class Tags extends Model
         $sql = "
             CREATE TABLE {$table} (
               tag_code   varchar(64) NOT NULL,
-              name text NOT NULL DEFAULT '',
+              name       varchar(128) NOT NULL DEFAULT '',
               created_at datetime,
               updated_at datetime,
               constraint tags_pkey PRIMARY KEY (
