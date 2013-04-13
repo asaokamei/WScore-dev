@@ -19,8 +19,6 @@ class Tasks extends Model
     /** @var string     name of primary key        */
     protected $id_name = 'task_id';
 
-    public $recordClassName = '\App\Tasks\Entity\Task';
-
     // +----------------------------------------------------------------------+
     /**
      */
