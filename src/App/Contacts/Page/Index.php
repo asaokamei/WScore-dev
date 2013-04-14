@@ -72,12 +72,12 @@ class Index implements PageInterface
         return $data;
     }
 
-    public function onPut( $match )
+    public function onPut( $match, $post )
     {
         $this->cm->useEntity( '\App\Contacts\Entity\Friend' );
         $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
-        if( $this->cm->processor->with( $_POST )->posts() ) {
+        if( $this->cm->processor->with( $post )->posts() ) {
             $this->em->save();
         }
         return self::RELOAD_SELF;

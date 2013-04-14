@@ -55,10 +55,10 @@ class Tags implements PageInterface
         return $data;
     }
 
-    public function onPost( $match )
+    public function onPost( $match, $post )
     {
         $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
-        if( $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Tag', 'tag_code' )->posts() ) {
+        if( $this->cm->processor->with( $post )->clean( '\App\Contacts\Entity\Tag', 'tag_code' )->posts() ) {
             $this->em->save();
         }
         return self::RELOAD_SELF;

@@ -27,13 +27,13 @@ class Edit extends FriendBase implements PageInterface
         return $data;
     }
 
-    public function onPost( $match )
+    public function onPost( $match, $post )
     {
         $this->cm->useEntity( '\App\Contacts\Entity\Friend' );
         $this->cm->useEntity( '\App\Contacts\Entity\Contact' );
         $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
-        if( $this->cm->processor->with( $_POST )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts() ) {
+        if( $this->cm->processor->with( $post )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts() ) {
             $this->em->save();
         }
         return self::RELOAD_SELF;
