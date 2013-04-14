@@ -47,14 +47,14 @@ class Edit implements PageInterface
 
     /**
      * @param array $match
+     * @param array $post
      * @return array
-     * @throws \Exception
      */
-    public function onPut( $match )
+    public function onPut( $match, $post )
     {
         $task = $this->fetchTask( $match );
         $task = $this->role->applyDataIO( $task );
-        $task->load( $_POST );
+        $task->load( $post );
         if( !$this->session->verifyToken() ){
             $match[ 'alert' ] = 'error on session token. ';
         }

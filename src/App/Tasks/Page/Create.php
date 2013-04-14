@@ -46,14 +46,14 @@ class Create implements PageInterface
 
     /**
      * @param array $match
+     * @param array $post
      * @return array
-     * @throws \Exception
      */
-    public function onPost( $match )
+    public function onPost( $match, $post )
     {
         $task = $this->em->newEntity( '\App\Tasks\Entity\Task' );
         $task = $this->role->applyDataIO( $task );
-        $task->load( $_POST );
+        $task->load( $post );
         if( !$this->session->verifyToken() ){
             $match[ 'alert' ] = 'error on session token. ';
         }
