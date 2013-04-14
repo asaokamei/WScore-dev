@@ -25,7 +25,7 @@
 "id","type","extra","pattern",,,,,
 "contact_id","number",,,,,,,
 "friend_id","number",,,,,,,
-"contact_info","text",,,,,,,
+"info","text",,,,,,,
 "new_dt_friend",,,,,,,,
 "mod_dt_friend",,,,,,,,
 ,,,,,,,,
