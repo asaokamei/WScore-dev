@@ -35,8 +35,14 @@ class Edit extends FriendBase implements PageInterface
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
         if( $this->cm->processor->with( $post )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts() ) {
             $this->em->save();
+            return self::RELOAD_SELF;
         }
-        return self::RELOAD_SELF;
+        $this->em->fetchByGet();
+        $friend = $this->loadFriend( $match );
+        $data   = $this->cenaFriend( $friend );
+        $this->em->fetchByGet( false );
+        $data   = $this->linkContacts( $data );
+        return $data;
     }
     // +----------------------------------------------------------------------+
 }
