@@ -36,6 +36,16 @@ class Index implements PageInterface
         $query   = $this->paginate->setQuery( $this->friends->query() );
         $friends = $query->order( 'friend_id' )->select();
         $friends = $this->em->fetch( '\App\Contacts\Entity\Friend', $friends );
+        $roles   = $this->loadRelations( $friends );
+        return $roles;
+    }
+
+    /**
+     * @param \WScore\DataMapper\Entity\Collection $friends
+     * @return array
+     */
+    private function loadRelations( $friends )
+    {
         $ids     = $friends->pack( 'friend_id' );
         $joiners = $this->em->fetch( '\App\Contacts\Entity\Fr2tg', $ids, 'friend_id' );
         $ids     = $joiners->pack( 'tag_code' );
@@ -79,7 +89,17 @@ class Index implements PageInterface
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
         if( $this->cm->processor->with( $post )->posts() ) {
             $this->em->save();
+            return self::RELOAD_SELF;
         }
-        return self::RELOAD_SELF;
+        $tags    = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
+        $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
+        $friends = $this->em->get( '\App\Contacts\Entity\Friend', null );
+        $roles   = $this->loadRelations( $friends );
+        $data = array(
+            'friends' => $roles,
+            'tagList' => $tagList,
+            'alert'   => 'please check the input',
+        );
+        return $data;
     }
 }

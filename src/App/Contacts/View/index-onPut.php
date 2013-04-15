@@ -13,6 +13,13 @@ $sel = $friends[0]->form( 'gender' );
 $sel->attributes[ 'class' ] = 'span2';
 $sel->style = 'select';
 
+$error = function( $role, $name ) {
+    if( $error = $role->getError( $name ) ) {
+        return "<br /><span class=\"text-error\">{$error}</span>";
+    }
+    return '';
+}
+
 ?>
 <form name="friend" method="post" action="">
 <table class="table">
@@ -33,8 +40,8 @@ $sel->style = 'select';
     <tbody>
     <tr>
         <td></td>
-        <td><?php echo $friend->popHtml( 'friend_name' ); ?></td>
-        <td><?php echo $friend->popHtml( 'gender' ); ?></td>
+        <td><?php echo $friend->popHtml( 'friend_name' ); echo $error( $friend, 'friend_name' ); ?></td>
+        <td><?php echo $friend->popHtml( 'gender' ); echo $error( $friend, 'gender' ); ?></td>
         <td><?php echo $friend->popLinkSelect( 'tags', $tagList, 'name', 'select' )->size('1'); ?>
         <?php echo $friend->popEmptyLink( 'tags' ); ?>
         </td>
