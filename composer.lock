@@ -161,12 +161,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.DataMapper.git",
-                "reference": "11ca6261b97706ee49ca8ea093252c2719e9d092"
+                "reference": "5c36440572da491c25371fe23ebb463a139ff8d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/11ca6261b97706ee49ca8ea093252c2719e9d092",
-                "reference": "11ca6261b97706ee49ca8ea093252c2719e9d092",
+                "url": "https://api.github.com/repos/asaokamei/WScore.DataMapper/zipball/5c36440572da491c25371fe23ebb463a139ff8d0",
+                "reference": "5c36440572da491c25371fe23ebb463a139ff8d0",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 }
             ],
             "description": "DataMapper.",
-            "time": "2013-04-12 21:43:53"
+            "time": "2013-04-15 11:08:59"
         },
         {
             "name": "wscore/dbaccess",
@@ -322,12 +322,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Validation.git",
-                "reference": "08e8749f2dd09e6b9ce3e0deed17c9df3a016399"
+                "reference": "fcd0da19424a3493ff4fb4423dfcad460b6848f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Validation/zipball/08e8749f2dd09e6b9ce3e0deed17c9df3a016399",
-                "reference": "08e8749f2dd09e6b9ce3e0deed17c9df3a016399",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Validation/zipball/fcd0da19424a3493ff4fb4423dfcad460b6848f6",
+                "reference": "fcd0da19424a3493ff4fb4423dfcad460b6848f6",
                 "shasum": ""
             },
             "type": "library",
@@ -344,7 +344,7 @@
                 }
             ],
             "description": "Validation and filtration for values such as form input.",
-            "time": "2013-04-02 07:32:08"
+            "time": "2013-04-14 11:06:07"
         },
         {
             "name": "wscore/web",
@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "f5b322d900a4417f8d14558369731d57253bfed5"
+                "reference": "1c93d59a7aef0ed8e652dd0c17dd4b7c812c1f2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/f5b322d900a4417f8d14558369731d57253bfed5",
-                "reference": "f5b322d900a4417f8d14558369731d57253bfed5",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/1c93d59a7aef0ed8e652dd0c17dd4b7c812c1f2b",
+                "reference": "1c93d59a7aef0ed8e652dd0c17dd4b7c812c1f2b",
                 "shasum": ""
             },
             "require": {
@@ -378,7 +378,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-04-11 22:16:01"
+            "time": "2013-04-14 03:56:16"
         }
     ],
     "packages-dev": [
