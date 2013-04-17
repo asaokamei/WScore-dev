@@ -44,8 +44,7 @@ $htmlType = 'form';
         $cByType  = array();
         foreach( $contacts as $contact ) {
             /** @var $cont \App\Contacts\Entity\Contact */
-            $cont = $contact->retrieve();
-            $type = $cont->type;
+            $type = $contact->retrieve()->type;
             $cByType[ $type ][] = $contact;
         }
         // display contacts by type. 
@@ -55,6 +54,7 @@ $htmlType = 'form';
             foreach( $contacts as $contact ) {
                 echo '<dd>'; 
                 echo $contact->popHtml( 'info', $htmlType )->class_( 'span3' );
+                echo ' '.$contact->popDeleteSelect()->class_( 'span1' );
                 echo $contact->popHtml( 'type', 'hidden' );
                 echo $contact->popLinkHidden( 'friend' );
                 echo '</dd>';
