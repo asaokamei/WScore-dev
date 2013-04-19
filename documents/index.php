@@ -30,12 +30,13 @@ $this->HomePage = true;
     </header>
     <div class="row-fluid marketing">
         <div class="span6">
-            <h3>Serving Html Files</h3>
-            <h4>&gt; <a href="direct/" >direct</a></h4>
-            <p>viewing files under public directly. </p>
-            <h4>&gt; <a href="templates/index.php" >from template folder</a></h4>
-            <p>viewing files under template folder (outside of public). 
-                [<a href="templates/badRequest.php" >bad request</a>] [<a href="templates/noService.php" >no service</a>]</p>
+            <h3>Serving Files</h3>
+            <h4>&gt; <a href="templates/index" >documents</a></h4>
+            <p>viewing various types of files under documents folder. </p>
+            <h4>&gt; other pages</h4>
+            <p>[<a href="direct/">direct</a>] 
+                [<a href="templates/badRequest.php" >bad request</a>] 
+                [<a href="templates/noService.php" >no service</a>]</p>
             <h3>Simple Applications</h3>
             <h4>&gt; <a href="password/index.php" >generate password</a></h4>
             <p>demo for building form elements. 

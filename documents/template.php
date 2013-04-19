@@ -10,6 +10,6 @@
     <li><a href="another.php" >Another</a></li>
     <li><a href="html.html" >Html</a></li>
 </ul>
-<h4>Template Folder</h4>
-<p>contents under template folder is rendered here. </p>
+<h4>documents</h4>
+<p>some texts about WScore Framework. </p>
 <?php echo $this->get( 'content' ); ?>
