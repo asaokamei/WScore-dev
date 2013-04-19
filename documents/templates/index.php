@@ -1,5 +1,5 @@
 <h1>About WScore Framework</h1>
-<h3>yet another frameworks for PHP...</h3>
+<h3>yet another framework for PHP...</h3>
 <p>It's a PHP framework that is simple and small code base. </p>
 <p>But it has a unique technology called Cena Data Transfer Agent (Cena-DTA). </p>
 <p>Cena-DTA allows to synchronize databases between client and server, or more recently 
@@ -16,3 +16,5 @@ a very little/simple code. </p>
     <li>Symfony</li>
     <li>Perfect PHP (a textbook about PHP)</li>
 </ul>
+<h3>license</h3>
+<p><a href="../LICENSE" >GPL version 2.</a></p>
