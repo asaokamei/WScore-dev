@@ -31,9 +31,8 @@ $this->HomePage = true;
     <div class="row-fluid marketing">
         <div class="span6">
             <h3>Serving Files</h3>
-            <h4>&gt; <a href="templates/index" >documents</a></h4>
-            <p>viewing various types of files under documents folder. </p>
-            <h4>&gt; other pages</h4>
+            <p>renders various types of files, such as text and markdown. </p>
+            <h4>&gt; <a href="templates/index" >about WScore</a></h4>
             <p>[<a href="direct/">direct</a>] 
                 [<a href="templates/badRequest.php" >bad request</a>] 
                 [<a href="templates/noService.php" >no service</a>]</p>

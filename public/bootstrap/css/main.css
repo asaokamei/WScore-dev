@@ -24,8 +24,11 @@ dl.dl-horizontal dd { margin-top: 10px; }
 .marketing {
     margin: 60px 0;
 }
-.marketing p + h4 {
+.marketing p + h3 {
     margin-top: 18px;
+}
+.marketing p + h4 {
+    margin-top: 8px;
 }
 
 .memo {
