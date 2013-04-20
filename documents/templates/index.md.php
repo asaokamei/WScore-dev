@@ -33,7 +33,7 @@ as follows.
 All of the files are treated like a PHP scripts, so PHP code can be embedded within.
 
 
-###Chain and Dispatch
+###chain and dispatch
 
 The basic idea about dispatching controller, or resource object is 
 borrowed (i.e. copied) from BEAR.Sunday. I found it so intuitive, 
@@ -62,11 +62,12 @@ AppLoader Module
 : This module contains Page object (i.e. controller) and View file (templates).
 
 
-###license
+License and Patents
+-------------------
 
-[GPL version 2](LICENSE).
+license
+: [GPL version 2](LICENSE).
 
 
-###patents
-
-The Cena-DTA is patented in Japan. 
+patents
+: The Cena-DTA is patented in Japan. 
