@@ -17,6 +17,18 @@ class Template extends PhpTemplate
      */
     public $pageView;
 
+    /**
+     * @Inject
+     * @var \WScore\Web\View\ScoreMenu
+     */
+    public $score;
+    
+    /**
+     * @Inject
+     * @var \WScore\Web\View\NavBarBootstrap
+     */
+    public $menu;
+    
     public function __construct()
     {
         $this->set( 'baseUrl', $this->request->getBaseUrl() );
