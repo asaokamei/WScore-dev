@@ -19,9 +19,9 @@ $this->menu->setMenu( $menu )->setTags( 'pill' );
 
 ?>
     <style type="text/css">
-        div#taskMenu { clear: both; float: right;}
+        div#contactMenu { clear: both; float: right;}
     </style>
-    <div id="taskMenu">
+    <div id="contactMenu">
         <?php echo $this->menu->draw(); ?>
     </div>
     <h4>contacts demo with Cena</h4>
