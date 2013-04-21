@@ -5,7 +5,11 @@ WScore Framework
 
 It's a PHP framework that is simple and small code base. 
 
-But it has a unique technology called [Cena Data Transfer Agent (Cena-DTA)](cena).
+requirements
+: PHP 5.3 or later.
+: PDO based database access.
+
+it's unique technology is [Cena Data Transfer Agent (Cena-DTA)](cena).
 
 Cena-DTA allows to synchronize databases between client and server, or more recently 
 known as cloud and application. With Cena DTA, you also can create complex html forms 
