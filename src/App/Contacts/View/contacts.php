@@ -1,20 +1,29 @@
 <?php
 
-/** @var $this \WScore\Template\TemplateInterface */
+/** @var $this \Demo\Classes\Template */
 $baseUrl = $this->get( 'baseUrl' );
 $taskUrl = $this->get( 'appUrl' );
 $appRoot = $this->get( 'appRoot' );
+$render  = $this->get( 'render' );
+$render  = substr( $render, 1 ); // remove first slash... 
+
+// build menus.
+$menu = array(
+    array( 'title' => 'Contacts', 'icon' => 'home',    'url' => $appRoot,          ),
+    array( 'title' => 'New',      'icon' => 'edit',    'url' => $appRoot.'create', ),
+    array( 'title' => 'Tags',     'icon' => 'hand-up', 'url' => $appRoot.'tags', ),
+    array( 'title' => 'Setup',    'icon' => 'file',    'url' => $appRoot.'setup',  ),
+);
+$menu = $this->score->setMenu( $menu, $appRoot . $render );
+$this->menu->setMenu( $menu )->setTags( 'pill' );
 
 ?>
     <style type="text/css">
-        ul.subMenu { clear: both; float: right;}
+        div#taskMenu { clear: both; float: right;}
     </style>
-    <ul class="nav nav-pills subMenu">
-        <li><a href="<?php echo $appRoot; ?>" >Contacts</a></li>
-        <li><a href="<?php echo $appRoot; ?>create" >Add New</a></li>
-        <li><a href="<?php echo $appRoot; ?>tags" >Tags</a></li>
-        <li><a href="<?php echo $appRoot; ?>setup" >setup</a></li>
-    </ul>
+    <div id="taskMenu">
+        <?php echo $this->menu->draw(); ?>
+    </div>
     <h4>contacts demo with Cena</h4>
     <!-- HtmlTest: Needle=Tasks/View/task -->
     <p>contacts demo application using Cena data transfer agent. </p>
