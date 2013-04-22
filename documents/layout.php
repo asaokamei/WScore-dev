@@ -2,8 +2,7 @@
 
 /** @var $this \Demo\Classes\Template */
 $baseUrl = $this->get( 'baseUrl' );
-$appRoot = $this->get( 'appRoot' );
-$appRoot = substr( $appRoot, 1 ); // remove first slash... 
+$pathInfo= $this->get( 'pathInfo' );
 
 // build menus.
 $menu = array(
@@ -13,7 +12,7 @@ $menu = array(
     array( 'title' => 'Contacts', 'icon' => 'hand-up', 'url' => $baseUrl.'contacts/', ),
     array( 'title' => 'About',    'icon' => 'file',    'url' => $baseUrl.'templates/index',  ),
 );
-$menu = $this->score->setMenu( $menu, $baseUrl.$appRoot );
+$menu = $this->score->setMenu( $menu, $baseUrl.$pathInfo );
 $this->menu->setMenu( $menu )->setTags( 'tabs' );
 
 ?>
