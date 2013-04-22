@@ -14,7 +14,6 @@ function buildApp( $cache )
 {
     // set up folders.
     $root = dirname( __DIR__ );
-    $template_root = $root . '/documents';
 
     // set up container/service. 
     /** @noinspection PhpIncludeInspection */
@@ -24,6 +23,7 @@ function buildApp( $cache )
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/instance.php' );
     }
     $service->set( 'ContainerInterface', $service );
+    $service->set( 'rootDirectory',      $root );
     
     // set up database access
     $dba = include( $root . '/app/config/dbaccess.php' );
@@ -36,11 +36,7 @@ function buildApp( $cache )
     $service->singleton( 'LoggerInterface', $logger );
 
     // set up Template
-    /** @var $template \WScore\Template\TemplateInterface */
     $service->singleton( 'TemplateInterface', '\Demo\Classes\Template' ); 
-    $template = $service->get( 'TemplateInterface' );
-    $template->setRoot( $template_root );
-    $template->setParent( 'layout.php' );
 
     // generate myself, app, object.
     $app = $service->get( 'Demo\Web' );
