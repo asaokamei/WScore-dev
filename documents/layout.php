@@ -32,10 +32,15 @@ $this->menu->setMenu( $menu )->setTags( 'tabs' );
 </style>
 <div class="container-narrow">
     <div class="masthead">
-        <h3 class="muted"><?php if( $this->HomePage ) { ?>WScore Public Demo<?php } else { echo "<a href=\"{$this->baseUrl}index.php\">WScore Public Demo</a>"; } ?></h3>
-        <div id="mainMenu">
-            <?php echo $this->menu->draw(); ?>
-        </div>
+        <?php if( $this->HomePage ) { ?>
+            <h3 class="muted">WScore Demo</h3>
+            <hr>
+        <?php } else { ?>
+            <h3 class="muted"><a href="<?php echo $this->baseUrl;?>index.php">WScore Demo</a></h3>
+            <div id="mainMenu">
+                <?php echo $this->menu->draw(); ?>
+            </div>
+        <?php  } ?>
         <div style="clear:both;"></div>
     </div>
     <?php echo $this->get( 'content' ); ?>
