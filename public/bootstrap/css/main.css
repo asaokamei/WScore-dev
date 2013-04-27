@@ -81,3 +81,11 @@ div.formListBox input {
 pre {
     font-size: 14px;
 }
+
+div#mainMenu {
+    margin-top: -20px;
+}
+div#mainMenu > ul { 
+    clear: both; 
+    float: right;
+}

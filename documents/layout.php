@@ -27,9 +27,6 @@ $this->menu->setMenu( $menu )->setTags( 'tabs' );
 </head>
 <body>
 <!-- HtmlTest: Needle=documents/layout -->
-<style type="text/css">
-    div#mainMenu > ul { clear: both; float: right;}
-</style>
 <div class="container-narrow">
     <div class="masthead">
         <?php if( $this->HomePage ) { ?>
