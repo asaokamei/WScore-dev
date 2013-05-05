@@ -7,13 +7,13 @@ class Generate
      * @Inject
      * @var \App\Pwd\Role\PwdAble
      */
-    protected $password;
+    public $password;
 
     /**
      * @Inject
      * @var \WScore\Html\Forms
      */
-    protected $form;
+    public $form;
 
     public function onGet( $match )
     {

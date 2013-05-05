@@ -7,13 +7,13 @@ class Index
      * @Inject
      * @var \Demo\Role\PwdAble
      */
-    protected $password;
+    public $password;
 
     /**
      * @Inject
      * @var \WScore\Html\Forms
      */
-    protected $form;
+    public $form;
 
     public function onGet( $match )
     {

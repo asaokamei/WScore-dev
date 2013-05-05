@@ -9,7 +9,7 @@ class PwdAble
      * @Inject
      * @var \WScore\Web\Http\Request
      */
-    protected $request;
+    public $request;
     /**
      * @return array
      */
