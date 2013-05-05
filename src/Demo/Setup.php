@@ -10,7 +10,7 @@ class Setup extends AppLoader
      * @Inject
      * @var rootDirectory
      */
-    protected $root;
+    public $root;
     
     public function load( $pathInfo )
     {

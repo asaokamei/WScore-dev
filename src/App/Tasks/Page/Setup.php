@@ -7,7 +7,7 @@ class Setup
      * @Inject
      * @var \App\Tasks\Model\Tasks
      */
-    protected $tasks;
+    public $tasks;
     
     public function onGet( $match )
     {

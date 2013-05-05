@@ -9,19 +9,19 @@ class Done implements PageInterface
      * @Inject
      * @var \WScore\DataMapper\EntityManager
      */
-    protected $em;
+    public $em;
 
     /**
      * @Inject
      * @var \WScore\DataMapper\RoleManager
      */
-    protected $role;
+    public $role;
 
     /**
      * @Inject
      * @var \App\Tasks\Model\Tasks
      */
-    protected $tasks;
+    public $tasks;
 
     /**
      * @param array $match

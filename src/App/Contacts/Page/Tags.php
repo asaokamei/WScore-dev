@@ -9,19 +9,19 @@ class Tags implements PageInterface
      * @Inject
      * @var \WScore\DataMapper\EntityManager
      */
-    protected $em;
+    public $em;
 
     /**
      * @Inject
      * @var \WScore\Cena\CenaManager
      */
-    protected $cm;
+    public $cm;
 
     /**
      * @Inject
      * @var \App\Contacts\Model\Tags
      */
-    protected $tags;
+    public $tags;
 
     private function loadIndex( $match )
     {

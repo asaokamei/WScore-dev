@@ -9,13 +9,13 @@ class TaskApp extends AppLoader
      * @Inject
      * @var \WScore\DataMapper\EntityManager
      */
-    protected $em;
+    public $em;
 
     /**
      * @Inject
      * @var \WScore\DataMapper\RoleManager
      */
-    protected $role;
+    public $role;
 
     public function __construct()
     {

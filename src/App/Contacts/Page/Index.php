@@ -9,25 +9,25 @@ class Index implements PageInterface
      * @Inject
      * @var \WScore\DataMapper\EntityManager
      */
-    protected $em;
+    public $em;
 
     /**
      * @Inject
      * @var \WScore\Cena\CenaManager
      */
-    protected $cm;
+    public $cm;
 
     /**
      * @Inject
      * @var \App\Contacts\Model\Friends
      */
-    protected $friends;
+    public $friends;
 
     /**
      * @Inject
      * @var \WScore\DbAccess\Tools\Paginate
      */
-    protected $paginate;
+    public $paginate;
 
     private function loadIndex( $match )
     {

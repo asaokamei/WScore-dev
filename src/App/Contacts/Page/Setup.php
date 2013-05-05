@@ -9,25 +9,25 @@ class Setup implements PageInterface
      * @Inject
      * @var \App\Contacts\Model\Friends
      */
-    protected $friends;
+    public $friends;
 
     /**
      * @Inject
      * @var \App\Contacts\Model\Contacts
      */
-    protected $contacts;
+    public $contacts;
 
     /**
      * @Inject
      * @var \App\Contacts\Model\Tags
      */
-    protected $tags;
+    public $tags;
 
     /**
      * @Inject
      * @var \App\Contacts\Model\Fr2tg
      */
-    protected $fr2tg;
+    public $fr2tg;
 
     public function onGet( $match )
     {
