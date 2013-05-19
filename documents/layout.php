@@ -7,7 +7,7 @@ $pathInfo= $this->get( 'pathInfo' );
 // build menus.
 $menu = array(
     array( 'title' => 'Top',      'icon' => 'home',    'url' => $baseUrl, ),
-    array( 'title' => 'Password', 'icon' => 'home',    'url' => $baseUrl.'pwd/index',  ),
+    array( 'title' => 'Password', 'icon' => 'home',    'url' => $baseUrl.'password/index',  ),
     array( 'title' => 'Tasks',    'icon' => 'edit',    'url' => $baseUrl.'tasks/', ),
     array( 'title' => 'Contacts', 'icon' => 'hand-up', 'url' => $baseUrl.'contacts/', ),
     array( 'title' => 'About',    'icon' => 'file',    'url' => $baseUrl.'templates/index',  ),
