@@ -4,10 +4,10 @@
 
 /** @var $this \WScore\Template\TemplateInterface */
 
-if( $this->get( 'onMethod' ) === 'onPut' ) {
+if( $this->get( 'method' ) === 'put' ) {
 
     ?>
-    <form name="setup" action="<?php echo $this->get('appRoot'); ?>" method="get">
+    <form name="setup" action="<?php echo $this->get('appURL'); ?>" method="get">
         <p>set up done. </p>
         <p>click list tasks to show all new tasks. </p>
         <button type="submit" class="btn btn-primary">List Tasks</button>

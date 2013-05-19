@@ -7,7 +7,7 @@ if( !$tasks = $this->get( 'friends' ) ) {
     return;
 }
 
-$method     = $this->get( 'onMethod' );
+$method     = 'on' . ucwords( $this->get( 'method' ) );
 $includeForm = '/index-' . $method . '.php';
 
 ?>

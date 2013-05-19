@@ -1,9 +1,7 @@
 <?php
 namespace App\Contacts\Page;
 
-use \WScore\Web\Page\PageInterface;
-
-class Edit extends FriendBase implements PageInterface
+class Edit extends FriendBase
 {
     // +----------------------------------------------------------------------+
     //  on* methods. 
@@ -35,7 +33,7 @@ class Edit extends FriendBase implements PageInterface
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
         if( $this->cm->processor->with( $post )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts() ) {
             $this->em->save();
-            return self::RELOAD_SELF;
+            return $this->reload();
         }
         $this->em->fetchByGet();
         $friend = $this->loadFriend( $match );

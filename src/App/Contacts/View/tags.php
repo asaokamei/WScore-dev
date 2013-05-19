@@ -8,7 +8,7 @@ if( !$tags = $this->get( 'tags' ) ) {
     return;
 }
 
-$onMethod     = $this->get( 'onMethod' );
+$onMethod     = 'on' . ucwords( $this->get( 'method' ) );
 if( $onMethod === 'onEdit' ) {
     $method   = 'post';
     $button   = 'save changes';

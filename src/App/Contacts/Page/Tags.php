@@ -1,9 +1,9 @@
 <?php
 namespace App\Contacts\Page;
 
-use \WScore\Web\Page\PageInterface;
+use WScore\Web\Respond\ResponsePage;
 
-class Tags implements PageInterface
+class Tags extends ResponsePage
 {
     /**
      * @Inject
@@ -61,7 +61,7 @@ class Tags implements PageInterface
         if( $this->cm->processor->with( $post )->clean( '\App\Contacts\Entity\Tag', 'tag_code' )->posts() ) {
             $this->em->save();
         }
-        return self::RELOAD_SELF;
+        return $this->reload();
     }
 
 }

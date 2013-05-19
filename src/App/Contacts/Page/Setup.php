@@ -1,9 +1,9 @@
 <?php
 namespace App\Contacts\Page;
 
-use \WScore\Web\Page\PageInterface;
+use WScore\Web\Respond\ResponsePage;
 
-class Setup implements PageInterface
+class Setup extends ResponsePage
 {
     /**
      * @Inject
@@ -31,7 +31,7 @@ class Setup implements PageInterface
 
     public function onGet( $match )
     {
-        return self::RENDER_PAGE;
+        return array();
     }
     
     public function onPut( $match )

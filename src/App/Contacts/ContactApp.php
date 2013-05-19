@@ -1,10 +1,9 @@
 <?php
 namespace App\Contacts;
 
-use Demo\Classes\AppModuleLogger as AppLoader;
-use WScore\DiContainer\ContainerInterface;
+use WScore\Web\Respond\Dispatch;
 
-class ContactApp extends AppLoader
+class ContactApp extends Dispatch
 {
     /**
      * @Inject
@@ -46,9 +45,9 @@ class ContactApp extends AppLoader
      * @param string $pathInfo
      * @return null|string
      */
-    public function load( $pathInfo )
+    public function respond( $match=array() )
     {
         $this->template->addParent( $this->viewRoot . '/contacts.php' );
-        return parent::load( $pathInfo );
+        return parent::respond( $match );
     }
 }

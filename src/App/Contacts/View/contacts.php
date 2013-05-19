@@ -2,9 +2,9 @@
 
 /** @var $this \Demo\Classes\Template */
 $baseUrl = $this->get( 'baseUrl' );
-$taskUrl = $this->get( 'appUrl' );
-$appRoot = $this->get( 'appRoot' );
-$render  = $this->get( 'render' );
+$taskUrl = $this->get( 'appInfo' );
+$appRoot = $this->get( 'appURL' );
+$render  = $this->get( 'appInfo' );
 $render  = substr( $render, 1 ); // remove first slash... 
 
 // build menus.

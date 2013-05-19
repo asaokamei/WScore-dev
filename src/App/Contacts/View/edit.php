@@ -7,9 +7,9 @@ if( !$friend = $this->get( 'friend' ) ) {
     return;
 }
 
-$method     = $this->get( 'onMethod' );
-$includeForm = '/edit-' . $method . '.php';
-if( $method === 'onEdit' ) {
+$method     = ucwords( $this->get( 'method' ) );
+$includeForm = '/edit-on' . $method . '.php';
+if( $method === 'Edit' ) {
     $htmlType = 'form';
 } else {
     $htmlType = 'html';

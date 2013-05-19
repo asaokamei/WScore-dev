@@ -1,7 +1,9 @@
 <?php
 namespace App\Contacts\Page;
 
-class FriendBase
+use WScore\Web\Respond\ResponsePage;
+
+class FriendBase extends ResponsePage
 {
     /**
      * @Inject

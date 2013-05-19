@@ -1,9 +1,9 @@
 <?php
 namespace App\Contacts\Page;
 
-use \WScore\Web\Page\PageInterface;
+use WScore\Web\Respond\ResponsePage;
 
-class Index implements PageInterface
+class Index extends ResponsePage
 {
     /**
      * @Inject
@@ -89,7 +89,7 @@ class Index implements PageInterface
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
         if( $this->cm->processor->with( $post )->posts() ) {
             $this->em->save();
-            return self::RELOAD_SELF;
+            return $this->reload();
         }
         $tags    = $this->em->getModel( '\App\Contacts\Entity\Tag' )->query()->select();
         $tagList = $this->em->fetch( '\App\Contacts\Entity\Tag', $tags );
