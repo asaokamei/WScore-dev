@@ -1,9 +1,9 @@
 <?php
 namespace App\Tasks;
 
-use Demo\Classes\AppModuleLogger as AppLoader;
+use WScore\Web\Respond\Dispatch;
 
-class TaskApp extends AppLoader
+class TaskApp extends Dispatch
 {
     /**
      * @Inject
@@ -36,9 +36,9 @@ class TaskApp extends AppLoader
      * @param string $pathInfo
      * @return null|string
      */
-    public function load( $pathInfo )
+    public function respond( $match=array() )
     {
         $this->template->addParent( $this->viewRoot . '/task.php' );
-        return parent::load( $pathInfo );
+        return parent::respond( $match );
     }
 }

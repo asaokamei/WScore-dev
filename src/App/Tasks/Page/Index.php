@@ -1,7 +1,9 @@
 <?php
 namespace App\Tasks\Page;
 
-class Index
+use WScore\Web\Respond\ResponsePage;
+
+class Index extends ResponsePage
 {
     /**
      * @Inject

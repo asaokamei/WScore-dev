@@ -1,9 +1,9 @@
 <?php
 namespace App\Tasks\Page;
 
-use \WScore\Web\Page\PageInterface;
+use WScore\Web\Respond\ResponsePage;
 
-class Done implements PageInterface
+class Done extends ResponsePage
 {
     /**
      * @Inject
@@ -37,7 +37,8 @@ class Done implements PageInterface
             $active = $this->role->applyActive( $task );
             $active->save();
         }
-        return self::JUMP_TO_APP_ROOT;
+        $this->loadAppRoot();
+        return array();
     }
 
     /**
@@ -54,7 +55,8 @@ class Done implements PageInterface
             $active->delete();
             $active->save();
         }
-        return self::JUMP_TO_APP_ROOT;
+        $this->loadAppRoot();
+        return array();
     }
 
     /**

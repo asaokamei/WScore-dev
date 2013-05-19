@@ -1,7 +1,9 @@
 <?php
 namespace App\Tasks\Page;
 
-class Setup
+use WScore\Web\Respond\ResponsePage;
+
+class Setup extends ResponsePage
 {
     /**
      * @Inject

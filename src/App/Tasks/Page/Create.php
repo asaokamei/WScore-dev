@@ -1,9 +1,9 @@
 <?php
 namespace App\Tasks\Page;
 
-use \WScore\Web\Page\PageInterface;
+use WScore\Web\Respond\ResponsePage;
 
-class Create implements PageInterface
+class Create extends ResponsePage
 {
     /**
      * @Inject
@@ -60,7 +60,8 @@ class Create implements PageInterface
         elseif( $task->validate() ) {
             $active = $this->role->applyActive( $task );
             $active->save();
-            return self::JUMP_TO_APP_ROOT;
+            $this->loadAppRoot();
+            return array();
         }
         $match[ 'task' ] = $task;
         $match[ 'tokenVal' ] = $this->session->pushToken();

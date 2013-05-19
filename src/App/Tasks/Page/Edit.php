@@ -1,9 +1,9 @@
 <?php
 namespace App\Tasks\Page;
 
-use \WScore\Web\Page\PageInterface;
+use WScore\Web\Respond\ResponsePage;
 
-class Edit implements PageInterface
+class Edit extends ResponsePage
 {
     /**
      * @Inject
@@ -61,7 +61,8 @@ class Edit implements PageInterface
         elseif( $task->validate() ) {
             $active = $this->role->applyActive( $task );
             $active->save();
-            return self::JUMP_TO_APP_ROOT;
+            $this->loadAppRoot();
+            return array();
         }
         $match[ 'alert' ] = 'please check the inputs. ';
         $match[ 'task' ] = $task;

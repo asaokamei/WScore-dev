@@ -32,9 +32,9 @@ class Web extends WebApp
     {
         $dic = $this->container;
         $this->addResponder( $dic->get( '\Demo\Setup' ) );
+        $this->addResponder( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
         /*
         $this->addResponder( $dic->get( '\App\Contacts\ContactApp' ), 'contacts/' );
-        $this->addResponder( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
         $this->addResponder( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
         */
         $this->addResponder( $dic->get( '\Demo\Renderer' ) );

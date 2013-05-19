@@ -4,7 +4,7 @@
 
 /** @var $this \WScore\Template\TemplateInterface */
 
-if( $this->get( 'onMethod' ) === 'onGet' ) {
+if( $this->get( 'method' ) === 'get' ) {
 
     ?>
     <form name="setup" action="" method="post">
@@ -18,7 +18,7 @@ if( $this->get( 'onMethod' ) === 'onGet' ) {
 } else {
     
     ?>
-    <form name="setup" action="<?php echo $this->get('appRoot'); ?>" method="get">
+    <form name="setup" action="<?php echo $this->get('appURL'); ?>" method="get">
         <p>set up done. </p>
         <p>click list tasks to show all new tasks. </p>
         <button type="submit" class="btn btn-primary">List Tasks</button>
