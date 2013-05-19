@@ -4,7 +4,7 @@ namespace Demo;
 use \WScore\DiContainer\ContainerInterface;
 use \WScore\Template\TemplateInterface;
 use \Monolog\Logger as LoggerInterface;
-use \WScore\Web\WebApp;
+use \WScore\Web\HttpResponder as WebApp;
 
 class Web extends WebApp
 {
@@ -31,11 +31,13 @@ class Web extends WebApp
     public function __construct()
     {
         $dic = $this->container;
-        $this->setModule( $dic->get( '\Demo\Setup' ) );
-        $this->setModule( $dic->get( '\App\Contacts\ContactApp' ), 'contacts/' );
-        $this->setModule( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
-        $this->setModule( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
-        $this->setModule( $dic->get( '\Demo\Renderer' ) );
-        $this->setModule( $dic->get( '\Demo\Logger' ), true );
+        $this->addResponder( $dic->get( '\Demo\Setup' ) );
+        /*
+        $this->addResponder( $dic->get( '\App\Contacts\ContactApp' ), 'contacts/' );
+        $this->addResponder( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
+        $this->addResponder( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
+        */
+        $this->addResponder( $dic->get( '\Demo\Renderer' ) );
+        $this->addResponder( $dic->get( '\Demo\Logger' ), true );
     }
 }

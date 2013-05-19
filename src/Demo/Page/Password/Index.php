@@ -1,7 +1,9 @@
 <?php
 namespace Demo\Page\Password;
 
-class Index
+use WScore\Web\Respond\ResponsePage;
+
+class Index extends ResponsePage
 {
     /**
      * @Inject

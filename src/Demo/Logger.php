@@ -2,8 +2,9 @@
 namespace Demo;
 
 use WScore\Web\Module\AppLoader;
+use WScore\Web\Respond\Dispatch;
 
-class Logger extends AppLoader
+class Logger extends Dispatch
 {
     /**
      * @Inject
@@ -11,7 +12,7 @@ class Logger extends AppLoader
      */
     public $profile;
 
-    public function load( $pathInfo )
+    public function respond( $match=array() )
     {
         $this->profile->logProfile();
         return;
