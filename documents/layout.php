@@ -48,16 +48,15 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
     <div class="masthead">
         <?php if( $this->HomePage ) { ?>
             <h3 class="muted">WScore Demo</h3>
-            <hr>
         <?php } else { ?>
             <h3 class="muted"><a href="<?php echo $this->baseUrl;?>index.php">WScore Demo</a></h3>
+        <?php  } ?>
             <div id="mainMenu">
                 <?php echo $menu; ?>
             </div>
             <div id="subMenu">
                 <?php echo $subMenu; ?>
             </div>
-        <?php  } ?>
         <div style="clear:both;"></div>
     </div>
     <?php
