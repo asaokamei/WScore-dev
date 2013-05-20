@@ -7,10 +7,10 @@ $pathInfo= $this->get( 'pathInfo' );
 // build menus.
 $menu = array(
     array( 'title' => 'Top',      'icon' => 'home',    'url' => $baseUrl, ),
-    array( 'title' => 'Password', 'icon' => 'home',    'url' => $baseUrl.'password/index',  ),
+    array( 'title' => 'About',    'icon' => 'file',    'url' => $baseUrl.'templates/index',  ),
+    array( 'title' => 'Password', 'icon' => 'plus-sign',    'url' => $baseUrl.'password/index',  ),
     array( 'title' => 'Tasks',    'icon' => 'edit',    'url' => $baseUrl.'tasks/', ),
     array( 'title' => 'Contacts', 'icon' => 'hand-up', 'url' => $baseUrl.'contacts/', ),
-    array( 'title' => 'About',    'icon' => 'file',    'url' => $baseUrl.'templates/index',  ),
 );
 $menu = $this->score->setMenu( $menu, $baseUrl.$pathInfo );
 $menu = $this->menu->setMenu( $menu )->setTags( 'tabs' )->draw();
@@ -32,7 +32,14 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
     <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/main.css" />
     <title>WScore Public Demo</title>
     <style type="text/css">
-        ul.subMenu { clear: both; float: right;}
+        div#mainMenu ul {
+            margin-bottom: 5px;
+        }
+        div#subMenu ul {
+            margin-bottom: 5px;
+            clear: both; 
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +54,9 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
             <div id="mainMenu">
                 <?php echo $menu; ?>
             </div>
-            <ul class="subMenu">
+            <div id="subMenu">
                 <?php echo $subMenu; ?>
-            </ul>
+            </div>
         <?php  } ?>
         <div style="clear:both;"></div>
     </div>
