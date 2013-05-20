@@ -64,7 +64,7 @@ class Edit extends ResponsePage
             $this->loadAppRoot();
             return array();
         }
-        $match[ 'alert' ] = 'please check the inputs. ';
+        $this->invalidParameter( 'Please check the input values.' );
         $match[ 'task' ] = $task;
         $match[ 'tokenVal' ] = $this->session->pushToken();
         $match[ 'tokenTag' ] = $this->session->popTokenTagName();

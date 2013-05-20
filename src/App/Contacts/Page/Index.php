@@ -98,8 +98,9 @@ class Index extends ResponsePage
         $data = array(
             'friends' => $roles,
             'tagList' => $tagList,
-            'alert'   => 'please check the input',
         );
-        return $data;
+        $this->assign( $data );
+        $this->invalidParameter( 'Please check the input values.' );
+        return $this;
     }
 }

@@ -53,6 +53,18 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
         <?php  } ?>
         <div style="clear:both;"></div>
     </div>
+    <?php
+    // displaying alerts. 
+    if( $this->get( 'alert' ) ) {
+        $alert = $this->get( 'alert' );
+        echo '
+        <div class="alert alert-error">
+          <strong>Error:</strong><br/>
+          <strong>' .$alert.'</strong>
+        </div>
+        ';
+    }
+    ?>
     <?php echo $this->get( 'content' ); ?>
     <footer class="footer">
         <hr>

@@ -20,11 +20,4 @@ $this->set( 'sub_menu', $menu );
     <h1><?= $this->get( 'title' ); ?></h1>
 <?php
 
-if( $alert = $this->get( 'alert' ) ) {
-    echo '<div class="alert alert-error">
-      <strong>Error:</strong><br/>
-      <strong>' .$alert.'</strong>
-    </div>';
-}
-
 echo $this->get( 'content' );

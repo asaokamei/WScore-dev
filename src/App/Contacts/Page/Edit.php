@@ -40,7 +40,9 @@ class Edit extends FriendBase
         $data   = $this->cenaFriend( $friend );
         $this->em->fetchByGet( false );
         $data   = $this->linkContacts( $data );
-        return $data;
+        $this->assign( $data );
+        $this->invalidParameter( 'Please check the input values.' );
+        return $this;
     }
     // +----------------------------------------------------------------------+
 }
