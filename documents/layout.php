@@ -13,7 +13,14 @@ $menu = array(
     array( 'title' => 'About',    'icon' => 'file',    'url' => $baseUrl.'templates/index',  ),
 );
 $menu = $this->score->setMenu( $menu, $baseUrl.$pathInfo );
-$this->menu->setMenu( $menu )->setTags( 'tabs' );
+$menu = $this->menu->setMenu( $menu )->setTags( 'tabs' )->draw();
+
+if( $subMenu = $this->get( 'sub_menu' ) ) {
+    $subMenu = $this->score->setMenu( $subMenu, $baseUrl.$pathInfo );
+    $subMenu = $this->menu->setMenu( $subMenu )->setTags( 'pill' )->draw();
+} else {
+    $subMenu = '';
+}
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +31,9 @@ $this->menu->setMenu( $menu )->setTags( 'tabs' );
     <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/bootstrap-responsive.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/main.css" />
     <title>WScore Public Demo</title>
+    <style type="text/css">
+        ul.subMenu { clear: both; float: right;}
+    </style>
 </head>
 <body>
 <!-- HtmlTest: Needle=documents/layout -->
@@ -35,8 +45,11 @@ $this->menu->setMenu( $menu )->setTags( 'tabs' );
         <?php } else { ?>
             <h3 class="muted"><a href="<?php echo $this->baseUrl;?>index.php">WScore Demo</a></h3>
             <div id="mainMenu">
-                <?php echo $this->menu->draw(); ?>
+                <?php echo $menu; ?>
             </div>
+            <ul class="subMenu">
+                <?php echo $subMenu; ?>
+            </ul>
         <?php  } ?>
         <div style="clear:both;"></div>
     </div>

@@ -11,20 +11,12 @@ class Renderer extends Dispatch
     {
         parent::__construct();
         $routes = array(
-            'password/index.php' => array( 'addParent' => 'password.php' ),
+            'password/*'  => array( 'addParent' => 'password.php' ),
+            'templates/*' => array( 'addParent' => 'template.php' ),
             '/'   => array( 'render' => 'index.php' ),
             '/*'  => array(),
         );
         $this->setRoute( $routes );
         $this->viewRoot = dirname( dirname( __DIR__ ) ). '/documents';
-    }
-    
-    public function respond( $match=array() )
-    {
-        $pathInfo = $this->request->pathInfo;
-        if( substr( $pathInfo, 0, 10 ) == 'templates/') {
-            $this->template->addParent( 'template.php' );
-        }
-        return parent::respond( $match );
     }
 }

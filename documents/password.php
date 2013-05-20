@@ -1,13 +1,14 @@
 <?php
 /** @var $this \WScore\Template\PhpTemplate */
+
+$appRoot = $this->get( 'appURL' );
+$menu = array(
+    array( 'title' => 'New Passwords', 'url' => $appRoot.'password/index',          ),
+);
+$this->set( 'sub_menu', $menu );
+
 ?>
-<style type="text/css">
-    ul.subMenu { clear: both; float: right;}
-</style>
 <!-- HtmlTest: Needle=documents/password -->
-<ul class="nav nav-pills subMenu">
-    <li><a href="index" >New Passwords</a></li>
-</ul>
 <h4>Password</h4>
 <p>generates password as you like. </p>
 <?php echo $this->get( 'content' ); ?>

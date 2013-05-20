@@ -1,11 +1,7 @@
 <?php
 
 /** @var $this \Demo\Classes\Template */
-$baseUrl = $this->get( 'baseUrl' );
-$taskUrl = $this->get( 'appInfo' );
 $appRoot = $this->get( 'appURL' );
-$render  = $this->get( 'appInfo' );
-$render  = substr( $render, 1 ); // remove first slash... 
 
 // build menus.
 $menu = array(
@@ -14,16 +10,9 @@ $menu = array(
     array( 'title' => 'Tags',     'icon' => 'hand-up', 'url' => $appRoot.'tags', ),
     array( 'title' => 'Setup',    'icon' => 'file',    'url' => $appRoot.'setup',  ),
 );
-$menu = $this->score->setMenu( $menu, $appRoot . $render );
-$this->menu->setMenu( $menu )->setTags( 'pill' );
+$this->set( 'sub_menu', $menu );
 
 ?>
-    <style type="text/css">
-        div#contactMenu { clear: both; float: right;}
-    </style>
-    <div id="contactMenu">
-        <?php echo $this->menu->draw(); ?>
-    </div>
     <h4>contacts demo with Cena</h4>
     <!-- HtmlTest: Needle=Tasks/View/task -->
     <p>contacts demo application using Cena data transfer agent. </p>
