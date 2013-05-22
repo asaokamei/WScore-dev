@@ -23,20 +23,23 @@ $this->set( 'HomePage', true );
         }
     </style>
     <header class="jumbotron">
+
         <h1>WScore framework ♫</h1>
         <p class="lead">Simple Data Mapper and Cena data transfer agent <br />for web application development.</p>
         <a href="https://github.com/asaokamei/WScore-dev" class="btn btn-success">see it at GitHub</a>
+        
         <hr>
     </header>
     <div class="row-fluid marketing">
         <div class="span6">
+
             <h3>About WScore</h3>
 
             <h4>&gt; <a href="templates/index" >about WScore</a></h4>
-            <p>documents about WScore framework. some are written in markdown, others are html. </p>
+            <p>documents about WScore framework.  </p>
 
-            <h4>&gt; error pages</h4>
-            <p>sample error pages.  <br />
+            <h4>&gt; special pages</h4>
+            <p>sample error pages and some old-traditional php-way page.  <br />
                 [<a href="direct/">direct</a>]
                 [<a href="templates/badRequest.php" >bad request</a>] 
                 [<a href="templates/noService.php" >no service</a>]</p>

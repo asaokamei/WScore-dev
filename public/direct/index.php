@@ -1,9 +1,11 @@
 <?php
 require_once( __DIR__ . '/../../app/bootstrap.php' );
-$app = App\getApp( 'info', false );
-/** @var $app App\App */
-/** @var $view WScore\Template\TemplateInterface */
+$app = App\getApp( 'WsDemo-app', true );
+/** @var $app Demo\Web */
+/** @var $view \Demo\Classes\Template */
 $view = $app->container->get( 'TemplateInterface' );
+$root = $app->container->get( 'rootDirectory' );
+$view->addParent( $root . '/documents/layout.php' );
 $view->renderSelf();
 
 ?>
@@ -12,15 +14,18 @@ $view->renderSelf();
 <h1>Top of Direct Folder</h1>
 <div class="row-fluid marketing">
     <div class="span6">
-        <h3>brah brah</h3>
-        <p>aasdf asdf asdfasd fasdf asdf asfawea efasdfa sdfad fasdf asdfa sfasd fasd. </p>
+
+        <h3>Direct View</h3>
+        <p>this page is rendered directly, i.e. skipping front-end dispatcher. </p>
+        <p>not sure how useful this is. demonstration of renderSelf function in WScore\Template. </p>
+
     </div>
     <div class="span6">
-        <h3>more brah</h3>
-        <p>qwerqwer qwerqwerq werq werqwe rqwerqwerqwertqwerqwerqwe . </p>
-        <p>a l ljl ;lj lj;lkjkloiuo ij  ljl jl; j;lj lkj; kll;l . </p>
+
+        <h3>Setting View</h3>
+        <p>set up template ($view in this source code) to render the page inside a common layout. </p>
+
     </div>
-    <div class="span12">
-        <p>12394123904712390 123 4129384 12394 12 4129038 41928074 0129 741209 412...</p>
+    <div class="span6">
     </div>
 </div>
