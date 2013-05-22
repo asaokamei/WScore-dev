@@ -13,7 +13,7 @@ class Renderer extends Dispatch
         $routes = array(
             'password/*'  => array( 'addParent' => 'password.php' ),
             'templates/*' => array( 'addParent' => 'template.php' ),
-            '/'   => array( 'render' => 'index.php' ),
+            '/'   => array( 'render' => 'index' ),
             '/*'  => array(),
         );
         $this->setRoute( $routes );

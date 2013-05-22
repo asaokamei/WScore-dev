@@ -6,11 +6,11 @@ $pathInfo= $this->get( 'pathInfo' );
 
 // build menus.
 $menu = array(
-    array( 'title' => 'Top',      'icon' => 'home',    'url' => $baseUrl, ),
-    array( 'title' => 'About',    'icon' => 'file',    'url' => $baseUrl.'templates/index',  ),
-    array( 'title' => 'Password', 'icon' => 'plus-sign',    'url' => $baseUrl.'password/index',  ),
-    array( 'title' => 'Tasks',    'icon' => 'edit',    'url' => $baseUrl.'tasks/', ),
-    array( 'title' => 'Contacts', 'icon' => 'hand-up', 'url' => $baseUrl.'contacts/', ),
+    array( 'title' => 'Top',      'icon' => 'home',      'url' => $baseUrl, ),
+    array( 'title' => 'About',    'icon' => 'file',      'url' => $baseUrl.'templates/index',  ),
+    array( 'title' => 'Password', 'icon' => 'plus-sign', 'url' => $baseUrl.'password/index',  ),
+    array( 'title' => 'Tasks',    'icon' => 'edit',      'url' => $baseUrl.'tasks/', ),
+    array( 'title' => 'Contacts', 'icon' => 'hand-up',   'url' => $baseUrl.'contacts/', ),
 );
 $menu = $this->score->setMenu( $menu, $baseUrl.$pathInfo );
 $menu = $this->menu->setMenu( $menu )->setTags( 'tabs' )->draw();
@@ -49,7 +49,7 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
         <?php if( $this->HomePage ) { ?>
             <h3 class="muted">WScore Demo</h3>
         <?php } else { ?>
-            <h3 class="muted"><a href="<?php echo $this->baseUrl;?>index.php">WScore Demo</a></h3>
+            <h3 class="muted"><a href="<?php echo $this->baseUrl;?>index">WScore Demo</a></h3>
         <?php  } ?>
             <div id="mainMenu">
                 <?php echo $menu; ?>

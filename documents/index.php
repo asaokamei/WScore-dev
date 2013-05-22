@@ -1,13 +1,13 @@
 <?php
-/** @var $this WScore\Template\Template */
-$this->HomePage = true;
+/** @var $this \Demo\Classes\Template */
+$this->set( 'HomePage', true );
 
 ?>
     <style type="text/css">
 
             /* Main marketing message and sign up button */
         .jumbotron {
-            margin: 20px 0;
+            margin: 30px 0;
             text-align: center;
         }
         .jumbotron h1 {
@@ -19,7 +19,7 @@ $this->HomePage = true;
             padding: 10px 10px;
         }
         .marketing {
-            margin: 20px 0;
+            margin: 30px 0;
         }
     </style>
     <header class="jumbotron">
@@ -30,24 +30,34 @@ $this->HomePage = true;
     </header>
     <div class="row-fluid marketing">
         <div class="span6">
-            <h3>Serving Files</h3>
-            <p>renders various types of files, such as text and markdown. </p>
+            <h3>About WScore</h3>
+
             <h4>&gt; <a href="templates/index" >about WScore</a></h4>
-            <p>[<a href="direct/">direct</a>] 
+            <p>documents about WScore framework. some are written in markdown, others are html. </p>
+
+            <h4>&gt; error pages</h4>
+            <p>sample error pages.  <br />
+                [<a href="direct/">direct</a>]
                 [<a href="templates/badRequest.php" >bad request</a>] 
                 [<a href="templates/noService.php" >no service</a>]</p>
-            <h3>Simple Applications</h3>
-            <h4>&gt; <a href="password/index.php" >generate password</a></h4>
-            <p>demo for building form elements. 
-                another demo using AppLoader (<a href="pwd/" >pwd</a>). </p>
+
+            <h3>Caches, etc.</h3>
+            <p>majority of the application is cached into APC as a single object image, as inspired (copied) from BEAR.Sunday.</p>
+            <p>[<a href="cache.php" >cache.php</a>] [<a href="apc.php" >apc</a>] [<a href="info.php" >phpinfo</a>]</p>
+
         </div>
         <div class="span6">
-            <h3>DataBase Sample</h3>
+
+            <h3>Sample Applications</h3>
+
+            <h4>&gt; <a href="password/index.php" >generate password</a></h4>
+            <p>demo for building form elements.</p>
+
             <h4>&gt; <a href="tasks/" >task/todo application</a></h4>
-            <p>demo for using data mapper, model, and entity. </p>
+            <p>a simple task/todo manager using data mapper, model, and entity. </p>
+
             <h4>&gt; <a href="contacts/" >contacts using Cena</a></h4>
             <p>a conceptual demo for using Cena-DTA using friends and contact demo. </p>
-            <h3>Caching Application</h3>
-            <p>majority of the application is cached into APC as a single object image, as inspired (copied) from BEAR.Sunday.</p>
+
         </div>
     </div>
