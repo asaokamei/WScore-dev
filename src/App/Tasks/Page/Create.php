@@ -3,6 +3,13 @@ namespace App\Tasks\Page;
 
 use WScore\Web\Respond\ResponsePage;
 
+/**
+ * Class Create
+ *
+ * @package App\Tasks\Page
+ * 
+ * @namespace App-Tasks
+ */
 class Create extends ResponsePage
 {
     /**

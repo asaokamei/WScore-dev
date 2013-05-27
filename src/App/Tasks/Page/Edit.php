@@ -3,6 +3,13 @@ namespace App\Tasks\Page;
 
 use WScore\Web\Respond\ResponsePage;
 
+/**
+ * Class Edit
+ *
+ * @package App\Tasks\Page
+ *
+ * @namespace App-Tasks
+ */
 class Edit extends ResponsePage
 {
     /**

@@ -3,6 +3,13 @@ namespace App\Tasks;
 
 use WScore\Web\Respond\Dispatch;
 
+/**
+ * Class TaskApp
+ *
+ * @package App\Tasks
+ *
+ * @namespace App-Tasks
+ */
 class TaskApp extends Dispatch
 {
     /**
@@ -16,6 +23,12 @@ class TaskApp extends Dispatch
      * @var \WScore\DataMapper\RoleManager
      */
     public $role;
+
+    /**
+     * @Inject
+     * @var \App\Tasks\Model\Tasks
+     */
+    public $tasks;
 
     public function __construct()
     {

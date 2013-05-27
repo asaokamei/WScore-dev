@@ -3,6 +3,13 @@ namespace App\Tasks\Entity;
 
 use \WScore\DataMapper\Entity\EntityAbstract;
 
+/**
+ * Class Task
+ *
+ * @package App\Tasks\Entity
+ *
+ * @namespace App-Tasks
+ */
 class Task extends EntityAbstract
 {
     const STATUS_ACTIVE = '1';

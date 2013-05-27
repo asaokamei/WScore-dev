@@ -16,6 +16,7 @@ function buildApp( $cache )
     $root = dirname( __DIR__ );
 
     // set up container/service. 
+    /** @var $service \WScore\DiContainer\Container */
     /** @noinspection PhpIncludeInspection */
     if( $cache ) {
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/withCache.php' );
@@ -28,6 +29,11 @@ function buildApp( $cache )
     // set up database access
     $dba = include( $root . '/app/config/dbaccess.php' );
     $service->set( '\Pdo', $dba );
+    // set up app-tasks namespace
+    $service->setNamespace( 'App-Tasks' );
+    $dba = include( $root . '/app/config/sqlite.php' );
+    $service->set( '\Pdo', $dba );
+    $service->setNamespace();
     
     // set up logger
     $logger = new Logger( 'demoApp' );

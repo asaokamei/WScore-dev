@@ -9,6 +9,7 @@ use \WScore\DataMapper\Model;
  *
  * @package App\Tasks\Model
  * 
+ * @namespace App-Tasks
  * @singleton
  */
 class Tasks extends Model
@@ -37,7 +38,7 @@ class Tasks extends Model
     {
         $sql = "
         CREATE TABLE {$this->table} (
-          task_id    SERIAL,
+          task_id    INTEGER PRIMARY KEY AUTOINCREMENT,
           memo       varchar(2048) NOT NULL DEFAULT '',
           done_by    date,
           status     char(1) NOT NULL DEFAULT '1',
