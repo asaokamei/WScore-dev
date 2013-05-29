@@ -7,7 +7,7 @@ use \WScore\DataMapper\Model;
  * Class Contacts
  * @package App\Contacts\Model
  *
- * @singleton
+ * @namespace App-Contacts
  */
 class Contacts extends Model
 {

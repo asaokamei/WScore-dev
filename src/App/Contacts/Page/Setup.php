@@ -3,6 +3,13 @@ namespace App\Contacts\Page;
 
 use WScore\Web\Respond\ResponsePage;
 
+/**
+ * Class Setup
+ *
+ * @package App\Contacts\Page
+ *
+ * @namespace App-Contacts
+ */
 class Setup extends ResponsePage
 {
     /**

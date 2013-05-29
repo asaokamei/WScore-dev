@@ -1,6 +1,12 @@
 <?php
 namespace App\Contacts\Page;
-
+/**
+ * Class Edit
+ *
+ * @package App\Contacts\Page
+ *
+ * @namespace App-Contacts
+ */
 class Edit extends FriendBase
 {
     // +----------------------------------------------------------------------+

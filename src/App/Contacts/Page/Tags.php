@@ -3,6 +3,13 @@ namespace App\Contacts\Page;
 
 use WScore\Web\Respond\ResponsePage;
 
+/**
+ * Class Tags
+ *
+ * @package App\Contacts\Page
+ *
+ * @namespace App-Contacts
+ */
 class Tags extends ResponsePage
 {
     /**

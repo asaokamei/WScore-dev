@@ -10,7 +10,6 @@ use \WScore\DataMapper\Model;
  * @package App\Tasks\Model
  * 
  * @namespace App-Tasks
- * @singleton
  */
 class Tasks extends Model
 {

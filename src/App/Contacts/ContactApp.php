@@ -3,6 +3,13 @@ namespace App\Contacts;
 
 use WScore\Web\Respond\Dispatch;
 
+/**
+ * Class ContactApp
+ *
+ * @package App\Contacts
+ * 
+ * @namespace App-Contacts
+ */
 class ContactApp extends Dispatch
 {
     /**

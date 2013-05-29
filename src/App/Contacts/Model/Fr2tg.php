@@ -7,7 +7,7 @@ use \WScore\DataMapper\Model;
  * Class Fr2tg
  * @package App\Contacts\Model
  *
- * @singleton
+ * @namespace App-Contacts
  */
 class Fr2tg extends Model
 {

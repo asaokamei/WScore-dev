@@ -7,7 +7,7 @@ use \WScore\DataMapper\Model;
  * Class Tags
  * @package App\Contacts\Model
  *
- * @singleton
+ * @namespace App-Contacts
  */
 class Tags extends Model
 {
