@@ -39,10 +39,10 @@ function buildApp( $cache )
     $logger = new Logger( 'demoApp' );
     $stream = new StreamHandler( $root . '/app/logs/access.log', Logger::INFO );
     $logger->pushHandler( $stream );
-    $service->singleton( 'LoggerInterface', $logger );
+    $service->set( 'LoggerInterface', $logger );
 
     // set up Template
-    $service->singleton( 'TemplateInterface', '\Demo\Classes\Template' ); 
+    $service->set( 'TemplateInterface', '\Demo\Classes\Template' )->singleton(); 
 
     // generate myself, app, object.
     $app = $service->get( 'Demo\Web' );
