@@ -26,14 +26,13 @@ function buildApp( $cache )
     $service->set( 'ContainerInterface', $service );
     $service->set( 'rootDirectory',      $root );
     
+    $service->set( '\WScore\DbAccess\Query' )->scope( 'shared' );
+    // set up app-tasks namespace
+    $dba = include( $root . '/app/config/sqlite.php' );
+    $service->set( '\Pdo', $dba )->resetNamespace( 'App-Tasks');
     // set up database access
     $dba = include( $root . '/app/config/dbaccess.php' );
     $service->set( '\Pdo', $dba );
-    // set up app-tasks namespace
-    $service->setNamespace( 'App-Tasks' );
-    $dba = include( $root . '/app/config/sqlite.php' );
-    $service->set( '\Pdo', $dba );
-    $service->setNamespace();
     
     // set up logger
     $logger = new Logger( 'demoApp' );
