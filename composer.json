@@ -10,7 +10,8 @@
         "wscore/dbaccess": "dev-master",
         "wscore/datamapper": "dev-master",
         "wscore/validation": "dev-master",
-        "wscore/cena": "dev-master"
+        "wscore/cena": "dev-master",
+        "wscore/http": "dev-master"
     },
     "authors": [
         {
