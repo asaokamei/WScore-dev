@@ -11,3 +11,16 @@
  * to-be-written
  * 
  */
+
+// set up directories.
+
+$rootDir = dirname( dirname( __DIR__ ) );
+$preLoader = $rootDir . '/vendor/classpreloader/classpreloader/classpreloader.php';
+$cacheFile = $rootDir . '/app/bootstrap.php.cache';
+$config    = $rootDir . '/app/config/ClassList.php';
+$config    = $rootDir . '/app/config/ClassConfig.php';
+
+$cmd = "php {$preLoader} compile --config={$config} --output={$cacheFile}";
+echo $cmd . PHP_EOL;
+passthru($cmd);
+
