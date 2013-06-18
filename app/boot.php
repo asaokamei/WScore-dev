@@ -19,9 +19,9 @@ function buildApp( $cache )
     /** @var $service \WScore\DiContainer\Container */
     /** @noinspection PhpIncludeInspection */
     if( $cache ) {
-        $service = include( $root . '/vendor/wscore/dicontainer/scripts/withCache.php' );
+        $service = include( $root . '/vendor/wscore/dicontainer/scripts/containerCached.php' );
     } else {
-        $service = include( $root . '/vendor/wscore/dicontainer/scripts/instance.php' );
+        $service = include( $root . '/vendor/wscore/dicontainer/scripts/container.php' );
     }
     $service->set( 'ContainerInterface', $service );
     $service->set( 'rootDirectory',      $root );
