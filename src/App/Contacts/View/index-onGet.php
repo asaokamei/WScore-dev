@@ -2,7 +2,7 @@
 
 use \App\Tasks\Entity\Task;
 
-/** @var $this \App\Site\Classes\Template */
+/** @var $this \Demo\Classes\Template */
 
 ?>
 <form name="friend" method="post" action="">
