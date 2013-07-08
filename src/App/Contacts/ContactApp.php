@@ -42,10 +42,6 @@ class ContactApp extends Dispatch
         );
         $this->setRoute( $routes );
 
-        $this->em->getModel( '\App\Contacts\Entity\Friend' );
-        $this->em->getModel( '\App\Contacts\Entity\Contact' );
-        $this->em->getModel( '\App\Contacts\Entity\Tag' );
-        $this->em->getModel( '\App\Contacts\Entity\Fr2tg' );
     }
 
     /**
@@ -56,5 +52,19 @@ class ContactApp extends Dispatch
     {
         $this->template->addParent( $this->viewRoot . '/contacts.php' );
         return parent::respond( $match );
+    }
+
+    /**
+     * load all possible stuff.
+     *
+     * @return $this
+     */
+    public function instantiate()
+    {
+        $this->em->getModel( '\App\Contacts\Entity\Friend' );
+        $this->em->getModel( '\App\Contacts\Entity\Contact' );
+        $this->em->getModel( '\App\Contacts\Entity\Tag' );
+        $this->em->getModel( '\App\Contacts\Entity\Fr2tg' );
+        return parent::instantiate();
     }
 }

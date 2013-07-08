@@ -31,13 +31,13 @@ class Web extends WebApp
     public function __construct()
     {
         $dic = $this->container;
-        $this->addResponder( $dic->get( '\Demo\Setup' ) );
-        $this->addResponder( $dic->get( '\App\Tasks\TaskApp' ),   'tasks/' );
-        $this->addResponder( $dic->get( '\App\Contacts\ContactApp' ), 'contacts/' );
+        $this->addResponder( '\Demo\Setup' );
+        $this->addResponder( '\App\Tasks\TaskApp',   'tasks/' );
+        $this->addResponder( '\App\Contacts\ContactApp', 'contacts/' );
         /*
         $this->addResponder( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
         */
-        $this->addResponder( $dic->get( '\Demo\Renderer' ) );
-        $this->addResponder( $dic->get( '\Demo\Logger' ), true );
+        $this->addResponder( '\Demo\Renderer' );
+        $this->addResponder( '\Demo\Logger', true );
     }
 }
