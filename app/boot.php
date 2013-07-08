@@ -18,7 +18,7 @@ function buildApp( $cache )
     // set up container/service. 
     /** @var $service \WScore\DiContainer\Container */
     /** @noinspection PhpIncludeInspection */
-    if( $cache ) {
+    if( true ) {
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/containerCached.php' );
     } else {
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/container.php' );
@@ -60,6 +60,7 @@ function getApp( $appName, $cache=true )
     if( !function_exists( 'apc_fetch' ) ) return buildApp( false );
     if( $app = apc_fetch( $appName ) ) return $app;
     $app = buildApp( $cache );
+    $app->instantiate();
     apc_store( $appName, $app );
     return $app;
 }
