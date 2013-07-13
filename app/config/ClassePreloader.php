@@ -16,7 +16,7 @@
 
 $rootDir = dirname( dirname( __DIR__ ) );
 $preLoader = $rootDir . '/vendor/classpreloader/classpreloader/classpreloader.php';
-$cacheFile = $rootDir . '/app/bootstrap.php.cache';
+$cacheFile = $rootDir . '/app/cache/bootstrap.php.cache';
 $config    = $rootDir . '/app/config/ClassList.php';
 $config    = $rootDir . '/app/config/ClassConfig.php';
 
