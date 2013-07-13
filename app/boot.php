@@ -29,7 +29,7 @@ function buildApp( $cache )
     $service->set( '\WScore\DbAccess\Query' )->scope( 'shared' );
     // set up app-tasks namespace
     $dba = include( $root . '/app/config/sqlite.php' );
-    $service->set( '\Pdo', $dba )->resetNamespace( 'App-Tasks');
+    $service->set( '\Pdo', $dba )->inNamespace( 'App-Tasks');
     // set up database access
     $dba = include( $root . '/app/config/dbaccess.php' );
     $service->set( '\Pdo', $dba );
