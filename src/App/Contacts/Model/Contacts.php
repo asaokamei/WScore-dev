@@ -1,7 +1,7 @@
 <?php
 namespace App\Contacts\Model;
 
-use \WScore\DataMapper\Model;
+use \WScore\DataMapper\Model\Model;
 
 /**
  * Class Contacts

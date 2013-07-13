@@ -2,7 +2,7 @@
 namespace App\Tasks\Model;
 
 use \App\Tasks\Entity\Task;
-use \WScore\DataMapper\Model;
+use \WScore\DataMapper\Model\Model;
 
 /**
  * Class Tasks
