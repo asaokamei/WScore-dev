@@ -1,17 +1,21 @@
 <?php
 use Monolog\Processor\UidProcessor;
 
+if( !isset( $runMode ) ) {
+    $runMode = 'prod';
+}
+
 require_once( __DIR__ . '/../app/bootstrap.php' );
 
 try {
 
     // make app object.
     /** @var $app Demo\Web */
-    if( !isset( $runMode ) ) {
-        $app = App\getApp( 'WsDemo-app', true );
-    } elseif( $runMode == 'debug' ) {
+    if( $runMode == 'debug' ) {
         $app = App\getApp( 'WsDemo-app', false );
         $app = App\debugApp( $app );
+    } else {
+        $app = App\getApp( 'WsDemo-app', true );
     }
 
     // set app for serving web. 
