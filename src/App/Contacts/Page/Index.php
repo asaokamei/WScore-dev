@@ -32,12 +32,11 @@ class Index extends ResponsePage
 
     private function loadIndex( $match )
     {
-        $friModel = $this->em->getModel( '\App\Contacts\Entity\Friend' );
         $this->paginate->per_page = 4;
         $this->paginate->setOptions( $_GET );
-        $query   = $this->paginate->setQuery( $friModel->query() );
-        $friends = $query->order( 'friend_id' )->select();
-        $friends = $this->em->fetch( '\App\Contacts\Entity\Friend', $friends );
+        $query   = $this->em->query( '\App\Contacts\Entity\Friend' )->order( 'friend_id' );
+        $query   = $this->paginate->setQuery( $query );
+        $friends = $query->fetch();
         $roles   = $this->loadRelations( $friends );
         return $roles;
     }
