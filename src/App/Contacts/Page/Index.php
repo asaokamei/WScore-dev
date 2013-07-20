@@ -26,17 +26,18 @@ class Index extends ResponsePage
 
     /**
      * @Inject
-     * @var \WScore\DbAccess\Tools\Paginate
+     * @var \WScore\DataMapper\Filter\Paginate
      */
     public $paginate;
 
     private function loadIndex( $match )
     {
-        $this->paginate->per_page = 4;
+        $this->paginate->set( 'per_page', 4 );
         $this->paginate->setOptions( $_GET );
-        $query   = $this->em->query( '\App\Contacts\Entity\Friend' )->order( 'friend_id' );
-        $query   = $this->paginate->setQuery( $query );
-        $friends = $query->fetch();
+        $friends = $this->em->query( '\App\Contacts\Entity\Friend' )
+            ->rule( $this->paginate )
+            ->order( 'friend_id' )
+            ->fetch();
         $roles   = $this->loadRelations( $friends );
         return $roles;
     }
