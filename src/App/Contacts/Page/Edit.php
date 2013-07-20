@@ -9,6 +9,12 @@ namespace App\Contacts\Page;
  */
 class Edit extends FriendBase
 {
+    /**
+     * @Inject
+     * @var \WScore\DataMapper\Filter\ForUpdate
+     */
+    public $forUpdate;
+    
     // +----------------------------------------------------------------------+
     //  on* methods. 
     // +----------------------------------------------------------------------+
@@ -37,6 +43,8 @@ class Edit extends FriendBase
         $this->cm->useEntity( '\App\Contacts\Entity\Contact' );
         $this->cm->useEntity( '\App\Contacts\Entity\Tag' );
         $this->cm->useEntity( '\App\Contacts\Entity\Fr2tg' );
+        $this->app->instantiate();
+        $this->cm->em()->mm()->addFilter( 'query', $this->forUpdate );
         if( $this->cm->processor->with( $post )->clean( '\App\Contacts\Entity\Contact', 'info' )->posts() ) {
             $this->em->save();
             return $this->reload();
