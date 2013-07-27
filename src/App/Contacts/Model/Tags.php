@@ -19,7 +19,7 @@ class Tags extends Model
     {
         parent::__construct();
         $csv = file_get_contents( __DIR__ . '/tags.csv' );
-        $this->property->prepare( $csv );
+        $this->property->setupCsv( $csv );
     }
 
     public function setupTable()

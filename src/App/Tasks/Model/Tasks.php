@@ -26,11 +26,11 @@ class Tasks extends Model
     {
         parent::__construct();
         $csv = file_get_contents( __DIR__ . '/tasks.csv' );
-        $this->property->prepare( $csv );
-        $this->property->selectors[ 'status' ][ 'choice' ] = array(
+        $this->property->setupCsv( $csv );
+        $this->property->setProperty( 'status', 'choice', array(
             array( Task::STATUS_ACTIVE, 'active' ),
             array( Task::STATUS_DONE,   'done' ),
-        );
+        ) );
     }
 
     public function getCreateSql() 

@@ -19,7 +19,7 @@ class Fr2tg extends Model
     {
         parent::__construct();
         $csv = file_get_contents( __DIR__ . '/fr2tg.csv' );
-        $this->property->prepare( $csv );
+        $this->property->setupCsv( $csv );
     }
 
     public function setupTable()
