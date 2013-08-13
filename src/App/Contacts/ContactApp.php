@@ -52,7 +52,7 @@ class ContactApp extends DispatchAbstract
     }
 
     /**
-     * @param string $pathInfo
+     * @param array $match
      * @return null|string
      */
     public function respond( $match=array() )
