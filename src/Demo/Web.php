@@ -18,7 +18,7 @@ class Web extends WebApp
      * @Inject
      * @var TemplateInterface
      */
-    public $template;
+    public $renderer;
 
     /**
      * @Inject

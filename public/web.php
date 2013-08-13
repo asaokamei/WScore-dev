@@ -28,12 +28,12 @@ try {
         exit;
     }
     // no response means nothing found.
-    echo $app->template->setTemplate( 'errors/e404.php' )->render();
+    echo $app->renderer->setTemplate( 'errors/e404.php' )->render();
 
 } catch ( Exception $e ) {
 
     $code = $e->getCode();
-    $app->template->set( 'code', $code );
+    $app->renderer->set( 'code', $code );
     if( !in_array( $code, array( '400', '404' ) ) ) {
         // last minute log about the crash.
         if( isset( $app ) && isset( $app->logger ) ) {
@@ -41,5 +41,5 @@ try {
         }
         $code = '503';
     }
-    echo $app->template->setTemplate( "errors/e{$code}.php" )->render();
+    echo $app->renderer->setTemplate( "errors/e{$code}.php" )->render();
 }
