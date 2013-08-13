@@ -1,7 +1,8 @@
 <?php
 namespace App\Tasks;
 
-use WScore\Web\Respond\Dispatch;
+use WScore\Response\DispatchAbstract;
+use WScore\Template\TemplateInterface;
 
 /**
  * Class TaskApp
@@ -10,7 +11,7 @@ use WScore\Web\Respond\Dispatch;
  *
  * @namespace App-Tasks
  */
-class TaskApp extends Dispatch
+class TaskApp extends DispatchAbstract
 {
     /**
      * @Inject
@@ -30,6 +31,12 @@ class TaskApp extends Dispatch
      */
     public $tasks;
 
+    /**
+     * @Inject
+     * @var TemplateInterface
+     */
+    public $template;
+
     public function __construct()
     {
         parent::__construct( __DIR__ );
@@ -46,7 +53,8 @@ class TaskApp extends Dispatch
     }
 
     /**
-     * @param string $pathInfo
+     * @param array $match
+     * @internal param string $pathInfo
      * @return null|string
      */
     public function respond( $match=array() )

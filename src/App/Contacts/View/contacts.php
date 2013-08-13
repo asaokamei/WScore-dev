@@ -1,7 +1,7 @@
 <?php
 
 /** @var $this \Demo\Classes\Template */
-$appRoot = $this->get( 'appURL' );
+$appRoot = $this->get( 'requestRoot' );
 
 // build menus.
 $menu = array(

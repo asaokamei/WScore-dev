@@ -1,7 +1,7 @@
 <?php
 namespace App\Tasks\Page;
 
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\PageAbstract;
 
 /**
  * Class Edit
@@ -10,7 +10,7 @@ use WScore\Web\Respond\ResponsePage;
  *
  * @namespace App-Tasks
  */
-class Edit extends ResponsePage
+class Edit extends PageAbstract
 {
     /**
      * @Inject
@@ -69,7 +69,7 @@ class Edit extends ResponsePage
             $active = $this->role->applyActive( $task );
             $active->save();
             $this->loadAppRoot();
-            return array();
+            return null;
         }
         $this->invalidParameter( 'Please check the input values.' );
         $match[ 'task' ] = $task;

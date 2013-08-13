@@ -1,7 +1,8 @@
 <?php
 namespace App\Contacts;
 
-use WScore\Web\Respond\Dispatch;
+use WScore\Response\DispatchAbstract;
+use WScore\Template\TemplateInterface;
 
 /**
  * Class ContactApp
@@ -10,7 +11,7 @@ use WScore\Web\Respond\Dispatch;
  * 
  * @namespace App-Contacts
  */
-class ContactApp extends Dispatch
+class ContactApp extends DispatchAbstract
 {
     /**
      * @Inject
@@ -29,6 +30,12 @@ class ContactApp extends Dispatch
      * @var \WScore\DataMapper\RoleManager
      */
     public $role;
+
+    /**
+     * @Inject
+     * @var TemplateInterface
+     */
+    public $template;
 
     public function __construct()
     {

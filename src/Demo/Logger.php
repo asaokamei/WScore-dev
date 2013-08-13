@@ -1,11 +1,13 @@
 <?php
 namespace Demo;
 
-use WScore\Web\Module\AppLoader;
-use WScore\Web\Respond\Dispatch;
+use WScore\Response\ResponsibleInterface;
+use WScore\Response\ResponsibleTrait;
 
-class Logger extends Dispatch
+class Logger implements ResponsibleInterface
 {
+    use ResponsibleTrait;
+
     /**
      * @Inject
      * @var \WScore\DbAccess\Profile

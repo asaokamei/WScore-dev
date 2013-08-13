@@ -1,7 +1,7 @@
 <?php
 namespace App\Tasks\Page;
 
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\PageAbstract;
 
 /**
  * Class Done
@@ -10,7 +10,7 @@ use WScore\Web\Respond\ResponsePage;
  *
  * @namespace App-Tasks
  */
-class Done extends ResponsePage
+class Done extends PageAbstract
 {
     /**
      * @Inject

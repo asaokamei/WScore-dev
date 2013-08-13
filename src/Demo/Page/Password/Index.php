@@ -1,9 +1,9 @@
 <?php
 namespace Demo\Page\Password;
 
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\PageAbstract;
 
-class Index extends ResponsePage
+class Index extends PageAbstract
 {
     /**
      * @Inject
@@ -17,7 +17,7 @@ class Index extends ResponsePage
      */
     public $form;
 
-    public function onGet( $match )
+    public function onGet( $match=array() )
     {
         $input = $this->password->init();
         $data = $this->form( $input );

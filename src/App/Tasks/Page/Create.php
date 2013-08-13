@@ -1,7 +1,7 @@
 <?php
 namespace App\Tasks\Page;
 
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\PageAbstract;
 
 /**
  * Class Create
@@ -10,7 +10,7 @@ use WScore\Web\Respond\ResponsePage;
  * 
  * @namespace App-Tasks
  */
-class Create extends ResponsePage
+class Create extends PageAbstract
 {
     /**
      * @Inject
@@ -41,7 +41,7 @@ class Create extends ResponsePage
      * @return array
      * @throws \Exception
      */
-    public function onGet( $match )
+    public function onGet( $match=array() )
     {
         $task = $this->em->newEntity( '\App\Tasks\Entity\Task' );
         $task = $this->role->applyDataIO( $task );
@@ -52,7 +52,6 @@ class Create extends ResponsePage
     }
 
     /**
-     * @param array $match
      * @param array $post
      * @return array
      */

@@ -1,7 +1,7 @@
 <?php
 namespace App\Contacts\Page;
 
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\PageAbstract;
 
 /**
  * Class Tags
@@ -10,7 +10,7 @@ use WScore\Web\Respond\ResponsePage;
  *
  * @namespace App-Contacts
  */
-class Tags extends ResponsePage
+class Tags extends PageAbstract
 {
     /**
      * @Inject

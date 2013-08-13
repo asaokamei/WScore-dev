@@ -4,7 +4,7 @@ namespace Demo;
 use \WScore\DiContainer\ContainerInterface;
 use \WScore\Template\TemplateInterface;
 use \Monolog\Logger as LoggerInterface;
-use \WScore\Web\HttpResponder as WebApp;
+use \WScore\Web\WebApp as WebApp;
 
 class Web extends WebApp
 {

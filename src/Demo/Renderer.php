@@ -1,12 +1,18 @@
 <?php
 namespace Demo;
 
-use WScore\Web\Module\AppLoader;
-use WScore\Web\Respond\Dispatch;
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\DispatchAbstract;
+use WScore\Response\ResponsibleTrait;
+use WScore\Template\TemplateInterface;
 
-class Renderer extends Dispatch
+class Renderer extends DispatchAbstract
 {
+    /**
+     * @Inject
+     * @var TemplateInterface
+     */
+    public $template;
+
     public function __construct()
     {
         parent::__construct();
@@ -18,5 +24,16 @@ class Renderer extends Dispatch
         );
         $this->setRoute( $routes );
         $this->viewRoot = dirname( dirname( __DIR__ ) ). '/documents';
+    }
+
+    public function respond( $match=array() )
+    {
+        if( !$pageUri = $this->match() ) {
+            return null;
+        }
+        if( isset( $this->match[ 'addParent' ] ) ) {
+            $this->template->addParent( $this->match[ 'addParent' ] );
+        }
+        return $this->dispatch( $pageUri );
     }
 }

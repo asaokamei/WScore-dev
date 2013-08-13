@@ -2,7 +2,7 @@
 use Monolog\Processor\UidProcessor;
 
 if( !isset( $runMode ) ) {
-    $runMode = 'prod';
+    $runMode = 'debug';
 }
 
 require_once( __DIR__ . '/../app/bootstrap.php' );
@@ -19,7 +19,7 @@ try {
     }
 
     // set app for serving web. 
-    $app->setHttpRequest( $_SERVER, $_POST );
+    $app->setHttpRequest( $_SERVER, $_GET + $_POST );
     $app->logger->pushProcessor( new UidProcessor() );
     $app->logger->info( 'app->run', array( 'time' => date( 'Y-m-d H:i:s' ), 'path' => $app->request->pathInfo, 'on' => $app->request->method ) );
     $response = $app->respond();

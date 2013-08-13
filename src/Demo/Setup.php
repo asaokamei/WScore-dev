@@ -1,13 +1,15 @@
 <?php
 namespace Demo;
 
-use WScore\Web\Module\AppLoader;
-use WScore\DiContainer\String as rootDirectory;
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\ResponsibleInterface;
+use WScore\Response\ResponsibleTrait;
+use WScore\DiContainer\Types\String as rootDirectory;
 use WScore\Template\TemplateInterface;
 
-class Setup extends ResponsePage
+class Setup implements ResponsibleInterface
 {
+    use ResponsibleTrait;
+
     /**
      * @Inject
      * @var rootDirectory
@@ -19,15 +21,20 @@ class Setup extends ResponsePage
      * @var TemplateInterface
      */
     public $template;
-    
+
     public function respond( $match=array() )
     {
         $template_root = $this->root . '/documents';
+        /** @var \Demo\Web $root */
+        $root = $this->getRoot();
+        /** @var \WScore\Web\WebRequest $request */
+        $request = $root->getRequest();
+
         $this->template->setRoot( $template_root );
         $this->template->setParent( 'layout.php' );
+        $this->template->set( 'baseUrl',  $request->baseURL );
+        $this->template->set( 'pathInfo', $request->pathInfo );
 
-        $this->template->set( 'baseUrl',  $this->retrieveRequest()->baseURL );
-        $this->template->set( 'pathInfo', $this->retrieveRequest()->pathInfo );
         return;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace App\Tasks\Page;
 
-use WScore\Web\Respond\ResponsePage;
+use WScore\Response\PageAbstract;
 
 /**
  * Class Index
@@ -10,7 +10,7 @@ use WScore\Web\Respond\ResponsePage;
  *
  * @namespace App-Tasks
  */
-class Index extends ResponsePage
+class Index extends PageAbstract
 {
     /**
      * @Inject
@@ -30,7 +30,7 @@ class Index extends ResponsePage
      */
     public $tasks;
 
-    public function onGet( $match )
+    public function onGet( $match=array() )
     {
         $tasks = $this->tasks->query()->order( 'status, done_by, task_id' )->select();
         $tasks = $this->em->fetch( '\App\Tasks\Entity\Task', $tasks );
