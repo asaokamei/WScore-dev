@@ -4,10 +4,13 @@
     "require": {
         "psr/log": "~1.0",
         "monolog/monolog":"1.5.x",
-        "classpreloader/classpreloader": "1.0.0",
         "wscore/dicontainer": "dev-master",
         "wscore/web": "dev-master",
         "wscore/cena": "dev-master"
+    },
+    "require-dev": {
+        "classpreloader/classpreloader": "1.0.0"
+        
     },
     "authors": [
         {
