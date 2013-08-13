@@ -10,9 +10,9 @@ class All_Tests
     {
         $suite = new \PHPUnit_Framework_TestSuite( 'all tests for WScore\'s Demo Site' );
         $folder = __DIR__ . '/';
-        $suite->addTestFile( $folder . 'Modules/App_BasicTest.php' );
-        $suite->addTestFile( $folder . 'Modules/App_PasswordTest.php' );
-        $suite->addTestFile( $folder . 'Modules/App_PwdTest.php' );
+        $suite->addTestFile( $folder . 'App/App_BasicTest.php' );
+        $suite->addTestFile( $folder . 'App/App_PasswordTest.php' );
+        $suite->addTestFile( $folder . 'App/App_PwdTest.php' );
         return $suite;
     }
 

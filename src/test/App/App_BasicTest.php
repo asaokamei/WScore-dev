@@ -20,7 +20,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
     function setUp()
     {
         /** @var $container \Demo\Web */
-        $this->app = \App\getApp( 'WsTest-app', false );
+        $this->app = \App\buildApp( false );
         $this->template_root = __DIR__ . '/../../../documents/';
         $this->public_root   = __DIR__ . '/../../../public/';
     }
