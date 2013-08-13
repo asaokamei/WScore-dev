@@ -2,7 +2,7 @@
 namespace Demo;
 
 use WScore\Response\DispatchAbstract;
-use WScore\Response\ResponsibleTrait;
+use WScore\Response\ModuleTrait;
 use WScore\Template\TemplateInterface;
 
 class Renderer extends DispatchAbstract

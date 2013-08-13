@@ -1,12 +1,12 @@
 <?php
 namespace Demo;
 
-use WScore\Response\ResponsibleInterface;
-use WScore\Response\ResponsibleTrait;
+use WScore\Response\ModuleInterface;
+use WScore\Response\ModuleTrait;
 
-class Logger implements ResponsibleInterface
+class Logger implements ModuleInterface
 {
-    use ResponsibleTrait;
+    use ModuleTrait;
 
     /**
      * @Inject

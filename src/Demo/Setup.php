@@ -1,14 +1,14 @@
 <?php
 namespace Demo;
 
-use WScore\Response\ResponsibleInterface;
-use WScore\Response\ResponsibleTrait;
+use WScore\Response\ModuleInterface;
+use WScore\Response\ModuleTrait;
 use WScore\DiContainer\Types\String as rootDirectory;
 use WScore\Template\TemplateInterface;
 
-class Setup implements ResponsibleInterface
+class Setup implements ModuleInterface
 {
-    use ResponsibleTrait;
+    use ModuleTrait;
 
     /**
      * @Inject
