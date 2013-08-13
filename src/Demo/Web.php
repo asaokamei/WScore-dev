@@ -32,10 +32,10 @@ class Web extends WebApp
     {
         $dic = $this->container;
         $this->addModule( '\Demo\Setup' );
-        $this->addModule( '\App\Tasks\TaskApp',   'tasks/' );
-        $this->addModule( '\App\Contacts\ContactApp', 'contacts/' );
+        $this->addModule( '\Modules\Tasks\TaskApp',   'tasks/' );
+        $this->addModule( '\Modules\Contacts\ContactApp', 'contacts/' );
         /*
-        $this->addResponder( $dic->get( '\App\Pwd\Generator' ),   'pwd/' );
+        $this->addResponder( $dic->get( '\Modules\Pwd\Generator' ),   'pwd/' );
         */
         $this->addModule( '\Demo\Renderer' );
         $this->addModule( '\Demo\Logger', true );

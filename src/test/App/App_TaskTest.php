@@ -22,7 +22,7 @@ class App_TaskTests extends \PHPUnit_Framework_TestCase
         /** @var $container \App\App */
         $this->app = \App\getApp( 'WsTest-app', false );
         $this->document_root = __DIR__ . '/../../../documents/';
-        $this->template_root = __DIR__ . '/../../../lib/App/Tasks/View/';
+        $this->template_root = __DIR__ . '/../../../lib/Modules/Tasks/View/';
     }
 
     public function test_task_needles()

@@ -4,7 +4,7 @@ $rootDir = dirname( dirname( __DIR__ ) );
 
 require $rootDir . '/vendor/autoload.php';
 $composerLoader = new \Composer\Autoload\ClassLoader();
-$composerLoader->add( 'App', $rootDir . '/src/' );
+$composerLoader->add( 'Modules', $rootDir . '/src/' );
 $composerLoader->add( 'Demo', $rootDir . '/src/' );
 $composerLoader->register();
 

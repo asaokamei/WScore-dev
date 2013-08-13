@@ -22,7 +22,7 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
         /** @var $container \Demo\Web */
         $this->app = \App\getApp( 'WsTest-app', false );
         $this->document_root = __DIR__ . '/../../../documents/';
-        $this->template_root = __DIR__ . '/../../../src/App/Pwd/View/';
+        $this->template_root = __DIR__ . '/../../../src/Modules/Pwd/View/';
     }
 
     function test_password_menu()
