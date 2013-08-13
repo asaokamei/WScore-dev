@@ -7,7 +7,7 @@ if( !$friend = $this->get( 'friend' ) ) {
     return;
 }
 
-$method     = ucwords( $this->get( 'method' ) );
+$method     = ucwords( $this->get( 'requestMethod' ) );
 $includeForm = '/edit-on' . $method . '.php';
 if( $method === 'Edit' ) {
     $htmlType = 'form';

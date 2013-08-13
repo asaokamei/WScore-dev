@@ -21,7 +21,10 @@ try {
     // set app for serving web. 
     $app->setHttpRequest( $_SERVER, $_GET + $_POST );
     $app->logger->pushProcessor( new UidProcessor() );
-    $app->logger->info( 'app->run', array( 'time' => date( 'Y-m-d H:i:s' ), 'path' => $app->request->pathInfo, 'on' => $app->request->method ) );
+    $app->logger->info( 'app->run', array( 
+        'time' => date( 'Y-m-d H:i:s' ), 
+        'path' => $app->request->getInfo( 'pathInfo' ), 
+        'on'   => $app->request->getInfo( 'requestMethod' ) ) );
     $response = $app->respond();
     if( $response ) {
         $app->render()->emit();
