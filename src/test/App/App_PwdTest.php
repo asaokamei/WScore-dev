@@ -67,7 +67,7 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
             'REQUEST_URI'    => '/test/pwd/',
         );
         //$this->app->pathInfo( $server );
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         $response = $this->app->load( 'pwd/' );
         $contents = Html::extractHtmlTestMatches( $response->content );
 

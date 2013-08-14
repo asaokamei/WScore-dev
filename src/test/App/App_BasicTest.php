@@ -33,7 +33,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
     function test_top_index()
     {
         $this->app->pathInfo( 'index.php' );
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         $response = $this->app->load( 'index.php' );
         $contents = $response->content;
         
@@ -47,7 +47,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
     function test_template_files()
     {
         $this->app->pathInfo( 'templates/index.php' );
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         $response = $this->app->load( 'templates/index.php' );
         $contents = $response->content;
 
@@ -60,7 +60,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
 
     function test_template_another()
     {
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         $response = $this->app->load( 'templates/another.php' );
         $contents = $response->content;
 
@@ -73,7 +73,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
 
     function test_not_found()
     {
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         $response = $this->app->load( 'not_found.php' );
         $this->assertEquals( null, $response );
     }
@@ -82,7 +82,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
      */
     function test_bad_request()
     {
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         try {
             $response = $this->app->load( 'templates/badRequest.php' );
         } catch( \RuntimeException $e ) {
@@ -95,7 +95,7 @@ class App_BasicTests extends \PHPUnit_Framework_TestCase
      */
     function test_no_service()
     {
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         try {
             $response = $this->app->load( 'templates/noService.php' );
         } catch( \RuntimeException $e ) {

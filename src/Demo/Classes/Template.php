@@ -7,7 +7,7 @@ class Template extends PhpTemplate
 {
     /**
      * @Inject
-     * @var \WScore\Web\Http\Request
+     * @var \WScore\Http\Request
      */
     public $request;
 

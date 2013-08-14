@@ -24,7 +24,7 @@ class App_PasswordTests extends \PHPUnit_Framework_TestCase
 
     function test_password_menu()
     {
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         $response = $this->app->load( 'password/index.php' );
         $contents = $response->content;
 
@@ -42,7 +42,7 @@ class App_PasswordTests extends \PHPUnit_Framework_TestCase
             'count'  => '6',
             'symbol' => '',
         );
-        /** @var $response \WScore\Web\Http\Response */
+        /** @var $response \WScore\Http\Response */
         $response = $this->app->with( $post )->on( 'post' )->load( 'password/index.php' );
         $contents = $response->content;
 
