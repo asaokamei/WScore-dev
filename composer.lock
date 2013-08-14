@@ -325,15 +325,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Http.git",
-                "reference": "dc21b103d0c3040ca1744c3969f9c40d9416c1e1"
+                "reference": "acf10cafdd3002eae7eb7cd54b49e57ea90b9d69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Http/zipball/dc21b103d0c3040ca1744c3969f9c40d9416c1e1",
-                "reference": "dc21b103d0c3040ca1744c3969f9c40d9416c1e1",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Http/zipball/acf10cafdd3002eae7eb7cd54b49e57ea90b9d69",
+                "reference": "acf10cafdd3002eae7eb7cd54b49e57ea90b9d69",
                 "shasum": ""
             },
             "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WScore\\Http": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
@@ -342,7 +347,7 @@
                 }
             ],
             "description": "classes for http.",
-            "time": "2013-06-13 10:51:26"
+            "time": "2013-08-14 23:35:40"
         },
         {
             "name": "wscore/template",
@@ -413,12 +418,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asaokamei/WScore.Web.git",
-                "reference": "ee7be4e963a3b801bfc314f2b61a938f404b1f5e"
+                "reference": "59ae39a0faa77604687824633f0796d64112ac56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/ee7be4e963a3b801bfc314f2b61a938f404b1f5e",
-                "reference": "ee7be4e963a3b801bfc314f2b61a938f404b1f5e",
+                "url": "https://api.github.com/repos/asaokamei/WScore.Web/zipball/59ae39a0faa77604687824633f0796d64112ac56",
+                "reference": "59ae39a0faa77604687824633f0796d64112ac56",
                 "shasum": ""
             },
             "require": {
@@ -441,7 +446,7 @@
                 }
             ],
             "description": "Web application front-end dispatcher.",
-            "time": "2013-08-13 11:28:31"
+            "time": "2013-08-14 23:38:32"
         }
     ],
     "packages-dev": [
@@ -638,12 +643,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "6b6564a27b23daa5fa3dc12db7a4b0eeabf13f1f"
+                "reference": "16903d637cdce58c122b8b6e9b271170953d2996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/6b6564a27b23daa5fa3dc12db7a4b0eeabf13f1f",
-                "reference": "6b6564a27b23daa5fa3dc12db7a4b0eeabf13f1f",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/16903d637cdce58c122b8b6e9b271170953d2996",
+                "reference": "16903d637cdce58c122b8b6e9b271170953d2996",
                 "shasum": ""
             },
             "require": {
@@ -676,7 +681,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 20:19:01"
+            "time": "2013-08-14 13:08:25"
         }
     ],
     "aliases": [
