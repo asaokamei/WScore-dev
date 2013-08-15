@@ -4,18 +4,18 @@
 
 /** @var $this \WScore\Template\TemplateInterface */
 
-if( $this->get( 'method' ) === 'put' ) {
+if( $this->get( 'requestMethod' ) === 'put' ) {
 
     ?>
-    <form name="setup" action="<?php echo $this->get('appURL'); ?>" method="get">
-        <p>set up done. </p>
+    <form name="setup" action="<?php echo $this->get('requestRoot'); ?>" method="get">
+        <p class="alert alert-success">set up done. </p>
         <p>click list tasks to show all new tasks. </p>
         <button type="submit" class="btn btn-primary">List Tasks</button>
     </form>
 <?php
 
 } else {
-    
+
     ?>
     <form name="setup" action="" method="post">
         <p>check the checkbox below, and click SetUp button. </p>
