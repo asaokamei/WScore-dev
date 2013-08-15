@@ -60,5 +60,5 @@
 <form name="edit" method="post" action="">
     <input type="hidden" name="_method" value="edit" />
     <button type="submit" class="btn btn-primary">edit contact</button>
-    <a href="<?php echo $this->get( 'appURL' ); ?>" class="btn">back to list</a>
+    <a href="<?php echo $this->get( 'requestRoot' ); ?>" class="btn">back to list</a>
 </form> 

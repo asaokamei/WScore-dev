@@ -76,5 +76,5 @@ $htmlType = 'form';
         ?>
     </dl>
     <button type="submit" class="btn btn-primary">save new contact</button>
-    <a href="<?php echo $this->get( 'appRoot' ); ?>" class="btn">back to list</a>
+    <a href="<?php echo $this->get( 'requestRoot' ); ?>" class="btn">back to list</a>
 </form>

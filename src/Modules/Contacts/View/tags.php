@@ -8,7 +8,7 @@ if( !$tags = $this->get( 'tags' ) ) {
     return;
 }
 
-$onMethod     = 'on' . ucwords( $this->get( 'method' ) );
+$onMethod     = 'on' . ucwords( $this->get( 'requestMethod' ) );
 if( $onMethod === 'onEdit' ) {
     $method   = 'post';
     $button   = 'save changes';
@@ -18,7 +18,7 @@ if( $onMethod === 'onEdit' ) {
     $method   = 'edit';
     $button   = 'edit tags';
     $htmlType = 'html';
-    $subBut   = '<a href="' . $this->get( 'appRoot' ) . '" class="btn">back to list</a>';
+    $subBut   = '<a href="' . $this->get( 'requestRoot' ) . '" class="btn">back to list</a>';
 }
 
 ?>
