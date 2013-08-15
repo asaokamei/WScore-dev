@@ -37,9 +37,8 @@ class Index extends FriendBase
     private function loadRelations( $friends )
     {
         $ids     = $friends->pack( 'friend_id' );
-        $joiners = $this->em->fetch( '\Modules\Contacts\Entity\Fr2tg', $ids, 'friend_id' );
-        $ids     = $joiners->pack( 'tag_code' );
-        $tags    = $this->em->fetch( '\Modules\Contacts\Entity\Tag', $ids );
+        $ids     = $this->em->fetch( '\Modules\Contacts\Entity\Fr2tg', $ids, 'friend_id' )->pack( 'tag_code' );
+        $this->em->fetch( '\Modules\Contacts\Entity\Tag', $ids );
         $this->em->fetchByGet();
         $roles = array();
         foreach( $friends as $key => $entity ) {
