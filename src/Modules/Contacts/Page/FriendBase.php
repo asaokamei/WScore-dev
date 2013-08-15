@@ -33,6 +33,14 @@ class FriendBase extends PageAbstract
     // +----------------------------------------------------------------------+
     //  utilities for all on* methods. 
     // +----------------------------------------------------------------------+
+    public function __construct()
+    {
+        $this->cm->useEntity( '\Modules\Contacts\Entity\Friend' );
+        $this->cm->useEntity( '\Modules\Contacts\Entity\Contact' );
+        $this->cm->useEntity( '\Modules\Contacts\Entity\Tag' );
+        $this->cm->useEntity( '\Modules\Contacts\Entity\Fr2tg' );
+    }
+
     /**
      * @param $match
      * @return \Modules\Contacts\Entity\Friend

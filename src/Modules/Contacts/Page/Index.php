@@ -10,20 +10,8 @@ use WScore\Response\PageAbstract;
  *
  * @namespace Modules-Contacts
  */
-class Index extends PageAbstract
+class Index extends FriendBase
 {
-    /**
-     * @Inject
-     * @var \WScore\DataMapper\EntityManager
-     */
-    public $em;
-
-    /**
-     * @Inject
-     * @var \WScore\Cena\CenaManager
-     */
-    public $cm;
-
     /**
      * @Inject
      * @var \WScore\DataMapper\Filter\Paginate
@@ -86,9 +74,6 @@ class Index extends PageAbstract
 
     public function onPut( $match, $post )
     {
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Friend' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Tag' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Fr2tg' );
         if( $this->cm->processor->with( $post )->posts() ) {
             $this->em->save();
             return $this->reload();

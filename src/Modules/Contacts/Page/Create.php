@@ -27,10 +27,6 @@ class Create extends FriendBase
 
     public function onPost( $match, $post )
     {
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Friend' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Contact' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Tag' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Fr2tg' );
         if( $this->cm->processor->with( $post )->clean( '\Modules\Contacts\Entity\Contact', 'info' )->posts() ) {
             $this->em->save();
             return $this->loadAppRoot();

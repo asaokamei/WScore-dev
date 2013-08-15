@@ -39,10 +39,6 @@ class Edit extends FriendBase
 
     public function onPost( $match, $post )
     {
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Friend' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Contact' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Tag' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Fr2tg' );
         $this->getParent()->instantiate();
         $this->cm->em()->mm()->addFilter( 'query', $this->forUpdate );
         if( $this->cm->processor->with( $post )->clean( '\Modules\Contacts\Entity\Contact', 'info' )->posts() ) {
