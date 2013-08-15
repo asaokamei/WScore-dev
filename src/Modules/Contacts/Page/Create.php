@@ -45,8 +45,10 @@ class Create extends FriendBase
             }
             $friend->contacts[] = $contact;
         }
+        $this->em->fetchByGet( false );
         $data   = $this->cenaFriend( $friend );
         $data   = $this->linkContacts( $data );
+        $this->invalidParameter( 'Please check the input values.' );
         return $data;
     }
     // +----------------------------------------------------------------------+
