@@ -35,10 +35,7 @@ class FriendBase extends PageAbstract
     // +----------------------------------------------------------------------+
     public function __construct()
     {
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Friend' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Contact' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Tag' );
-        $this->cm->useEntity( '\Modules\Contacts\Entity\Fr2tg' );
+        $this->em->setNamespace( '\Modules\Contacts\Entity' );
     }
 
     /**
@@ -48,7 +45,7 @@ class FriendBase extends PageAbstract
     protected function loadFriend( $match )
     {
         $id = $match[ 'id' ];
-        $friend = $this->em->fetch( '\Modules\Contacts\Entity\Friend', $id );
+        $friend = $this->em->fetch( 'Friend', $id );
         $friend = $this->role->applyActive( $friend[0] );
         $friend->relation( 'contacts' )->fetch();
         $friend->relation( 'tags' )->fetch();
@@ -85,8 +82,8 @@ class FriendBase extends PageAbstract
             $contact->relate( 'friend', $friend->retrieve() );
         }
         // get all tags from database for selection. 
-        $tags = $this->em->getModel( '\Modules\Contacts\Entity\Tag' )->query()->select();
-        $tagList = $this->em->fetch( '\Modules\Contacts\Entity\Tag', $tags );
+        $tags = $this->em->getModel( 'Tag' )->query()->select();
+        $tagList = $this->em->fetch( 'Tag', $tags );
         $data[ 'tagList' ] = $tagList;
         return $data;
     }

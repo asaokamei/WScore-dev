@@ -17,9 +17,9 @@ class Create extends FriendBase
         /** @var $friend \Modules\Contacts\Entity\Friend */
         $friend = $this->em->newEntity( '\Modules\Contacts\Entity\Friend' );
         // create new contacts for each type.
-        $friend->contacts[] = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => '1' ) );
-        $friend->contacts[] = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => '2' ) );
-        $friend->contacts[] = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => '3' ) );
+        $friend->contacts[] = $this->em->newEntity( 'Contact', array( 'type' => '1' ) );
+        $friend->contacts[] = $this->em->newEntity( 'Contact', array( 'type' => '2' ) );
+        $friend->contacts[] = $this->em->newEntity( 'Contact', array( 'type' => '3' ) );
         $data   = $this->cenaFriend( $friend );
         $data   = $this->linkContacts( $data );
         return $data;
@@ -27,17 +27,17 @@ class Create extends FriendBase
 
     public function onPost( $match, $post )
     {
-        if( $this->cm->processor->with( $post )->clean( '\Modules\Contacts\Entity\Contact', 'info' )->posts() ) {
+        if( $this->cm->processor->with( $post )->clean( 'Contact', 'info' )->posts() ) {
             $this->em->save();
             return $this->loadAppRoot();
         }
         $this->em->fetchByGet();
-        $friend = $this->em->fetch( '\Modules\Contacts\Entity\Friend', null )[0];
-        $contacts = $this->em->fetch( '\Modules\Contacts\Entity\Contact', null );
+        $friend = $this->em->fetch( 'Friend', null )[0];
+        $contacts = $this->em->fetch( 'Contact', null );
         $types = array( '1', '2', '3' );
         foreach( $types as $type ) {
             if( !$contact = $contacts->get( $type, 'type' )[0] ) {
-                $contact = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => $type ) );
+                $contact = $this->em->newEntity( 'Contact', array( 'type' => $type ) );
             }
             $friend->contacts[] = $contact;
         }

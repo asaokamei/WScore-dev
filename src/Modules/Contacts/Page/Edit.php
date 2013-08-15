@@ -29,9 +29,9 @@ class Edit extends FriendBase
     {
         $friend = $this->loadFriend( $match );
         // create new contacts for each type.
-        $friend->contacts[] = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => '1' ) );
-        $friend->contacts[] = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => '2' ) );
-        $friend->contacts[] = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => '3' ) );
+        $friend->contacts[] = $this->em->newEntity( 'Contact', array( 'type' => '1' ) );
+        $friend->contacts[] = $this->em->newEntity( 'Contact', array( 'type' => '2' ) );
+        $friend->contacts[] = $this->em->newEntity( 'Contact', array( 'type' => '3' ) );
         $data   = $this->cenaFriend( $friend );
         $data   = $this->linkContacts( $data );
         return $data;
@@ -41,7 +41,7 @@ class Edit extends FriendBase
     {
         $this->getParent()->instantiate();
         $this->cm->em()->mm()->addFilter( 'query', $this->forUpdate );
-        if( $this->cm->processor->with( $post )->clean( '\Modules\Contacts\Entity\Contact', 'info' )->posts() ) {
+        if( $this->cm->processor->with( $post )->clean( 'Contact', 'info' )->posts() ) {
             $this->em->save();
             return $this->reload();
         }

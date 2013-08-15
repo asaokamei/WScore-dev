@@ -22,7 +22,7 @@ class Index extends FriendBase
     {
         $this->paginate->set( 'per_page', 4 );
         $this->paginate->setOptions( $_GET );
-        $friends = $this->em->query( '\Modules\Contacts\Entity\Friend' )
+        $friends = $this->em->query( 'Friend' )
             ->rule( $this->paginate )
             ->order( 'friend_id' )
             ->fetch();
@@ -37,8 +37,8 @@ class Index extends FriendBase
     private function loadRelations( $friends )
     {
         $ids     = $friends->pack( 'friend_id' );
-        $ids     = $this->em->fetch( '\Modules\Contacts\Entity\Fr2tg', $ids, 'friend_id' )->pack( 'tag_code' );
-        $this->em->fetch( '\Modules\Contacts\Entity\Tag', $ids );
+        $ids     = $this->em->fetch( 'Fr2tg', $ids, 'friend_id' )->pack( 'tag_code' );
+        $this->em->fetch( 'Tag', $ids );
         $this->em->fetchByGet();
         $roles = array();
         foreach( $friends as $key => $entity ) {
@@ -60,8 +60,8 @@ class Index extends FriendBase
 
     public function onEdit( $match )
     {
-        $tags    = $this->em->getModel( '\Modules\Contacts\Entity\Tag' )->query()->select();
-        $tagList = $this->em->fetch( '\Modules\Contacts\Entity\Tag', $tags );
+        $tags    = $this->em->getModel( 'Tag' )->query()->select();
+        $tagList = $this->em->fetch( 'Tag', $tags );
         $friends = $this->loadIndex( $match );
         // get all tags from database for selection. 
         $data = array( 
@@ -77,9 +77,9 @@ class Index extends FriendBase
             $this->em->save();
             return $this->reload();
         }
-        $tags    = $this->em->getModel( '\Modules\Contacts\Entity\Tag' )->query()->select();
-        $tagList = $this->em->fetch( '\Modules\Contacts\Entity\Tag', $tags );
-        $friends = $this->em->get( '\Modules\Contacts\Entity\Friend', null );
+        $tags    = $this->em->getModel( 'Tag' )->query()->select();
+        $tagList = $this->em->fetch( 'Tag', $tags );
+        $friends = $this->em->get( 'Friend', null );
         $roles   = $this->loadRelations( $friends );
         $data = array(
             'friends' => $roles,
