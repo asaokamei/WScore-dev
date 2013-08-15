@@ -16,22 +16,31 @@ if( !$friend = $this->get( 'friend' ) ) {
 /** @var $friend \WScore\Cena\Role\CenaIO */
 
 $htmlType = 'form';
+$error = function( $role, $name ) {
+    /** @var \WScore\DataMapper\Role\DataIO $role */
+    if( $error = $role->getError( $name ) ) {
+        return "<br /><span class=\"text-error\">{$error}</span>";
+    }
+    return '';
+}
 
 ?>
 <form name="create" method="post" action="">
     <dl class="dl-horizontal">
         <dt>name</dt>
-        <dd><?php echo $friend->popHtml( 'friend_name', $htmlType )->class_( 'span4' ); ?></dd>
+        <dd><?php echo $friend->popHtml( 'friend_name', $htmlType )->class_( 'span4' );
+            echo $error( $friend, 'friend_name' ); ?></dd>
         <dt>gender</dt>
         <dd><?php
             // make ul inline. 
             $sel = $friend->popHtml( 'gender', $htmlType );
             $sel->_get( 'ul' )->class_( 'inline' );
             echo $sel;
-
+            echo $error( $friend, 'gender' );
             ?></dd>
         <dt>birthday</dt>
-        <dd><?php echo $friend->popHtml( 'friend_bday', $htmlType ); ?></dd>
+        <dd><?php echo $friend->popHtml( 'friend_bday', $htmlType );
+            echo $error( $friend, 'friend_bday' ); ?></dd>
         <dt>tags</dt>
         <?php
         // show tags starts
