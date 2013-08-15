@@ -39,7 +39,6 @@ class Create extends FriendBase
         $friend = $this->em->fetch( '\Modules\Contacts\Entity\Friend', null )[0];
         $contacts = $this->em->fetch( '\Modules\Contacts\Entity\Contact', null );
         $types = array( '1', '2', '3' );
-        $contact2 = array();
         foreach( $types as $type ) {
             if( !$contact = $contacts->get( $type, 'type' )[0] ) {
                 $contact = $this->em->newEntity( '\Modules\Contacts\Entity\Contact', array( 'type' => $type ) );
