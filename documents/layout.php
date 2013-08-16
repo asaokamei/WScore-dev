@@ -40,7 +40,9 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
     <title>WScore Public Demo</title>
     <style type="text/css">
         div#mainMenu {
-            margin-top: 10px;
+            margin-top: 5px;
+        }
+        div#mainMenu ul {
             margin-bottom: 5px;
         }
         div#subMenu ul {
