@@ -39,7 +39,6 @@ class Edit extends FriendBase
 
     public function onPost( $match, $post )
     {
-        $this->getParent()->instantiate();
         $this->cm->em()->mm()->addFilter( 'query', $this->forUpdate );
         if( $this->cm->processor->with( $post )->clean( 'Contact', 'info' )->posts() ) {
             $this->em->save();
