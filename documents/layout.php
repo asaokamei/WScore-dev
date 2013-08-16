@@ -7,6 +7,13 @@ $pathInfo= $this->get( 'pathInfo' );
 // build menus.
 $menu = array(
     array( 'title' => 'Top',      'icon' => 'home',      'url' => $baseUrl, ),
+    array( 'title' => 'Tools',    'icon' => 'wrench',
+        'pages' => [
+            array( 'title' => 'clear-cache',    'url' => $baseUrl.'cache.php?act=cache-clear',  ),
+            array( 'title' => 'APC manager',    'url' => $baseUrl.'apc.php',  ),
+            array( 'title' => 'php info',    'url' => $baseUrl.'info.php',  ),
+        ]
+    ),
     array( 'title' => 'About',    'icon' => 'file',      'url' => $baseUrl.'templates/index',  ),
     array( 'title' => 'Password', 'icon' => 'plus-sign', 'url' => $baseUrl.'password/index',  ),
     array( 'title' => 'Tasks',    'icon' => 'edit',      'url' => $baseUrl.'tasks/', ),
@@ -32,12 +39,12 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
     <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/main.css" />
     <title>WScore Public Demo</title>
     <style type="text/css">
-        div#mainMenu ul {
+        div#mainMenu {
+            margin-top: 10px;
             margin-bottom: 5px;
         }
         div#subMenu ul {
-            margin-bottom: 5px;
-            clear: both; 
+            clear: both;
             float: right;
         }
     </style>
@@ -49,7 +56,7 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
         <?php if( $this->HomePage ) { ?>
             <h3 class="muted">WScore Demo</h3>
         <?php } else { ?>
-            <h3 class="muted"><a href="<?php echo $this->baseUrl;?>index">WScore Demo</a></h3>
+            <h3 class="muted"><a href="<?php echo $this->baseUrl;?>">WScore Demo</a></h3>
         <?php  } ?>
             <div id="mainMenu">
                 <?php echo $menu; ?>
@@ -77,6 +84,8 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
         <p>WScore Developed by WorkSpot.JP<br />
             thanks, bootstrap. </p>
     </footer>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="<?= $this->baseUrl ?>bootstrap/js/bootstrap.js"></script>
 </div>
 </body>
 </html>
