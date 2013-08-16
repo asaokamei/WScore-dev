@@ -7,6 +7,7 @@ $view = $app->container->get( 'TemplateInterface' );
 $root = $app->container->get( 'rootDirectory' );
 $view->addParent( $root . '/documents/layout.php' );
 $view->renderSelf();
+$view->set( 'baseUrl', '/WSdev/' );
 
 ?>
 <h4>Direct Folder</h4>
