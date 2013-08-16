@@ -8,10 +8,14 @@ $this->set( 'HomePage', true );
             /* Main marketing message and sign up button */
         .jumbotron {
             margin: 30px 0;
+            padding: 10px;
             text-align: center;
+            background-color: #f0f0f8;
+            border-radius: 10px;
+            border: 1px solid #e0e0f0;
         }
         .jumbotron h1 {
-            font-size: 60px;
+            font-size: 50px;
             line-height: 1;
         }
         .jumbotron .btn {
@@ -26,9 +30,7 @@ $this->set( 'HomePage', true );
 
         <h1>WScore framework ♫</h1>
         <p class="lead">Simple Data Mapper and Cena data transfer agent <br />for web application development.</p>
-        <a href="https://github.com/asaokamei/WScore-dev" class="btn btn-success">see it at GitHub</a>
-        
-        <hr>
+        <p><a href="https://github.com/asaokamei/WScore-dev" class="btn btn-success">see it at GitHub</a></p>
     </header>
     <div class="row-fluid marketing">
         <div class="span6">
@@ -44,7 +46,7 @@ $this->set( 'HomePage', true );
                 [<a href="templates/badRequest.php" >bad request</a>] 
                 [<a href="templates/noService.php" >no service</a>]</p>
 
-            <h3>Caches, etc.</h3>
+            <h3>Tools</h3>
             <p>majority of the application is cached into APC as a single object image, as inspired (copied) from BEAR.Sunday.</p>
             <p>[<a href="cache.php" >cache.php</a>] [<a href="apc.php" >apc</a>] [<a href="info.php" >phpinfo</a>]</p>
 
