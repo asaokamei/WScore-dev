@@ -30,7 +30,7 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
         $this->verifyNeedles( 
             'pwd/', 
             array(
-                $this->document_root . 'layout.php',
+                $this->document_root . '.layout.php',
                 $this->template_root . 'generate.php'
             ) 
         );
@@ -50,7 +50,7 @@ class App_PwdTests extends \PHPUnit_Framework_TestCase
         $contents = $this->verifyNeedles(
             $server,
             array(
-                $this->document_root . 'layout.php',
+                $this->document_root . '.layout.php',
                 $this->template_root . 'generate.php'
             ),
             $post

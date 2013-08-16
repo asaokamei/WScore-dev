@@ -17,8 +17,8 @@ class Renderer extends DispatchAbstract
     {
         parent::__construct();
         $routes = array(
-            'password/*'  => array( 'addParent' => 'password.php' ),
-            'templates/*' => array( 'addParent' => 'template.php' ),
+            'password/*'  => array( 'addParent' => '.password.php' ),
+            'templates/*' => array( 'addParent' => '.template.php' ),
             '/'   => array( 'render' => 'index' ),
             '/*'  => array(),
         );

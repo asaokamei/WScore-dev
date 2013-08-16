@@ -30,7 +30,7 @@ class App_TaskTests extends \PHPUnit_Framework_TestCase
         $this->verifyNeedles(
             'tasks/',
             array(
-                $this->document_root . 'layout.php',
+                $this->document_root . '.layout.php',
                 $this->template_root . 'task.php',
                 $this->template_root . 'index.php'
             )
@@ -41,7 +41,7 @@ class App_TaskTests extends \PHPUnit_Framework_TestCase
         $this->verifyNeedles(
             'tasks/create',
             array(
-                $this->document_root . 'layout.php',
+                $this->document_root . '.layout.php',
                 $this->template_root . 'task.php',
                 $this->template_root . 'create.php'
             )
@@ -52,7 +52,7 @@ class App_TaskTests extends \PHPUnit_Framework_TestCase
         $this->verifyNeedles(
             'tasks/setup',
             array(
-                $this->document_root . 'layout.php',
+                $this->document_root . '.layout.php',
                 $this->template_root . 'task.php',
                 $this->template_root . 'setup.php'
             )
@@ -63,7 +63,7 @@ class App_TaskTests extends \PHPUnit_Framework_TestCase
         $this->verifyNeedles(
             'tasks/1',
             array(
-                $this->document_root . 'layout.php',
+                $this->document_root . '.layout.php',
                 $this->template_root . 'task.php',
                 $this->template_root . 'edit.php'
             )

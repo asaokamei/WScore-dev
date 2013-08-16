@@ -31,7 +31,7 @@ class Setup implements ModuleInterface
         $request = $root->getRequest();
 
         $this->template->setRoot( $template_root );
-        $this->template->setParent( 'layout.php' );
+        $this->template->setParent( '.layout.php' );
         $this->template->set( 'baseUrl',  $request->getInfo( 'baseURL' ) );
         $this->template->set( 'pathInfo', $request->getInfo( 'pathInfo' ) );
 

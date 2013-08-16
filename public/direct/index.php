@@ -5,7 +5,7 @@ $app = App\getApp( 'WsDemo-app', true );
 /** @var $view \Demo\Classes\Template */
 $view = $app->container->get( 'TemplateInterface' );
 $root = $app->container->get( 'rootDirectory' );
-$view->addParent( $root . '/documents/layout.php' );
+$view->addParent( $root . '/documents/.layout.php' );
 $view->renderSelf();
 $view->set( 'baseUrl', '/WSdev/' );
 
