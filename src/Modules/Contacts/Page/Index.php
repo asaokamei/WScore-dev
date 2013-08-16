@@ -73,10 +73,13 @@ class Index extends FriendBase
 
     public function onPut( $match, $post )
     {
+        $this->em->query( 'Friend' )->begin();
         if( $this->cm->processor->with( $post )->posts() ) {
             $this->em->save();
+            $this->em->query( 'Friend' )->commit();
             return $this->reload();
         }
+        $this->em->query( 'Friend' )->rollback();
         $tags    = $this->em->getModel( 'Tag' )->query()->select();
         $tagList = $this->em->fetch( 'Tag', $tags );
         $friends = $this->em->get( 'Friend', null );
