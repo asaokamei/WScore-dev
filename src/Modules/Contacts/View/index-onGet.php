@@ -9,7 +9,7 @@ use \App\Tasks\Entity\Task;
     <?php
     $appRoot   = $this->get( 'appRoot' );
     $pageUrls = $this->get( 'paginate' )->setupUrls();
-    /** @var $pager \WScore\Web\View\PaginateBootstrap */
+    /** @var $pager \WScore\Web\View\Bootstrap2\Pagination */
     $pager    = $this->pageView->setUrls( $pageUrls );
     echo $pager->bootstrap( $pageUrls );
     ?>

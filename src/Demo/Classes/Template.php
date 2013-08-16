@@ -13,7 +13,7 @@ class Template extends PhpTemplate
 
     /**
      * @Inject
-     * @var \WScore\Web\View\PaginateBootstrap
+     * @var \WScore\Web\View\Bootstrap2\Pagination
      */
     public $pageView;
 
@@ -25,7 +25,7 @@ class Template extends PhpTemplate
     
     /**
      * @Inject
-     * @var \WScore\Web\View\NavBarBootstrap
+     * @var \WScore\Web\View\Bootstrap2\NavBar
      */
     public $menu;
     
