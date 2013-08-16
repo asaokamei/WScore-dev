@@ -2,6 +2,7 @@
 namespace Modules\Tasks\Page;
 
 use WScore\Response\PageAbstract;
+use WScore\Web\Session\TokenTrait;
 
 /**
  * Class Edit
@@ -12,6 +13,8 @@ use WScore\Response\PageAbstract;
  */
 class Edit extends PageAbstract
 {
+    use TokenTrait;
+
     /**
      * @Inject
      * @var \WScore\DataMapper\EntityManager
@@ -31,12 +34,6 @@ class Edit extends PageAbstract
     public $tasks;
 
     /**
-     * @Inject
-     * @var \WScore\Web\Session
-     */
-    public $session;
-
-    /**
      * @param array $match
      * @return array
      * @throws \Exception
@@ -46,8 +43,6 @@ class Edit extends PageAbstract
         $task = $this->fetchTask( $match );
         $task = $this->role->applyDataIO( $task );
         $match[ 'task' ] = $task;
-        $match[ 'tokenVal' ] = $this->session->pushToken();
-        $match[ 'tokenTag' ] = $this->session->popTokenTagName();
         return $match;
     }
 
@@ -62,7 +57,7 @@ class Edit extends PageAbstract
         $task = $this->fetchTask( $match );
         $task = $this->role->applyDataIO( $task );
         $task->load( $post );
-        if( !$this->session->verifyToken() ){
+        if( $this->request->getInfo( 'requestError' ) ) {
             $match[ 'alert' ] = 'error on session token. ';
         }
         elseif( $task->validate() ) {
@@ -73,8 +68,6 @@ class Edit extends PageAbstract
         }
         $this->invalidParameter( 'Please check the input values.' );
         $match[ 'task' ] = $task;
-        $match[ 'tokenVal' ] = $this->session->pushToken();
-        $match[ 'tokenTag' ] = $this->session->popTokenTagName();
         return $match;
     }
 

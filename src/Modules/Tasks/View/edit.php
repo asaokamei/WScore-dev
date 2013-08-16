@@ -43,7 +43,7 @@ function error( $task, $key ) {
         </dd>
     </dl>
     <input type="hidden" name="_method" value="put">
-    <input type="hidden" name="<?php echo $this->get( 'tokenTag' );?>" value="<?php echo $this->get( 'tokenVal' );?>" />
+    <input type="hidden" name="_token" value="<?php echo $this->get( '_token' );?>" />
     <button type="submit" class="btn btn-primary">save</button>
     <a href="<?php echo $this->get( 'appRoot' ); ?>" class="btn">cancel</a>
 </form>
