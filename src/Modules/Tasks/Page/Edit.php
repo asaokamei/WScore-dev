@@ -58,7 +58,7 @@ class Edit extends PageAbstract
         $task = $this->role->applyDataIO( $task );
         $task->load( $post );
         if( $this->request->getInfo( 'requestError' ) ) {
-            $match[ 'alert' ] = 'error on session token. ';
+            $match[ 'alert' ] = 'need a valid token. ';
         }
         elseif( $task->validate() ) {
             $active = $this->role->applyActive( $task );

@@ -15,6 +15,8 @@ class Tags extends Model
 
     protected $id_name = 'tag_code';
 
+    protected $insertMethod = 'insertValue';
+
     public function __construct()
     {
         parent::__construct();
@@ -60,14 +62,5 @@ class Tags extends Model
             $values[ 'name' ]      = "more{$idx} ". $tags[2]['name'];
         }
         return $values;
-    }
-
-    /**
-     * @param array $data
-     * @return string
-     */
-    public function insert( $data )
-    {
-        return $this->persistence->insertValue( $data );
     }
 }
