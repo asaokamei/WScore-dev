@@ -12,7 +12,7 @@ try {
     // make app object.
     /** @var $app Demo\Web */
     if( $runMode == 'debug' ) {
-        $app = App\getApp( 'WsDemo-app', false );
+        $app = App\getApp( 'WsDemo-app', true, true );
         $app = App\debugApp( $app );
     } else {
         $app = App\getApp( 'WsDemo-app', true );

@@ -7,10 +7,10 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
 /**
- * @param bool     $cache
+ * @param bool     $apc
  * @return \Demo\Web
  */
-function buildApp( $cache )
+function buildApp( $apc )
 {
     // set up folders.
     $root = dirname( __DIR__ );
@@ -18,7 +18,7 @@ function buildApp( $cache )
     // set up container/service. 
     /** @var $service \WScore\DiContainer\Container */
     /** @noinspection PhpIncludeInspection */
-    if( true ) {
+    if( $apc ) {
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/containerCached.php' );
     } else {
         $service = include( $root . '/vendor/wscore/dicontainer/scripts/container.php' );
@@ -50,14 +50,15 @@ function buildApp( $cache )
 
 
 /**
- * @param string  $appName
- * @param bool    $cache
+ * @param string $appName
+ * @param bool $cache
+ * @param bool $apc
  * @return \Demo\Web
  */
-function getApp( $appName, $cache=true )
+function getApp( $appName, $cache=true, $apc=true )
 {
-    if( !$cache ) return buildApp( $cache );
-    if( !function_exists( 'apc_fetch' ) ) return buildApp( false );
+    if( !$cache ) return buildApp( $apc );
+    if( !function_exists( 'apc_fetch' ) ) return buildApp( $apc );
     if( $app = apc_fetch( $appName ) ) return $app;
     $app = buildApp( $cache );
     $app->instantiate();
