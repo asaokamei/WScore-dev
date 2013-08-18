@@ -2,7 +2,7 @@
 use Monolog\Processor\UidProcessor;
 
 if( !isset( $runMode ) ) {
-    $runMode = 'debug';
+    $runMode = 'normal';
 }
 
 require_once( __DIR__ . '/../app/bootstrap.php' );
@@ -12,10 +12,13 @@ try {
     // make app object.
     /** @var $app Demo\Web */
     if( $runMode == 'debug' ) {
-        $app = App\getApp( 'WsDemo-app', true, true );
+        $app = App\getApp( 'WsDemo-app', false, false );
         $app = App\debugApp( $app );
-    } else {
-        $app = App\getApp( 'WsDemo-app', true );
+    } elseif( $runMode == 'normal' ) {
+        $app = App\getApp( 'WsDemo-app', false, true );
+    }
+    else {
+        $app = App\getApp( 'WsDemo-app', true, true );
     }
 
     // set app for serving web. 
