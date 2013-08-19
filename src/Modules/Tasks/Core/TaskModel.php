@@ -1,13 +1,13 @@
 <?php
-namespace Modules\Tasks\Model;
+namespace Modules\Tasks\Core;
 
-use \Modules\Tasks\Entity\Task;
+use \Modules\Tasks\Core\Task;
 use \WScore\DataMapper\Model\Model;
 
 /**
  * Class Tasks
  *
- * @package Modules\Tasks\Model
+ * @package Modules\Tasks\Core
  * 
  * @namespace Modules-Tasks
  */

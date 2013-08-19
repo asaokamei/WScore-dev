@@ -14,7 +14,7 @@ class Setup extends PageAbstract
 {
     /**
      * @Inject
-     * @var \Modules\Tasks\Model\Tasks
+     * @var \Modules\Tasks\Core\TaskModel
      */
     public $tasks;
     

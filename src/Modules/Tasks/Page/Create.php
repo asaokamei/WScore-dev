@@ -26,7 +26,7 @@ class Create extends PageAbstract
 
     /**
      * @Inject
-     * @var \Modules\Tasks\Model\Tasks
+     * @var \Modules\Tasks\Core\TaskModel
      */
     public $tasks;
 
@@ -43,7 +43,7 @@ class Create extends PageAbstract
      */
     public function onGet( $match=array() )
     {
-        $task = $this->em->newEntity( '\Modules\Tasks\Entity\Task' );
+        $task = $this->em->newEntity( 'Task' );
         $task = $this->role->applyDataIO( $task );
         $match[ 'task' ] = $task;
         $match[ 'tokenVal' ] = $this->session->pushToken();
@@ -57,7 +57,7 @@ class Create extends PageAbstract
      */
     public function onPost( $match, $post )
     {
-        $task = $this->em->newEntity( '\Modules\Tasks\Entity\Task' );
+        $task = $this->em->newEntity( 'Task' );
         $task = $this->role->applyDataIO( $task );
         $task->load( $post );
         if( !$this->session->verifyToken() ){

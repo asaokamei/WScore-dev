@@ -26,14 +26,14 @@ class Index extends PageAbstract
     
     /**
      * @Inject
-     * @var \Modules\Tasks\Model\Tasks
+     * @var \Modules\Tasks\Core\TaskModel
      */
     public $tasks;
 
     public function onGet( $match=array() )
     {
         $tasks = $this->tasks->query()->order( 'status, done_by, task_id' )->select();
-        $tasks = $this->em->fetch( '\Modules\Tasks\Entity\Task', $tasks );
+        $tasks = $this->em->fetch( 'Task', $tasks );
         $roles = array();
         foreach( $tasks as $key => $t ) {
             $roles[$key] = $this->role->applyDataIO( $t );

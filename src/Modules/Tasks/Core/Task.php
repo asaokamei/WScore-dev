@@ -1,12 +1,12 @@
 <?php
-namespace Modules\Tasks\Entity;
+namespace Modules\Tasks\Core;
 
 use \WScore\DataMapper\Entity\EntityAbstract;
 
 /**
  * Class Task
  *
- * @package Modules\Tasks\Entity
+ * @package Modules\Tasks\Core
  *
  * @namespace Modules-Tasks
  */
@@ -15,7 +15,7 @@ class Task extends EntityAbstract
     const STATUS_ACTIVE = '1';
     const STATUS_DONE   = '9';
 
-    public static $_modelName = '\Modules\Tasks\Core\TasksModel';
+    public static $_modelName = '\Modules\Tasks\Core\TaskModel';
 
     public $task_id = null;
 

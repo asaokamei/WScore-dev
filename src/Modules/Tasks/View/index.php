@@ -1,6 +1,6 @@
 <?php
 
-use \Modules\Tasks\Entity\Task;
+use \Modules\Tasks\Core\Task;
 
 /** @var $this \WScore\Template\TemplateInterface */
 

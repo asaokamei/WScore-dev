@@ -26,7 +26,7 @@ class Done extends PageAbstract
 
     /**
      * @Inject
-     * @var \Modules\Tasks\Model\Tasks
+     * @var \Modules\Tasks\Core\TaskModel
      */
     public $tasks;
 
@@ -37,10 +37,10 @@ class Done extends PageAbstract
      */
     public function onPut( $match )
     {
-        /** @var $task \Modules\Tasks\Entity\Task */
+        /** @var $task \Modules\Tasks\Core\Task */
         $task = $this->fetchTask( $match );
         if( !$task->isDone() ) {
-            $task->status = \Modules\Tasks\Entity\Task::STATUS_DONE;
+            $task->status = \Modules\Tasks\Core\Task::STATUS_DONE;
             $active = $this->role->applyActive( $task );
             $active->save();
         }
@@ -55,7 +55,7 @@ class Done extends PageAbstract
      */
     public function onDelete( $match )
     {
-        /** @var $task \Modules\Tasks\Entity\Task */
+        /** @var $task \Modules\Tasks\Core\Task */
         $task = $this->fetchTask( $match );
         if( $task->isDone() ) {
             $active = $this->role->applyActive( $task );
@@ -75,7 +75,7 @@ class Done extends PageAbstract
     {
         if( !isset( $match[ 'id' ] ) ) throw new \Exception( 'task id not set', 1400 );
         $id = $match[ 'id' ];
-        $task = $this->em->fetch( 'Modules\Tasks\Entity\Task', $id );
+        $task = $this->em->fetch( 'Modules\Tasks\Core\Task', $id );
         if( empty( $task ) ) throw new \Exception( 'task not found: id='.$id, 1401 );
         return $task[0];
     }

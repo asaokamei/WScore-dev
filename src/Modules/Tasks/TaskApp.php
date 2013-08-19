@@ -27,7 +27,7 @@ class TaskApp extends DispatchAbstract
 
     /**
      * @Inject
-     * @var \Modules\Tasks\Model\Tasks
+     * @var \Modules\Tasks\Core\TaskModel
      */
     public $tasks;
 
@@ -49,7 +49,8 @@ class TaskApp extends DispatchAbstract
         );
         $this->setRoute( $routes );
 
-        $this->em->getModel( '\Modules\Tasks\Entity\Task' );
+        $this->em->getModel( '\Modules\Tasks\Core\Task' );
+        $this->em->setNamespace( '\Modules\Tasks\Core' );
     }
 
     /**
