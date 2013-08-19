@@ -15,7 +15,7 @@ class Task extends EntityAbstract
     const STATUS_ACTIVE = '1';
     const STATUS_DONE   = '9';
 
-    public static $_modelName = '\Modules\Tasks\Model\Tasks';
+    public static $_modelName = '\Modules\Tasks\Core\TasksModel';
 
     public $task_id = null;
 

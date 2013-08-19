@@ -11,7 +11,7 @@ use \WScore\DataMapper\Model\Model;
  * 
  * @namespace Modules-Tasks
  */
-class Tasks extends Model
+class TaskModel extends Model
 {
     /** @var string     name of database table     */
     protected $table = 'task';
