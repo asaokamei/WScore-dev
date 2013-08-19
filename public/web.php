@@ -2,7 +2,7 @@
 use Monolog\Processor\UidProcessor;
 
 if( !isset( $runMode ) ) {
-    $runMode = 'normal';
+    $runMode = 'prod';
 }
 
 require_once( __DIR__ . '/../app/bootstrap.php' );
