@@ -26,13 +26,12 @@ class Index extends FriendBase
             ->rule( $this->paginate )
             ->order( 'friend_id' )
             ->fetch();
-        $roles   = $this->loadRelations( $friends );
+        $this->loadRelations( $friends );
         return $friends;
     }
 
     /**
      * @param \WScore\DataMapper\Entity\Collection $friends
-     * @return array
      */
     private function loadRelations( $friends )
     {
@@ -40,12 +39,9 @@ class Index extends FriendBase
         $ids     = $this->em->fetch( 'Fr2tg', $ids, 'friend_id' )->pack( 'tag_code' );
         $this->em->fetch( 'Tag', $ids );
         $this->em->fetchByGet();
-        $roles = array();
-        foreach( $friends as $key => $entity ) {
+        foreach( $friends as $entity ) {
             $this->em->relation( $entity, 'tags' )->fetch();
-            //$roles[$key] = $this->cm->applyCenaIO( $entity );
         }
-        return $roles;
     }
 
     public function onGet( $match )
