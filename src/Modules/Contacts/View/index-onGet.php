@@ -9,7 +9,7 @@
     $pageUrls = $this->get( 'paginate' )->setupUrls();
     /** @var $pager \WScore\Web\View\Bootstrap2\Pagination */
     $pager    = $this->pageView->setUrls( $pageUrls );
-    echo $pager->bootstrap( $pageUrls );
+    echo $pager->draw();
     ?>
 <table class="table">
     <thead>
