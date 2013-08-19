@@ -24,13 +24,17 @@ use \App\Tasks\Entity\Task;
     </tr>
     </thead>
     <?php
-    foreach( $this->arr( 'friends' ) as $friend ) {
-        /** @var $friend \WScore\Cena\Role\CenaIO */
-        $friend->setHtmlType( 'html' );
-        $detailUrl = $this->get( 'appRoot' ) . $friend->getId();
-        $name = $friend->popHtml( 'friend_name' );
+    /** @var $role \WScore\Cena\Role\CenaIO */
+    $role = $this->get( 'CenaIo' );
+    $friends = $this->arr( 'friends' );
+    foreach( $friends as $friend )
+    {
+        $role->register( $friend );
+        $role->setHtmlType( 'html' );
+        $detailUrl = $this->get( 'appRoot' ) . $role->getId();
+        $name = $role->popHtml( 'friend_name' );
         $name = "<a href=\"{$detailUrl}\">{$name}</a>";
-        $tags = $friend->retrieve()->tags;
+        $tags = $friend->tags;
         if( $tags && !empty( $tags ) ) {
             /** @var $tags \WScore\DataMapper\Entity\Collection */
             $tags = $tags->pack( 'name' );
@@ -43,7 +47,7 @@ use \App\Tasks\Entity\Task;
     <tr>
         <td></td>
         <td><?php echo $name; ?></td>
-        <td><?php echo $friend->popHtml( 'gender' ); ?></td>
+        <td><?php echo $role->popHtml( 'gender' ); ?></td>
         <td><?php echo $tags; ?></td>
         <td><a href="<?php echo $detailUrl; ?>" class="btn btn-mini">&gt;&gt;</a></td>
     </tr>

@@ -27,7 +27,7 @@ class Index extends FriendBase
             ->order( 'friend_id' )
             ->fetch();
         $roles   = $this->loadRelations( $friends );
-        return $roles;
+        return $friends;
     }
 
     /**
@@ -43,7 +43,7 @@ class Index extends FriendBase
         $roles = array();
         foreach( $friends as $key => $entity ) {
             $this->em->relation( $entity, 'tags' )->fetch();
-            $roles[$key] = $this->cm->applyCenaIO( $entity );
+            //$roles[$key] = $this->cm->applyCenaIO( $entity );
         }
         return $roles;
     }
@@ -54,6 +54,7 @@ class Index extends FriendBase
         $data = array(
             'friends'  => $friends,
             'paginate' => $this->paginate,
+            'CenaIo'  => $this->cm->getCenaIO(),
         );
         return $data;
     }
@@ -67,6 +68,7 @@ class Index extends FriendBase
         $data = array( 
             'friends' => $friends,
             'tagList' => $tagList,
+            'CenaIo'  => $this->cm->getCenaIO(),
         );
         return $data;
     }
@@ -83,10 +85,11 @@ class Index extends FriendBase
         $tags    = $this->em->getModel( 'Tag' )->query()->select();
         $tagList = $this->em->fetch( 'Tag', $tags );
         $friends = $this->em->get( 'Friend', null );
-        $roles   = $this->loadRelations( $friends );
+        $this->loadRelations( $friends );
         $data = array(
-            'friends' => $roles,
+            'friends' => $friends,
             'tagList' => $tagList,
+            'CenaIo'  => $this->cm->getCenaIO(),
         );
         $this->assign( $data );
         $this->invalidParameter( 'Please check the input values.' );

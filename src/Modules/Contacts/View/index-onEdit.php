@@ -1,15 +1,17 @@
 <?php
 
-use \App\Tasks\Entity\Task;
-
 /** @var $this \WScore\Template\TemplateInterface */
-/** @var $friends \WScore\Cena\Role\CenaIO[] */
-$friends = $this->arr( 'friends' );
+/** @var $friends \Modules\Contacts\Entity\Friend[] */
+/** @var $role \WScore\Cena\Role\CenaIO */
 
-$sel = $friends[0]->form( 'friend_name' );
+$friends = $this->arr( 'friends' );
+$role    = $this->get( 'CenaIo' );
+
+$role->register( $friends[0] );
+$sel = $role->form( 'friend_name' );
 $sel->attributes[ 'class' ] = 'span3';
 
-$sel = $friends[0]->form( 'gender' );
+$sel = $role->form( 'gender' );
 $sel->attributes[ 'class' ] = 'span2';
 $sel->style = 'select';
 
@@ -27,16 +29,16 @@ $sel->style = 'select';
     <?php
     $tagList = $this->get( 'tagList' );
     foreach( $friends as $friend ) {
-        /** @var $friend \WScore\Cena\Role\CenaIO */
-        $friend->setHtmlType( 'form' );
+        $role->register( $friend );
+        $role->setHtmlType( 'form' );
         ?>
     <tbody>
     <tr>
         <td></td>
-        <td><?php echo $friend->popHtml( 'friend_name' ); ?></td>
-        <td><?php echo $friend->popHtml( 'gender' ); ?></td>
-        <td><?php echo $friend->popLinkSelect( 'tags', $tagList, 'name', 'select' )->size('1'); ?>
-        <?php echo $friend->popEmptyLink( 'tags' ); ?>
+        <td><?php echo $role->popHtml( 'friend_name' ); ?></td>
+        <td><?php echo $role->popHtml( 'gender' ); ?></td>
+        <td><?php echo $role->popLinkSelect( 'tags', $tagList, 'name', 'select' )->size('1'); ?>
+        <?php echo $role->popEmptyLink( 'tags' ); ?>
         </td>
     </tr>
     </tbody>
