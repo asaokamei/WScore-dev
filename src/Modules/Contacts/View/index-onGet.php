@@ -1,13 +1,11 @@
 <?php
 
-use \App\Tasks\Entity\Task;
-
 /** @var $this \Demo\Classes\Template */
 
 ?>
 <form name="friend" method="post" action="">
     <?php
-    $appRoot   = $this->get( 'appRoot' );
+    $requestRoot   = $this->get( 'requestRoot' );
     $pageUrls = $this->get( 'paginate' )->setupUrls();
     /** @var $pager \WScore\Web\View\Bootstrap2\Pagination */
     $pager    = $this->pageView->setUrls( $pageUrls );
@@ -25,13 +23,13 @@ use \App\Tasks\Entity\Task;
     </thead>
     <?php
     /** @var $role \WScore\Cena\Role\CenaIO */
+    /** @var $friend \WScore\DataMapper\Entity\EntityInterface */
     $role = $this->get( 'CenaIo' );
-    $friends = $this->arr( 'friends' );
-    foreach( $friends as $friend )
+    $role->setHtmlType( 'html' );
+    foreach( $this->arr( 'friends' ) as $friend )
     {
         $role->register( $friend );
-        $role->setHtmlType( 'html' );
-        $detailUrl = $this->get( 'appRoot' ) . $role->getId();
+        $detailUrl = $requestRoot . $friend->getId();
         $name = $role->popHtml( 'friend_name' );
         $name = "<a href=\"{$detailUrl}\">{$name}</a>";
         $tags = $friend->tags;
@@ -42,6 +40,7 @@ use \App\Tasks\Entity\Task;
         } else {
             $tags = '...';
         }
+        /** @var $tags string */
         ?>
     <tbody>
     <tr>
