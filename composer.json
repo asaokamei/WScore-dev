@@ -9,8 +9,6 @@
         "wscore/cena": "dev-master"
     },
     "require-dev": {
-        "classpreloader/classpreloader": "1.0.0"
-        
     },
     "authors": [
         {
@@ -36,5 +34,11 @@
                 }
             }
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {
+            "Demo": "src",
+            "Modules": "src"
+        }
+    }
 }
