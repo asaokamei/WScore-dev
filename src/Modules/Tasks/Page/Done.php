@@ -1,6 +1,7 @@
 <?php
 namespace Modules\Tasks\Page;
 
+use Modules\Tasks\Core\Task;
 use WScore\Response\PageAbstract;
 
 /**
@@ -37,10 +38,10 @@ class Done extends PageAbstract
      */
     public function onPut( $match )
     {
-        /** @var $task \Modules\Tasks\Core\Task */
+        /** @var $task Task */
         $task = $this->fetchTask( $match );
         if( !$task->isDone() ) {
-            $task->status = \Modules\Tasks\Core\Task::STATUS_DONE;
+            $task->status = Task::STATUS_DONE;
             $active = $this->role->applyActive( $task );
             $active->save();
         }
@@ -55,7 +56,7 @@ class Done extends PageAbstract
      */
     public function onDelete( $match )
     {
-        /** @var $task \Modules\Tasks\Core\Task */
+        /** @var $task Task */
         $task = $this->fetchTask( $match );
         if( $task->isDone() ) {
             $active = $this->role->applyActive( $task );
@@ -75,7 +76,7 @@ class Done extends PageAbstract
     {
         if( !isset( $match[ 'id' ] ) ) throw new \Exception( 'task id not set', 1400 );
         $id = $match[ 'id' ];
-        $task = $this->em->fetch( 'Modules\Tasks\Core\Task', $id );
+        $task = $this->em->fetch( 'Task', $id );
         if( empty( $task ) ) throw new \Exception( 'task not found: id='.$id, 1401 );
         return $task[0];
     }

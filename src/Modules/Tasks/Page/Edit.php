@@ -80,7 +80,7 @@ class Edit extends PageAbstract
     {
         if( !isset( $match[ 'id' ] ) ) throw new \Exception( 'task id not set', 1400 );
         $id = $match[ 'id' ];
-        $task = $this->em->fetch( 'Modules\Tasks\Core\Task', $id );
+        $task = $this->em->fetch( 'Task', $id );
         if( empty( $task ) ) throw new \Exception( 'task not found: id='.$id, 1401 );
         return $task[0];
     }
