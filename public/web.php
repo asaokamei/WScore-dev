@@ -22,7 +22,7 @@ try {
     }
 
     // set app for serving web. 
-    $app->setHttpRequest( $_SERVER, $_GET + $_POST );
+    $app->setHttpRequest( $_SERVER, $_POST );
     $app->logger->pushProcessor( new UidProcessor() );
     $app->logger->info( 'app->run', array( 
         'time' => date( 'Y-m-d H:i:s' ), 
@@ -34,7 +34,7 @@ try {
         exit;
     }
     // no response means nothing found.
-    echo $app->renderer->setTemplate( 'errors/e404.php' )->render();
+    echo $app->renderer->setTemplate( 'errors/e404.php' )->render( $_GET );
 
 } catch ( Exception $e ) {
 
