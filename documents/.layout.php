@@ -34,9 +34,9 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl; ?>bootstrap/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>bootstrap/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>bootstrap/css/main.css" />
     <title>WScore Public Demo</title>
     <style type="text/css">
         div#mainMenu {
@@ -58,7 +58,7 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
         <?php if( $this->get( 'HomePage' ) ) { ?>
             <h3 class="muted">WScore Demo</h3>
         <?php } else { ?>
-            <h3 class="muted"><a href="<?php echo $this->baseUrl;?>">WScore Demo</a></h3>
+            <h3 class="muted"><a href="<?php echo $baseUrl;?>">WScore Demo</a></h3>
         <?php  } ?>
             <div id="mainMenu">
                 <?php echo $menu; ?>
@@ -87,7 +87,7 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
             thanks, bootstrap. </p>
     </footer>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="<?= $this->baseUrl ?>bootstrap/js/bootstrap.js"></script>
+    <script src="<?= $baseUrl ?>bootstrap/js/bootstrap.js"></script>
 </div>
 </body>
 </html>
