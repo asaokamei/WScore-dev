@@ -37,8 +37,9 @@ class Index extends FriendBase
     {
         $ids     = $friends->pack( 'friend_id' );
         $ids     = $this->em->fetch( 'Fr2tg', $ids, 'friend_id' )->pack( 'tag_code' );
-        //$this->em->fetch( 'Tag', $ids );
-        //$this->em->fetchByGet();
+        $this->em->fetch( 'Tag', $ids );
+        $this->em->fetchByGet();
+        $this->em->collection->makeIndexOn( 'Modules\Contacts\Model\Fr2tg', 'friend_id' );
         foreach( $friends as $entity ) {
             $this->em->relation( $entity, 'tags' )->fetch();
         }
