@@ -20,7 +20,7 @@ class Index extends FriendBase
 
     private function loadIndex( $match )
     {
-        $this->paginate->set( 'per_page', 4 );
+        $this->paginate->set( 'per_page', 100 );
         $this->paginate->setOptions( $_GET );
         $friends = $this->em->query( 'Friend' )
             ->rule( $this->paginate )
@@ -37,8 +37,8 @@ class Index extends FriendBase
     {
         $ids     = $friends->pack( 'friend_id' );
         $ids     = $this->em->fetch( 'Fr2tg', $ids, 'friend_id' )->pack( 'tag_code' );
-        $this->em->fetch( 'Tag', $ids );
-        $this->em->fetchByGet();
+        //$this->em->fetch( 'Tag', $ids );
+        //$this->em->fetchByGet();
         foreach( $friends as $entity ) {
             $this->em->relation( $entity, 'tags' )->fetch();
         }

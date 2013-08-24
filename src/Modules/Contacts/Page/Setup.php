@@ -45,7 +45,7 @@ class Setup extends PageAbstract
     {
         // setup for friends data.
         $this->friends->setupTable();
-        for( $i = 1; $i <= 10; $i++ ) {
+        for( $i = 1; $i <= 1000; $i++ ) {
             $friend = $this->friends->getFriendData($i);
             $this->friends->insert( $friend );
         }
