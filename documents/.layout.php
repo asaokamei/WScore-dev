@@ -55,7 +55,7 @@ if( $subMenu = $this->get( 'sub_menu' ) ) {
 <!-- HtmlTest: Needle=documents/layout -->
 <div class="container-narrow">
     <div class="masthead">
-        <?php if( $this->HomePage ) { ?>
+        <?php if( $this->get( 'HomePage' ) ) { ?>
             <h3 class="muted">WScore Demo</h3>
         <?php } else { ?>
             <h3 class="muted"><a href="<?php echo $this->baseUrl;?>">WScore Demo</a></h3>
