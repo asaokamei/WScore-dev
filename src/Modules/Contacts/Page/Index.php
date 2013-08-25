@@ -20,7 +20,7 @@ class Index extends FriendBase
 
     private function loadIndex( $match )
     {
-        $this->paginate->set( 'per_page', 100 );
+        $this->paginate->set( 'per_page', 10);
         $this->paginate->setOptions( $_GET );
         $friends = $this->em->query( 'Friend' )
             ->rule( $this->paginate )
