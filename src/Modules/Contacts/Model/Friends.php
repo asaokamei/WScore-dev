@@ -56,11 +56,12 @@ class Friends extends Model
     {
         $gender = array( 'M', 'F' );
         $gender = $gender[ $idx % 2 ];
-        $day    = 10 + $idx;
+        $date   = new \DateTime( '1989-02-01' );
+        $date->add( new \DateInterval( "P{$idx}D" ) );
         $data = array(
             'friend_name' => 'friend #' . $idx,
             'gender'      => $gender,
-            'friend_bday' => '1989-02-' . $day,
+            'friend_bday' => $date->format( 'Y-m-d' ),
         );
         return $data;
     }
