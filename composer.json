@@ -4,9 +4,9 @@
     "require": {
         "psr/log": "~1.0",
         "monolog/monolog":"1.5.x",
-        "wscore/dicontainer": "dev-master",
-        "wscore/web": "dev-master",
-        "wscore/cena": "dev-master"
+        "wscore/dicontainer": "0.1",
+        "wscore/web": "0.1",
+        "wscore/cena": "0.1"
     },
     "require-dev": {
     },
